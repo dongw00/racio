@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Card,
   CardHeader,
   Button,
   ListGroup,
   ListGroupItem,
-  Progress
-} from "shards-react";
+  Progress,
+} from 'shards-react';
 
 const UserDetails = ({ userDetails }) => (
   <Card small className="mb-4 pt-3">
@@ -34,8 +34,7 @@ const UserDetails = ({ userDetails }) => (
           </strong>
           <Progress
             className="progress-sm"
-            value={userDetails.performanceReportValue}
-          >
+            value={userDetails.performanceReportValue}>
             <span className="progress-value">
               {userDetails.performanceReportValue}%
             </span>
@@ -56,20 +55,20 @@ UserDetails.propTypes = {
   /**
    * The user details object.
    */
-  userDetails: PropTypes.object
+  userDetails: PropTypes.object,
 };
 
 UserDetails.defaultProps = {
   userDetails: {
-    name: "Sierra Brooks",
-    avatar: require("./../../images/avatars/0.jpg"),
-    jobTitle: "Project Manager",
-    performanceReportTitle: "Workload",
+    name: 'Sierra Brooks',
+    avatar: require('./../../images/avatars/wo.jpg'),
+    jobTitle: 'Project Manager',
+    performanceReportTitle: 'Workload',
     performanceReportValue: 74,
-    metaTitle: "Description",
+    metaTitle: 'Description',
     metaValue:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?"
-  }
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?',
+  },
 };
 
 export default UserDetails;

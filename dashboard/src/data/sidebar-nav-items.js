@@ -12,6 +12,11 @@ export default function() {
       to: '/blog-posts',
     },
     {
+      title: '주행기록',
+      htmlBefore: '<i class="material-icons">vertical_split</i>',
+      to: '/history',
+    },
+    {
       title: 'Forms & Components',
       htmlBefore: '<i class="material-icons">view_module</i>',
       to: '/components-overview',
@@ -24,7 +29,7 @@ export default function() {
     {
       title: '내 정보',
       htmlBefore: '<i class="material-icons">person</i>',
-      to: '/user-profile-lite',
+      to: '/user-profile',
     },
   ];
 }
