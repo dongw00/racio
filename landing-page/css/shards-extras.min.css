@@ -2,8 +2,8 @@
   position: relative;
   height: 100vh;
   min-height: 700px;
-  background: url(../images/agency-landing/welcome-cover.jpg) no-repeat center
-    center fixed;
+  background: url(../images/agency-landing/Bicycle-Background.jpg) no-repeat
+    center center fixed;
   background-size: cover;
 }
 .shards-landing-page--1 .welcome:before {
@@ -63,8 +63,8 @@
   position: relative;
   height: 100vh;
   min-height: 700px;
-  background: url(../images/app-promo/welcome-cover.jpg) no-repeat center center
-    fixed;
+  background: url(../images/app-promo/Bicycle-Background.jpg) no-repeat center
+    center fixed;
   background-size: cover;
 }
 .shards-app-promo-page--1 .welcome:before {
