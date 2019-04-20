@@ -12,7 +12,7 @@ const PageTitle = ({ title, subtitle, className, ...attrs }) => {
   );
 
   return (
-    <Col xs="12" sm="4" className={classes} {...attrs}>
+    <Col xs="12" sm="6" className={classes} {...attrs}>
       <h3 className="page-title">{title}</h3>
       <span className="text-uppercase page-subtitle">{subtitle}</span>
     </Col>
@@ -20,13 +20,7 @@ const PageTitle = ({ title, subtitle, className, ...attrs }) => {
 };
 
 PageTitle.propTypes = {
-  /**
-   * The page title.
-   */
   title: PropTypes.string,
-  /**
-   * The page subtitle.
-   */
   subtitle: PropTypes.string,
 };
 

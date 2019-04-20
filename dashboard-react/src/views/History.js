@@ -14,9 +14,7 @@ const History = () => (
         className="text-sm-left mb-3"
       />
     </Row>
-    <Row>
-      <MapComponent />;
-    </Row>
+    <MapComponent />
   </Container>
 );
 
