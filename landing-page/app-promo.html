@@ -22,6 +22,7 @@
     />
     <link rel="stylesheet" href="css/shards.min.css" />
     <link rel="stylesheet" href="css/shards-extras.min.css" />
+    <link rel="stylesheet" href="css/login.css" />
   </head>
   <body class="shards-app-promo-page--1">
     <!-- Welcome Section -->
@@ -94,6 +95,45 @@
       <div class="inner-wrapper mt-auto mb-auto container">
         <div class="row">
           <div class="col-lg-5 col-md-5 col-sm-12 mt-auto mb-auto mr-3">
+            <!-- Login -->
+            <div id = "hide_login">
+              <div id="dvAuth">
+                <div id="dvLogin">
+                    <h5 class="login_title">Account</h5>
+                    <div id="dvSocial">
+                        <div class="btnGroup">
+                            <li id="liGoogleBtn" class="waves-effect waves-teal btn-flat"><i></i>Using Google Account for login</li>
+                        </div>
+                        <em class="or">or</em>
+                    </div>
+                    <div id="dvEmail">
+                        <input type="email" id="userName" name="userName" class="input-text" placeholder="email">
+                        <input type="password" id="password" name="password" class="input-text" maxlength="17" placeholder="password">
+                        <div class="btnGroup">
+                            <li id="liEmailBtn" class="waves-effect waves-teal btn-flat">Login</li>
+                            <li id="liEmailJoin" class="waves-effect waves-teal btn-flat" onclick="active_login('hide_login','hide_signup')">Sign Up</li>
+                        </div>
+                    </div>
+                    <em id="back" onclick="active_login('hide_login','change_login')">&ltback</em>
+                </div>
+              </div> 
+            </div>
+            <!-- SignUp -->
+            <div id = "hide_signup">
+                <div id="dvJoin">
+                    <h5 class="login_title">Email SignUp</h5>
+                    <input type="text" id="joinUserName" name="userName" class="input-text" placeholder="UserName (ex.Hong gil dong)">
+                    <input type="email" id="joinUserEmail" name="userName" class="input-text" placeholder="Email account (ex.google, naver..)">
+                    <input type="password" id="joinPassword" name="password" class="input-text" maxlength="17" placeholder="password">
+                    <input type="password" id="joinRePassword" class="input-text" maxlength="17" placeholder="confirm password">
+                    <div class="btnGroup">
+                        <li id="liEmailJoinSubmit" class="waves-effect waves-teal btn-flat">Signed Up</li>
+                    </div>
+                </div>
+                <em id="back" onclick="active_login('hide_signup','hide_login')">&ltback</em>
+            </div>
+
+            <div id = "change_login">
             <h1 class="welcome-heading display-4 text-white">
               Trimm Bicycle
             </h1>
@@ -103,9 +143,8 @@
             <a
               href="#"
               class="btn btn-lg btn-primary btn-pill align-self-center text-md-center" 
-              onclick = "active_login()"
-            ><i class="fa fa-sign-in mr-2"></i>로그인</a
-            >
+              onclick = "active_login('change_login','hide_login')"
+            ><i class="fa fa-sign-in mr-2"></i>로그인</a>
 
             <div class="d-block mt-4">
               <a href="https://designrevision.com/download/shards"
@@ -120,9 +159,9 @@
                   src="images/app-promo/badge-google-play-store.png"
                   alt="Get it on Google Play Store"
               /></a>
+              </div>
             </div>
-          </div>
-
+        </div>
           <div class="col-lg-4 col-md-5 col-sm-12 ml-auto">
             <img
               class="iphone-mockup ml-auto"
@@ -498,5 +537,6 @@
     <script src="/js/jquery-3.4.0.min.js"></script>
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-  </body>
+    <script src="/js/login.js"></script>
+    </body>
 </html>
