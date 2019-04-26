@@ -102,15 +102,15 @@
                     <h5 class="login_title">Account</h5>
                     <div id="dvSocial">
                         <div class="btnGroup">
-                            <li id="liGoogleBtn" class="waves-effect waves-teal btn-flat"><i></i>Using Google Account for login</li>
+                            <li id="liGoogleBtn" class="waves-effect waves-teal btn-flat" onclick="GoogleBtnEvent()"><i></i>Using Google Account</li>
                         </div>
                         <em class="or">or</em>
                     </div>
                     <div id="dvEmail">
                         <input type="email" id="userName" name="userName" class="input-text" placeholder="email">
-                        <input type="password" id="password" name="password" class="input-text" maxlength="17" placeholder="password">
+                        <input type="password" id="password" name="password" class="input-text" maxlength="17" placeholder="password" onkeydown="keydown(1)">
                         <div class="btnGroup">
-                            <li id="liEmailBtn" class="waves-effect waves-teal btn-flat">Login</li>
+                            <li id="liEmailBtn" class="waves-effect waves-teal btn-flat" onclick="EmailBtnEvent()">Login</li>
                             <li id="liEmailJoin" class="waves-effect waves-teal btn-flat" onclick="active_login('hide_login','hide_signup')">Sign Up</li>
                         </div>
                     </div>
@@ -125,9 +125,9 @@
                     <input type="text" id="joinUserName" name="userName" class="input-text" placeholder="UserName (ex.Hong gil dong)">
                     <input type="email" id="joinUserEmail" name="userName" class="input-text" placeholder="Email account (ex.google, naver..)">
                     <input type="password" id="joinPassword" name="password" class="input-text" maxlength="17" placeholder="password">
-                    <input type="password" id="joinRePassword" class="input-text" maxlength="17" placeholder="confirm password">
+                    <input type="password" id="joinRePassword" class="input-text" maxlength="17" placeholder="confirm password" onkeydown="keydown(2)">
                     <div class="btnGroup">
-                        <li id="liEmailJoinSubmit" class="waves-effect waves-teal btn-flat">Signed Up</li>
+                        <li id="liEmailJoinSubmit" class="waves-effect waves-teal btn-flat" onclick = "SignUpBtnEvent()">Signed Up</li>
                     </div>
                 </div>
                 <em id="back" onclick="active_login('hide_signup','hide_login')">&ltback</em>
@@ -140,11 +140,16 @@
             <p class="text-muted">
               레이시오 웹 어플리케이션을 경험해보세요
             </p>
+            <div id = "login_button">
             <a
               href="#"
               class="btn btn-lg btn-primary btn-pill align-self-center text-md-center" 
               onclick = "active_login('change_login','hide_login')"
             ><i class="fa fa-sign-in mr-2"></i>로그인</a>
+            </div>
+            <div id='hide_dash'>
+            <div id='rounded1'></div><a id='user_info'></a><a id="logoutbtn" onclick="LogOutEvent()">Logout</a></a>
+            </div>
 
             <div class="d-block mt-4">
               <a href="https://designrevision.com/download/shards"
@@ -538,5 +543,17 @@
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/login.js"></script>
+    <script defer src="/__/firebase/4.6.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/4.6.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+      
+    <script type="text/template" id="templateUserList">
+            <li id="li<%=targetUserUid %>" data-targetUserUid="<%=targetUserUid %>" data-username="<%=userName %>" class="collection-item avatar list">
+                <img src="<%=profileImg ? profileImg : 'img/noprofile.png'  %>" alt="" class="circle">
+                <span class="title"><%=userName %></span>
+                <span class="small material-icons right hiddendiv done">done</span>
+                <span class="small material-icons right hiddendiv mood yellow-text">mood</span>
+            </li>
+    </script>
     </body>
 </html>
