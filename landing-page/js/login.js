@@ -1,3 +1,7 @@
+function CheckLogin(){
+
+}
+
 function keydown(num){
     if(window.event.keyCode == 13)
     {
@@ -51,9 +55,13 @@ function clear(){
 //구글 로그인 버튼 이벤트
 function GoogleBtnEvent(){
     var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
     firebase.auth().signInWithPopup(provider).then(function(result) {
-
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    
+    
+//    firebase.database = firebase.database(); // 인증 받은 후 초기화 하여야 합니다. 필드 변수에 서 할당하면 인증 받기전에 할당이라 에러발생
+//    firebase.database.goOnline(); // 데이터베이스를 명시적으로 온라인
+    
     var user = firebase.auth().currentUser;
 
     set_user(user);
@@ -65,7 +73,7 @@ function GoogleBtnEvent(){
 function EmailBtnEvent(){
     var email = document.getElementById('userName').value.trim();
     var password = document.getElementById('password').value.trim();
-    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);   
     if(!emailCheck(email)){
         alert('Invaild Email');
     }
