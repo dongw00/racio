@@ -33,10 +33,8 @@
 body {
   font-size: 1rem;
   font-weight: 300;
-  color: #5a6169;
-  opacity: 0.9;
-  background: #212529;
-  /* background-color: #fff; */
+  color: #695a5a;
+  background-color: #fff;
 }
 a {
   color: #007bff;
@@ -101,6 +99,8 @@ h2 {
 h3 {
   font-size: 1.953rem;
   line-height: 2.25rem;
+  /* 중요 h3 색상 추가 */
+  color: #d9e8ff;
 }
 .h4,
 h4 {
@@ -2184,7 +2184,7 @@ i.material-icons {
 }
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
-  color: #0477eb;
+  color: #495057;
   background-color: #fff;
   border-color: #ddd;
 }
@@ -4512,8 +4512,10 @@ html {
   font-size: 16px;
   font-weight: 500;
 }
+/* 중요 body 색상 */
 body {
-  background: #f5f6f8;
+  opacity: 0.9;
+  background: #212529;
   font-size: 15px;
   font-weight: 500;
 }
@@ -5008,7 +5010,7 @@ a.text-accent:hover {
   padding: 0 5px;
 }
 .main-navbar .navbar .notifications .dropdown-menu .notification__icon {
-  background-color: #31508f;
+  background-color: #f5f6f8;
   box-shadow: 0 0 0 1px #fff, inset 0 0 3px rgba(0, 0, 0, 0.2);
   width: 2.1875rem;
   height: 2.1875rem;
@@ -5071,7 +5073,7 @@ a.text-accent:hover {
   position: fixed;
   height: calc(100vh);
   opacity: 0.9;
-  background: #212529;
+  background: #fff;
   z-index: 1070;
   will-change: transform;
   transition: -webkit-transform 0.2s ease-in-out;
@@ -5128,8 +5130,7 @@ a.text-accent:hover {
 .main-sidebar .nav .nav-item .nav-link {
   border-bottom: 1px solid #e1e5eb;
   font-weight: 400;
-  opacity: 0.9;
-  color: #cacedb;
+  color: #3d5170;
   padding: 0.9375rem 1.5625rem;
 }
 .main-sidebar .nav .nav-item .nav-link i {
@@ -5683,7 +5684,7 @@ html .ql-toolbar .ql-picker .ql-picker-options {
     font-weight: 400;
   }
 }
-@media (max-width: 991.98px) {
+@media (max-width: 767.98px) {
   .main-navbar .navbar .notifications {
     position: static;
   }
