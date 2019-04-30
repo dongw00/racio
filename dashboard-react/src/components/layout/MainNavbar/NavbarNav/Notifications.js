@@ -43,9 +43,9 @@ export default class Notifications extends React.Component {
               </div>
             </div>
             <div className="notification__content">
-              <span className="notification__category">Analytics</span>
+              <span className="notification__category">분석</span>
               <p>
-                Your website’s active users count increased by{" "}
+                Your websiteâ€™s active users count increased by{" "}
                 <span className="text-success text-semibold">28%</span> in the
                 last week. Great job!
               </p>
@@ -58,16 +58,16 @@ export default class Notifications extends React.Component {
               </div>
             </div>
             <div className="notification__content">
-              <span className="notification__category">Sales</span>
+              <span className="notification__category">할인</span>
               <p>
-                Last week your store’s sales count decreased by{" "}
+                Last week your storeâ€™s sales count decreased by{" "}
                 <span className="text-danger text-semibold">5.52%</span>. It
                 could have been worse!
               </p>
             </div>
           </DropdownItem>
           <DropdownItem className="notification__all text-center">
-            View all Notifications
+            모든 알림 보기
           </DropdownItem>
         </Collapse>
       </NavItem>

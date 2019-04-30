@@ -2,7 +2,7 @@ export default function() {
   return [
     {
       title: '대시보드',
-      to: '/',
+      to: '/main',
       htmlBefore: '<i class="material-icons">edit</i>',
       htmlAfter: '',
     },
