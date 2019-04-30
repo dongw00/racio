@@ -1,14 +1,14 @@
-function logincheck(){
-    var user = firebase.auth().currentUser;
-    // firebase.auth().signOut().then(function() {
-    //     document.getElementById('rounded1').style.backgroundImage = null;
-    //     document.getElementById('user_info').innerHTML = "";
-    //     active_login('hide_dash','login_button');
-    //     // Sign-out successful
-    //   }).catch(function(error) {
-    //     // An error happened.
-    //   });
-}
+// function logincheck(){
+//     var user = firebase.auth().currentUser;
+//     // firebase.auth().signOut().then(function() {
+//     //     document.getElementById('rounded1').style.backgroundImage = null;
+//     //     document.getElementById('user_info').innerHTML = "";
+//     //     active_login('hide_dash','login_button');
+//     //     // Sign-out successful
+//     //   }).catch(function(error) {
+//     //     // An error happened.
+//     //   });
+// }
 
 function keydown(num){
     if(window.event.keyCode == 13)
@@ -65,8 +65,8 @@ function GoogleBtnEvent(){
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(function(){
-        var provider = new firebase.auth.GoogleAuthProvider();
-        return firebase.auth().signInWithRedirect(provider);
+        // var provider = new firebase.auth.GoogleAuthProvider();
+        // return firebase.auth().signInWithRedirect(provider);
     }).catch(function(error){});
     
     var user = firebase.auth().currentUser;
