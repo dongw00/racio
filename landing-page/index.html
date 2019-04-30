@@ -58,7 +58,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" id='tag1'>랭킹</a>
+                <a class="nav-link" href="#" id='tag1'>랭킹 & 업적</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" id='tag2'>데이터베이스</a>
@@ -74,7 +74,7 @@
             <!-- Social Icons -->
             <ul class="header-social-icons navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a id="Togglelang" class="nav-link" href="#" onclick = "ChangeLanguage()"><i class="fa fa-language fa-lg"></i></a>
+                    <a class="nav-link" href="#" onclick = "ChangeLanguage()"><i class="fa fa-language fa-lg"></i></a>
                   </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fa fa-twitter fa-lg"></i></a>
@@ -141,11 +141,13 @@
             <h1 class="welcome-heading display-4 text-white">
               Trimm Bicycle
             </h1>
-            <p class="text-muted" id="text1">
+            <p class="text-muted" id="text1"
+            >
               트림원을 위한 웹 어플리케이션을 경험해보세요. <br>  당신의 데이터를 유용하고 효율적으로 관리 할 수 있습니다.
             </p>
             <div id = "login_button">
             <a
+              id = "text_login"
               href="#"
               class="btn btn-lg btn-primary btn-pill align-self-center text-md-center" 
               onclick = "active_login('change_login','hide_login')"
@@ -201,16 +203,15 @@
             class="app-features-wrapper col-lg-4 col-md-6 col-sm-12 py-5 mx-auto"
           >
             <div class="container">
-              <h3 class="section-title underline--left my-5">Features</h3>
+              <h3 class="section-title underline--left my-5" id ='text_fit0'>trimm만의 특징</h3>
               <div class="feature py-4 d-flex">
                 <div class="icon text-white bg-success mr-5">
                   <i class="fa fa-refresh"></i>
                 </div>
                 <div>
-                  <h5>Comfortable</h5>
-                  <p>
-                    Quisque mollis mi ac aliquet accumsan. Sed sed dapibus
-                    libero. Nullam luctus purus duis sensibus signiferumque.
+                  <h5 id= 'text_fit1'>편리함</h5>
+                  <p id= 'text_fit1_sub'>
+                    누구나 쉽게 사용할 수 있는 간편하고 깔끔한 UI
                   </p>
                 </div>
               </div>
@@ -220,10 +221,9 @@
                   <i class="fa fa-shield"></i>
                 </div>
                 <div>
-                  <h5>Security</h5>
-                  <p>
-                    Quisque mollis mi ac aliquet accumsan. Sed sed dapibus
-                    libero. Nullam luctus purus duis sensibus signiferumque.
+                  <h5 id= 'text_fit2'>보안성</h5>
+                  <p id= 'text_fit2_sub'>
+                    철저하고 완벽하게 개인 정보 보호
                   </p>
                 </div>
               </div>
@@ -233,10 +233,9 @@
                   <i class="fa fa-share"></i>
                 </div>
                 <div>
-                  <h5>Sharing</h5>
-                  <p>
-                    Quisque mollis mi ac aliquet accumsan. Sed sed dapibus
-                    libero. Nullam luctus purus duis sensibus signiferumque.
+                  <h5 id= 'text_fit3'>데이터 공유</h5>
+                  <p id= 'text_fit3_sub'>
+                    파일 시스템을 통한 데이터 관리
                   </p>
                 </div>
               </div>
@@ -246,10 +245,9 @@
                   <i class="fa fa-globe"></i>
                 </div>
                 <div>
-                  <h5>Access Anywhere</h5>
-                  <p>
-                    Quisque mollis mi ac aliquet accumsan. Sed sed dapibus
-                    libero. Nullam luctus purus duis sensibus signiferumque.
+                  <h5 id= 'text_fit4'>어디서나 쉽게!</h5>
+                  <p id= 'text_fit4_sub'>
+                    언제 어디서나 사용할 수 있는 trimm One!
                   </p>
                 </div>
               </div>
@@ -541,7 +539,7 @@
       </nav>
     </footer>
     <!-- / Footer Section -->
-
+    
     <!-- JavaScript Dependencies -->
     <script src="/js/jquery-3.4.0.min.js"></script>
     <script src="/js/popper.min.js"></script>
@@ -560,7 +558,7 @@
                 <span class="small material-icons right hiddendiv mood yellow-text">mood</span>
             </li>
     </script>
-    <script>CheckLogin();</script>
+    <script>logincheck()</script>
     </body>
 </html>
   

@@ -1,5 +1,13 @@
-function CheckLogin(){
-
+function logincheck(){
+    var user = firebase.auth().currentUser;
+    // firebase.auth().signOut().then(function() {
+    //     document.getElementById('rounded1').style.backgroundImage = null;
+    //     document.getElementById('user_info').innerHTML = "";
+    //     active_login('hide_dash','login_button');
+    //     // Sign-out successful
+    //   }).catch(function(error) {
+    //     // An error happened.
+    //   });
 }
 
 function keydown(num){
@@ -56,17 +64,17 @@ function clear(){
 function GoogleBtnEvent(){
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
-    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-    
-    
-//    firebase.database = firebase.database(); // 인증 받은 후 초기화 하여야 합니다. 필드 변수에 서 할당하면 인증 받기전에 할당이라 에러발생
-//    firebase.database.goOnline(); // 데이터베이스를 명시적으로 온라인
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(function(){
+        var provider = new firebase.auth.GoogleAuthProvider();
+        return firebase.auth().signInWithRedirect(provider);
+    }).catch(function(error){});
     
     var user = firebase.auth().currentUser;
 
     set_user(user);
     }).catch(function(error) {
-    });    
+    });  
+
 }
 
 //이메일 로그인 버튼 이벤트
