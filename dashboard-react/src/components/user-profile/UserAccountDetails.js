@@ -28,21 +28,21 @@ const UserAccountDetails = ({ title }) => (
               <Row form>
                 {/* First Name */}
                 <Col md="6" className="form-group">
-                  <label htmlFor="feFirstName">First Name</label>
+                  <label htmlFor="feFirstName">성</label>
                   <FormInput
                     id="feFirstName"
-                    placeholder="First Name"
-                    value="Sierra"
+                    placeholder="성"
+                    value="박"
                     onChange={() => {}}
                   />
                 </Col>
                 {/* Last Name */}
                 <Col md="6" className="form-group">
-                  <label htmlFor="feLastName">Last Name</label>
+                  <label htmlFor="feLastName">이름</label>
                   <FormInput
                     id="feLastName"
-                    placeholder="Last Name"
-                    value="Brooks"
+                    placeholder="이름"
+                    value="진우"
                     onChange={() => {}}
                   />
                 </Col>
@@ -50,74 +50,75 @@ const UserAccountDetails = ({ title }) => (
               <Row form>
                 {/* Email */}
                 <Col md="6" className="form-group">
-                  <label htmlFor="feEmail">Email</label>
+                  <label htmlFor="feEmail">이메일</label>
                   <FormInput
                     type="email"
                     id="feEmail"
-                    placeholder="Email Address"
-                    value="sierra@example.com"
+                    placeholder="이메일 주소"
+                    value="raico123@example.com"
                     onChange={() => {}}
                     autoComplete="email"
                   />
                 </Col>
                 {/* Password */}
                 <Col md="6" className="form-group">
-                  <label htmlFor="fePassword">Password</label>
+                  <label htmlFor="fePassword">비밀번호</label>
                   <FormInput
                     type="password"
                     id="fePassword"
-                    placeholder="Password"
+                    placeholder="비밀번호"
                     value="EX@MPL#P@$$w0RD"
                     onChange={() => {}}
                     autoComplete="current-password"
                   />
                 </Col>
               </Row>
-              <FormGroup>
-                <label htmlFor="feAddress">Address</label>
-                <FormInput
-                  id="feAddress"
-                  placeholder="Address"
-                  value="1234 Main St."
-                  onChange={() => {}}
-                />
-              </FormGroup>
+              
               <Row form>
                 {/* City */}
                 <Col md="6" className="form-group">
-                  <label htmlFor="feCity">City</label>
+                  <label htmlFor="feCity">시/도</label>
                   <FormInput
                     id="feCity"
-                    placeholder="City"
+                    placeholder="시/도"
                     onChange={() => {}}
                   />
                 </Col>
                 {/* State */}
                 <Col md="4" className="form-group">
-                  <label htmlFor="feInputState">State</label>
+                  <label htmlFor="feInputState">구/군/시</label>
                   <FormSelect id="feInputState">
-                    <option>Choose...</option>
+                    <option>선택...</option>
                     <option>...</option>
                   </FormSelect>
                 </Col>
                 {/* Zip Code */}
                 <Col md="2" className="form-group">
-                  <label htmlFor="feZipCode">Zip</label>
+                  <label htmlFor="feZipCode">우편번호</label>
                   <FormInput
                     id="feZipCode"
-                    placeholder="Zip"
+                    placeholder="우편번호"
                     onChange={() => {}}
                   />
                 </Col>
               </Row>
+              <FormGroup>
+                <label htmlFor="feAddress">상세주소</label>
+                <FormInput
+                  id="feAddress"
+                  placeholder="상세주소"
+                  value=""
+                  onChange={() => {}}
+                />
+              </FormGroup>
               <Row form>
                 {/* Description */}
                 <Col md="12" className="form-group">
-                  <label htmlFor="feDescription">Description</label>
+                  <label htmlFor="feDescription">자기 소개</label>
                   <FormTextarea id="feDescription" rows="5" />
                 </Col>
               </Row>
-              <Button theme="accent">Update Account</Button>
+              <Button theme="accent">변경</Button>
             </Form>
           </Col>
         </Row>
@@ -134,7 +135,7 @@ UserAccountDetails.propTypes = {
 };
 
 UserAccountDetails.defaultProps = {
-  title: "Account Details"
+  title: "프로필 상세정보"
 };
 
 export default UserAccountDetails;

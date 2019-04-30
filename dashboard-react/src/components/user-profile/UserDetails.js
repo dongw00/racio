@@ -23,7 +23,7 @@ const UserDetails = ({ userDetails }) => (
       <h4 className="mb-0">{userDetails.name}</h4>
       <span className="text-muted d-block mb-2">{userDetails.jobTitle}</span>
       <Button pill outline size="sm" className="mb-2">
-        <i className="material-icons mr-1">person_add</i> Follow
+        <i className="material-icons mr-1">person_add</i> 팔로우
       </Button>
     </CardHeader>
     <ListGroup flush>
@@ -60,14 +60,14 @@ UserDetails.propTypes = {
 
 UserDetails.defaultProps = {
   userDetails: {
-    name: 'Sierra Brooks',
+    name: '박진우',
     avatar: require('./../../assets//images/avatars/wo.jpg'),
-    jobTitle: 'Project Manager',
-    performanceReportTitle: 'Workload',
+    jobTitle: '레이시오 리액트팀',
+    performanceReportTitle: '진행률',
     performanceReportValue: 74,
-    metaTitle: 'Description',
+    metaTitle: '자기 소개',
     metaValue:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?',
+      '자기 소개가 없습니다.',
   },
 };
 

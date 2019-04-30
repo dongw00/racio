@@ -9,8 +9,8 @@ const UserProfile = () => (
   <Container fluid className="main-content-container px-4">
     <Row noGutters className="page-header py-4">
       <PageTitle
-        title="User Profile"
-        subtitle="Overview"
+        title="사용자 프로필"
+        subtitle="개요"
         md="12"
         className="ml-sm-auto mr-sm-auto"
       />
