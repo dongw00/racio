@@ -22,8 +22,8 @@
     />
     <link rel="stylesheet" href="css/shards.min.css" />
     <link rel="stylesheet" href="css/shards-extras.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/login.css" />
-  
   </head>
   <body class="shards-app-promo-page--1">
     <!-- Welcome Section -->
@@ -50,43 +50,48 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#" id='tag0'
+                <a class="nav-link" href="#" id="tag0"
                   >홈 <span class="sr-only">(current)</span></a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" id='tag1'>랭킹 & 업적</a>
+                <a class="nav-link" href="#" id="tag1">랭킹 & 업적</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" id='tag2'>데이터베이스</a>
+                <a class="nav-link" href="#" id="tag2">데이터베이스</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" id='tag3'>제품</a>
+                <a class="nav-link" href="#" id="tag3">제품</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" id='tag4'>기타 서비스</a>
+                <a class="nav-link" href="#" id="tag4">기타 서비스</a>
               </li>
             </ul>
 
             <!-- Social Icons -->
             <ul class="header-social-icons navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick = "ChangeLanguage()"><i class="fa fa-language fa-lg"></i></a>
-                  </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                <a class="nav-link" href="#" onclick="ChangeLanguage()"
+                  ><i class="fa fa-language fa-lg"></i
+                ></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                <a class="nav-link" href="#"
+                  ><i class="fa fa-twitter fa-lg"></i
+                ></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-dribbble fa-lg"></i></a>
+                <a class="nav-link" href="#"
+                  ><i class="fa fa-facebook fa-lg"></i
+                ></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-github fa-lg"></i></a>
+                <a class="nav-link" href="#"
+                  ><i class="fa fa-youtube fa-lg"></i
+                ></a>
               </li>
             </ul>
           </div>
@@ -100,79 +105,155 @@
         <div class="row">
           <div class="col-lg-5 col-md-5 col-sm-12 mt-auto mb-auto mr-3">
             <!-- Login -->
-            <div id = "hide_login">
+            <div id="hide_login">
               <div id="dvAuth">
                 <div id="dvLogin">
-                    <h5 class="login_title">Account</h5>
-                    <div id="dvSocial">
-                        <div class="btnGroup">
-                            <li id="liGoogleBtn" class="waves-effect waves-teal btn-flat" onclick="GoogleBtnEvent()"><i></i>Using Google Account</li>
-                        </div>
-                        <em class="or">or</em>
-                    </div>
-                    <div id="dvEmail">
-                        <input type="email" id="userName" name="userName" class="input-text" placeholder="email">
-                        <input type="password" id="password" name="password" class="input-text" maxlength="17" placeholder="password" onkeydown="keydown(1)">
-                        <div class="btnGroup">
-                            <li id="liEmailBtn" class="waves-effect waves-teal btn-flat" onclick="EmailBtnEvent()">Login</li>
-                            <li id="liEmailJoin" class="waves-effect waves-teal btn-flat" onclick="active_login('hide_login','hide_signup')">Sign Up</li>
-                        </div>
-                    </div>
-                    <em id="back" onclick="active_login('hide_login','change_login')">&ltback</em>
-                </div>
-              </div> 
-            </div>
-            <!-- SignUp -->
-            <div id = "hide_signup">
-                <div id="dvJoin">
-                    <h5 class="login_title">Email SignUp</h5>
-                    <input type="text" id="joinUserName" name="userName" class="input-text" placeholder="UserName (ex.Hong gil dong)">
-                    <input type="email" id="joinUserEmail" name="userName" class="input-text" placeholder="Email account (ex.google, naver..)">
-                    <input type="password" id="joinPassword" name="password" class="input-text" maxlength="17" placeholder="password">
-                    <input type="password" id="joinRePassword" class="input-text" maxlength="17" placeholder="confirm password" onkeydown="keydown(2)">
+                  <h5 class="login_title">Account</h5>
+                  <div id="dvSocial">
                     <div class="btnGroup">
-                        <li id="liEmailJoinSubmit" class="waves-effect waves-teal btn-flat" onclick = "SignUpBtnEvent()">Signed Up</li>
+                      <li
+                        id="liGoogleBtn"
+                        class="waves-effect waves-teal btn-flat"
+                        onclick="GoogleBtnEvent()"
+                      >
+                        <i></i>Using Google Account
+                      </li>
                     </div>
+                  </div>
+                  <div id="dvEmail">
+                    <input
+                      type="email"
+                      id="userName"
+                      name="userName"
+                      class="input-text"
+                      placeholder="email"
+                    />
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      class="input-text"
+                      maxlength="17"
+                      placeholder="password"
+                      onkeydown="keydown(1)"
+                    />
+                    <div class="btnGroup">
+                      <li
+                        id="liEmailBtn"
+                        class="waves-effect waves-teal btn-flat"
+                        onclick="EmailBtnEvent()"
+                      >
+                        Login
+                      </li>
+                      <li
+                        id="liEmailJoin"
+                        class="waves-effect waves-teal btn-flat"
+                        onclick="active_login('hide_login','hide_signup')"
+                      >
+                        Sign Up
+                      </li>
+                    </div>
+                  </div>
+                  <em
+                    class="login-btn"
+                    id="back"
+                    onclick="active_login('hide_login','change_login')"
+                  >
+                    <i class="fa fa-angle-left"></i>back</em
+                  >
                 </div>
-                <em id="back" onclick="active_login('hide_signup','hide_login')">&ltback</em>
-            </div>
-
-            <div id = "change_login">
-            <h1 class="welcome-heading display-4 text-white">
-              Trimm Bicycle
-            </h1>
-            <p class="text-muted" id="text1"
-            >
-              트림원을 위한 웹 어플리케이션을 경험해보세요. <br>  당신의 데이터를 유용하고 효율적으로 관리 할 수 있습니다.
-            </p>
-            <div id = "login_button">
-            <a
-              id = "text_login"
-              href="#"
-              class="btn btn-lg btn-primary btn-pill align-self-center text-md-center" 
-              onclick = "active_login('change_login','hide_login')"
-            ><i class="fa fa-sign-in mr-2"></i>로그인</a>
-            </div>
-            <div id='hide_dash'>
-            <div id='rounded1'></div><a id='user_info'></a><a id="logoutbtn" onclick="LogOutEvent()">Logout</a></a>
-            </div>
-
-            <div class="d-block mt-4">
-              <a href="https://designrevision.com/download/shards"
-                ><img
-                  class="w-25 mt-2 mr-3"
-                  src="images/app-promo/badge-apple-store.png"
-                  alt="Get it on Apple Store"
-              /></a>
-              <a href="https://designrevision.com/download/shards"
-                ><img
-                  class="w-25 mt-2"
-                  src="images/app-promo/badge-google-play-store.png"
-                  alt="Get it on Google Play Store"
-              /></a>
               </div>
             </div>
-        </div>
+            <!-- SignUp -->
+            <div id="hide_signup">
+              <div id="dvJoin">
+                <h5 class="login_title">Email SignUp</h5>
+                <input
+                  type="text"
+                  id="joinUserName"
+                  name="userName"
+                  class="input-text"
+                  placeholder="UserName (ex.Hong gil dong)"
+                />
+                <input
+                  type="email"
+                  id="joinUserEmail"
+                  name="userName"
+                  class="input-text"
+                  placeholder="Email account (ex.google, naver..)"
+                />
+                <input
+                  type="password"
+                  id="joinPassword"
+                  name="password"
+                  class="input-text"
+                  maxlength="17"
+                  placeholder="password"
+                />
+                <input
+                  type="password"
+                  id="joinRePassword"
+                  class="input-text"
+                  maxlength="17"
+                  placeholder="confirm password"
+                  onkeydown="keydown(2)"
+                />
+                <div class="btnGroup">
+                  <li
+                    id="liEmailJoinSubmit"
+                    class="waves-effect waves-teal btn-flat"
+                    onclick="SignUpBtnEvent()"
+                  >
+                    Signed Up
+                  </li>
+                </div>
+              </div>
+              <em id="back" onclick="active_login('hide_signup','hide_login')"
+                >&ltback</em
+              >
+            </div>
+
+            <div id="change_login">
+              <!-- Typed js -->
+              <span id="typed" class="welcome-heading text-white"></span>
+              <p class="text-muted" id="text1">
+                트림원을 위한 웹 어플리케이션을 경험해보세요. <br />
+                당신의 데이터를 유용하고 효율적으로 관리 할 수 있습니다.
+              </p>
+
+              <div id="login_button" style="display: none">
+                <a
+                  id='text_login'
+                  href="#"
+                  class="btn btn-lg btn-primary btn-pill align-self-center text-md-center"
+                  onclick="active_login('change_login','hide_login')"
+                  ><i class="fa fa-sign-in mr-2"></i>로그인</a
+                >
+              </div>
+              <div id="hide_dash">
+                <div>
+                <span id='img_table'><div id="rounded1"></div></span>
+                <span></span></div>
+                <a id="user_info"></a>
+                <a id="logoutbtn" onclick="LogOutEvent()">Logout</a>
+              </div>
+
+              <div class="d-block mt-4">
+                <a href="https://designrevision.com/download/shards"
+                  ><img
+                    class="w-25 mt-2 mr-3"
+                    src="images/app-promo/badge-apple-store.png"
+                    alt="Get it on Apple Store"
+                /></a>
+                <a href="https://designrevision.com/download/shards"
+                  ><img
+                    class="w-25 mt-2"
+                    src="images/app-promo/badge-google-play-store.png"
+                    alt="Get it on Google Play Store"
+                /></a>
+              </div>
+            </div>
+          </div>
           <div class="col-lg-4 col-md-5 col-sm-12 ml-auto">
             <img
               class="iphone-mockup ml-auto"
@@ -203,14 +284,16 @@
             class="app-features-wrapper col-lg-4 col-md-6 col-sm-12 py-5 mx-auto"
           >
             <div class="container">
-              <h3 class="section-title underline--left my-5" id ='text_fit0'>trimm만의 특징</h3>
+              <h3 class="section-title underline--left my-5" id="text_fit0">
+                trimm만의 특징
+              </h3>
               <div class="feature py-4 d-flex">
                 <div class="icon text-white bg-success mr-5">
                   <i class="fa fa-refresh"></i>
                 </div>
                 <div>
-                  <h5 id= 'text_fit1'>편리함</h5>
-                  <p id= 'text_fit1_sub'>
+                  <h5 id="text_fit1">편리함</h5>
+                  <p id="text_fit1_sub">
                     누구나 쉽게 사용할 수 있는 간편하고 깔끔한 UI
                   </p>
                 </div>
@@ -221,8 +304,8 @@
                   <i class="fa fa-shield"></i>
                 </div>
                 <div>
-                  <h5 id= 'text_fit2'>보안성</h5>
-                  <p id= 'text_fit2_sub'>
+                  <h5 id="text_fit2">보안성</h5>
+                  <p id="text_fit2_sub">
                     철저하고 완벽하게 개인 정보 보호
                   </p>
                 </div>
@@ -233,8 +316,8 @@
                   <i class="fa fa-share"></i>
                 </div>
                 <div>
-                  <h5 id= 'text_fit3'>데이터 공유</h5>
-                  <p id= 'text_fit3_sub'>
+                  <h5 id="text_fit3">데이터 공유</h5>
+                  <p id="text_fit3_sub">
                     파일 시스템을 통한 데이터 관리
                   </p>
                 </div>
@@ -245,8 +328,8 @@
                   <i class="fa fa-globe"></i>
                 </div>
                 <div>
-                  <h5 id= 'text_fit4'>어디서나 쉽게!</h5>
-                  <p id= 'text_fit4_sub'>
+                  <h5 id="text_fit4">어디서나 쉽게!</h5>
+                  <p id="text_fit4_sub">
                     언제 어디서나 사용할 수 있는 trimm One!
                   </p>
                 </div>
@@ -260,7 +343,7 @@
 
     <!-- Testimonials Section -->
     <div class="testimonials section py-4">
-      <h3 class="section-title text-center m-5">Testimonials</h3>
+      <h3 class="section-title text-center m-5">2019 BEST RUNNER!</h3>
 
       <div class="container py-5">
         <div class="row">
@@ -268,17 +351,12 @@
             <div
               class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto"
             >
-              <img
-                src="images/common/avatar-1.jpeg"
-                class="w-100"
-                alt="Testimonial Avatar"
-              />
+              <img src="/images/app-promo/2등.png" class="w-100" alt="Testimonial Avatar" />
             </div>
-            <h5 class="mb-1">Osbourne Tranter</h5>
-            <span class="text-muted d-block mb-2">CEO at Megacorp</span>
+            <h5 class="mb-1">2. Ki yeon song</h5>
+            <span class="text-muted d-block mb-2">Korea</span>
             <p>
-              Vivamus quis ex mattis, gravida erat a, iaculis urna. Proin ac
-              eleifend tortor. Nunc in augue eget enim venenatis viverra.
+              8403km
             </p>
           </div>
 
@@ -286,17 +364,12 @@
             <div
               class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto"
             >
-              <img
-                src="images/common/avatar-2.jpeg"
-                class="w-100"
-                alt="Testimonial Avatar"
-              />
+              <img src="/images/app-promo/1등.png" class="w-100" alt="Testimonial Avatar" />
             </div>
-            <h5 class="mb-1">Darrin Ollie</h5>
-            <span class="text-muted d-block mb-2">CEO at Megacorp</span>
+            <h5 class="mb-1">1. Adam</h5>
+            <span class="text-muted d-block mb-2">USA</span>
             <p>
-              Nullam eu ligula facilisis, commodo velit non, vulputate dolor.
-              Aenean congue euismod vestibulum.
+              11232km
             </p>
           </div>
 
@@ -304,17 +377,12 @@
             <div
               class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto"
             >
-              <img
-                src="images/common/avatar-3.jpeg"
-                class="w-100"
-                alt="Testimonial Avatar"
-              />
+              <img src="/images/app-promo/3등.png" class="w-100" alt="Testimonial Avatar" />
             </div>
-            <h5 class="mb-1">Quinton Bruce</h5>
-            <span class="text-muted d-block mb-2">CEO at Megacorp</span>
+            <h5 class="mb-1">3. Harry potter</h5>
+            <span class="text-muted d-block mb-2">UK</span>
             <p>
-              Aenean imperdiet ultrices tortor id convallis. Donec id metus
-              magna. Morbi pretium odio faucibus blandit gravida.
+              7002km
             </p>
           </div>
         </div>
@@ -324,18 +392,14 @@
 
     <!-- Our Blog Section -->
     <div class="blog section section-invert py-4">
-      <h3 class="section-title text-center m-5">Latest Posts</h3>
+      <h3 class="section-title text-center m-5" id="post_text">최근 게시물</h3>
       <div class="container">
         <div class="py-4">
           <div class="row">
             <div class="card-deck">
               <div class="col-md-12 col-lg-4">
                 <div class="card mb-4">
-                  <img
-                    class="card-img-top"
-                    src="images/common/card-1.jpg"
-                    alt="Card image cap"
-                  />
+                  <img class="card-img-top" src="" alt="Card image cap" />
                   <div class="card-body">
                     <h4 class="card-title">
                       Find Great Places to Work While Travelling
@@ -354,11 +418,7 @@
 
               <div class="col-md-12 col-lg-4">
                 <div class="card mb-4">
-                  <img
-                    class="card-img-top"
-                    src="images/common/card-3.jpg"
-                    alt="Card image cap"
-                  />
+                  <img class="card-img-top" src="" alt="Card image cap" />
                   <div class="card-body">
                     <h4 class="card-title">
                       Quick Tips for Improving Your Website's Design
@@ -377,11 +437,7 @@
 
               <div class="col-md-12 col-lg-4">
                 <div class="card mb-4">
-                  <img
-                    class="card-img-top"
-                    src="images/common/card-2.jpg"
-                    alt="Card image cap"
-                  />
+                  <img class="card-img-top" src="" alt="Card image cap" />
                   <div class="card-body">
                     <h4 class="card-title">
                       A Designer's Tips While Travelling and Working
@@ -425,63 +481,6 @@
     </div>
     <!-- / Subscribe Section -->
 
-    <!-- Contact Section -->
-    <div class="contact section-invert py-4">
-      <h3 class="section-title text-center m-5">Contact Us</h3>
-      <div class="container py-4">
-        <div class="row justify-content-md-center px-4">
-          <div class="contact-form col-sm-12 col-md-10 col-lg-7 p-4 mb-4 card">
-            <form>
-              <div class="row">
-                <div class="col-md-6 col-sm-12">
-                  <div class="form-group">
-                    <label for="contactFormFullName">Full Name</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="contactFormFullName"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <div class="form-group">
-                    <label for="contactFormEmail">Email address</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="contactFormEmail"
-                      placeholder="Enter your email address"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Message</label>
-                    <textarea
-                      id="exampleInputEmail1"
-                      class="form-control mb-4"
-                      rows="10"
-                      placeholder="Enter your message..."
-                      name="message"
-                    ></textarea>
-                  </div>
-                </div>
-              </div>
-              <input
-                class="btn btn-success btn-pill d-flex ml-auto mr-auto"
-                type="submit"
-                value="Send Your Message"
-              />
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- / Contact Section -->
-
     <!-- Footer Section -->
     <footer>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -498,67 +497,35 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#"
-                  >Home <span class="sr-only">(current)</span></a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Ranking & Achievement</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Database</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Our Product</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Our services</a>
-              </li>
-            </ul>
-
-            <!-- Social Icons -->
-            <ul class="header-social-icons navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-facebook"></i></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-dribbble"></i></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-github"></i></a>
-              </li>
-            </ul>
+         
           </div>
         </div>
       </nav>
     </footer>
     <!-- / Footer Section -->
-    
+
     <!-- JavaScript Dependencies -->
-    <script src="/js/jquery-3.4.0.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/lib/jquery-3.4.0.min.js"></script>
+    <script src="/js/lib/popper.min.js"></script>
+    <script src="/js/lib/bootstrap.min.js"></script>
+    <script src="/js/lib/typed.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+    <script defer src="/__/firebase/5.9.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.9.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+
+    <script src="/js/index.js"></script>
     <script src="/js/login.js"></script>
     <script src="/js/language.js"></script>
+    <script>confirmLogin()</script>
     
-    <script defer src="/__/firebase/4.6.1/firebase-app.js"></script>
-    <script defer src="/__/firebase/4.6.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/init.js"></script>
     <script type="text/template" id="templateUserList">
-            <li id="li<%=targetUserUid %>" data-targetUserUid="<%=targetUserUid %>" data-username="<%=userName %>" class="collection-item avatar list">
-                <img src="<%=profileImg ? profileImg : 'img/noprofile.png'  %>" alt="" class="circle">
-                <span class="title"><%=userName %></span>
-                <span class="small material-icons right hiddendiv done">done</span>
-                <span class="small material-icons right hiddendiv mood yellow-text">mood</span>
-            </li>
+        <li id="li<%=targetUserUid %>" data-targetUserUid="<%=targetUserUid %>" data-username="<%=userName %>" class="collection-item avatar list">
+          <img src="<%=profileImg ? profileImg : 'img/noprofile.png'  %>" alt="" class="circle">
+          <span class="title"><%=userName %></span>
+          <span class="small material-icons right hiddendiv done">done</span>
+          <span class="small material-icons right hiddendiv mood yellow-text">mood</span>
+      </li>
     </script>
-    <script></script>
-    </body>
+  </body>
 </html>
-  
