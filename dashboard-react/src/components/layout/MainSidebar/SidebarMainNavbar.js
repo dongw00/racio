@@ -30,11 +30,10 @@ class SidebarMainNavbar extends React.Component {
               <img
                 id="main-logo"
                 className="d-inline-block align-top mr-1"
-                style={{ maxWidth: '25px' }}
-                src={require('../../../assets/images/shards-dashboards-logo.svg')}
+                style={{ height: '100%' }}
+                src={require('../../../assets/images/trimm.PNG')}
                 alt="Shards Dashboard"
               />
-              <span className="d-none d-md-inline ml-1">레이시오</span>
             </div>
           </NavbarBrand>
           {/* eslint-disable-next-line */}
