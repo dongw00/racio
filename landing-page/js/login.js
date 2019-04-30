@@ -15,19 +15,23 @@ function set_user(user) {
   active_login('login_button', 'hide_dash');
   active_login('hide_login', 'change_login');
 
-  document.getElementById('rounded1').style.backgroundImage =
-    'url(' + user.photoURL + ')';
-  document.getElementById('user_info').innerHTML =
-    'Name : ' + user.displayName + '<br>' + 'Email : ' + user.email + '<br>';
+  document.getElementById('rounded1').style.backgroundImage = `url(${
+    user.photoURL
+  })`;
+  document.getElementById('user_info').innerHTML = `
+    Name : ${user.displayName}
+    <br>
+    Email : ${user.email}
+    <br>
+  `;
 }
 
-// 이메일 정규표현식 검사
 function emailCheck(mail) {
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) return true;
+  const emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if (emailReg.test(mail)) return true;
   return false;
 }
 
-// 이메일, 비밀번호 확인
 function validateJoinForm(email, password, rePassword) {
   if (!emailCheck(email)) {
     alert('Invalid Email');
@@ -48,18 +52,23 @@ function clear() {
   document.getElementById('userName').value = '';
   document.getElementById('password').value = '';
 }
-
 //구글 로그인 버튼 이벤트
 function GoogleBtnEvent() {
   const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
   firebase
     .auth()
     .signInWithPopup(provider)
-    .then(function(result) {
-      var user = firebase.auth().currentUser;
+    .then((result) => {
+      firebase
+        .auth()
+        .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+        .then(() => {
+          // var provider = new firebase.auth.GoogleAuthProvider();
+          // return firebase.auth().signInWithRedirect(provider);
+        })
+        .catch(error => {});
 
-      set_user(user);
+      set_user(firebase.auth().currentUser;);
     })
     .catch(function(error) {});
 }
@@ -68,8 +77,9 @@ function GoogleBtnEvent() {
 function EmailBtnEvent() {
   const email = document.getElementById('userName').value.trim();
   const password = document.getElementById('password').value.trim();
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
-  if (!emailCheck(email)) alert('Invaild Email');
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+  if (!emailCheck(email))
+    alert('Invaild Email');
 
   if (emailCheck(email) && password.length > 0) {
     firebase
@@ -82,17 +92,17 @@ function EmailBtnEvent() {
           firebase
             .auth()
             .signOut()
-            .then(function() {
+            .then(() => {
               // Sign-out successful.
             })
-            .catch(function(error) {
+            .catch((error) => {
               // An error happened.
             });
           retrun;
         }
         set_user(user);
       })
-      .catch(function(error) {
+      .catch((error) => {
         // Handle Errors here.
         switch (error.code) {
           case 'auth/invalid-email':
@@ -126,20 +136,18 @@ function SignUpBtnEvent() {
         const user = firebase.auth().currentUser;
         user
           .sendEmailVerification()
-          .then(() => {
-            alert('Verifying message is sent to your Email');
-          })
-          .catch(error => {});
+          .then(() => alert('Verifying message is sent to your Email'))
+          .catch((error) => {});
 
         user
           .updateProfile({
             displayName: userName,
           })
-          .catch(error => {});
+          .catch((error) => {});
 
         active_login('hide_signup', 'hide_login');
       })
-      .catch(error => {
+      .catch((error) => {
         switch (error.code) {
           case 'auth/email-already-in-use':
             alert('This Email is already in use');
@@ -170,5 +178,7 @@ function LogOutEvent() {
       document.getElementById('user_info').innerHTML = '';
       active_login('hide_dash', 'login_button');
     })
-    .catch(error => {});
+    .catch((error) => {
+      // An error happened.
+    });
 }

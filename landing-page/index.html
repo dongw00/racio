@@ -73,9 +73,9 @@
 
             <!-- Social Icons -->
             <ul class="header-social-icons navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa fa-language"></i></a>
-                  </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-language"></i></a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fa fa-twitter"></i></a>
               </li>
@@ -97,76 +97,152 @@
         <div class="row">
           <div class="col-lg-5 col-md-5 col-sm-12 mt-auto mb-auto mr-3">
             <!-- Login -->
-            <div id = "hide_login">
+            <div id="hide_login">
               <div id="dvAuth">
                 <div id="dvLogin">
-                    <h5 class="login_title">Account</h5>
-                    <div id="dvSocial">
-                        <div class="btnGroup">
-                            <li id="liGoogleBtn" class="waves-effect waves-teal btn-flat" onclick="GoogleBtnEvent()"><i></i>Using Google Account</li>
-                        </div>
+                  <h5 class="login_title">Account</h5>
+                  <div id="dvSocial">
+                    <div class="btnGroup">
+                      <li
+                        id="liGoogleBtn"
+                        class="waves-effect waves-teal btn-flat"
+                        onclick="GoogleBtnEvent()"
+                      >
+                        <i></i>Using Google Account
+                      </li>
                     </div>
-                    <div id="dvEmail">
-                        <input type="email" id="userName" name="userName" class="input-text" placeholder="email">
-                        <input type="password" id="password" name="password" class="input-text" maxlength="17" placeholder="password" onkeydown="keydown(1)">
-                        <div class="btnGroup">
-                            <li id="liEmailBtn" class="waves-effect waves-teal btn-flat" onclick="EmailBtnEvent()">Login</li>
-                            <li id="liEmailJoin" class="waves-effect waves-teal btn-flat" onclick="active_login('hide_login','hide_signup')">Sign Up</li>
-                        </div>
+                  </div>
+                  <div id="dvEmail">
+                    <input
+                      type="email"
+                      id="userName"
+                      name="userName"
+                      class="input-text"
+                      placeholder="email"
+                    />
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      class="input-text"
+                      maxlength="17"
+                      placeholder="password"
+                      onkeydown="keydown(1)"
+                    />
+                    <div class="btnGroup">
+                      <li
+                        id="liEmailBtn"
+                        class="waves-effect waves-teal btn-flat"
+                        onclick="EmailBtnEvent()"
+                      >
+                        Login
+                      </li>
+                      <li
+                        id="liEmailJoin"
+                        class="waves-effect waves-teal btn-flat"
+                        onclick="active_login('hide_login','hide_signup')"
+                      >
+                        Sign Up
+                      </li>
                     </div>
-                    <em class="login-btn" id="back" onclick="active_login('hide_login','change_login')">
-                      <i class="fa fa-angle-left"></i>back</em>
+                  </div>
+                  <em
+                    class="login-btn"
+                    id="back"
+                    onclick="active_login('hide_login','change_login')"
+                  >
+                    <i class="fa fa-angle-left"></i>back</em
+                  >
                 </div>
               </div>
             </div>
             <!-- SignUp -->
-            <div id = "hide_signup">
-                <div id="dvJoin">
-                    <h5 class="login_title">Email SignUp</h5>
-                    <input type="text" id="joinUserName" name="userName" class="input-text" placeholder="UserName (ex.Hong gil dong)">
-                    <input type="email" id="joinUserEmail" name="userName" class="input-text" placeholder="Email account (ex.google, naver..)">
-                    <input type="password" id="joinPassword" name="password" class="input-text" maxlength="17" placeholder="password">
-                    <input type="password" id="joinRePassword" class="input-text" maxlength="17" placeholder="confirm password" onkeydown="keydown(2)">
-                    <div class="btnGroup">
-                        <li id="liEmailJoinSubmit" class="waves-effect waves-teal btn-flat" onclick = "SignUpBtnEvent()">Signed Up</li>
-                    </div>
+            <div id="hide_signup">
+              <div id="dvJoin">
+                <h5 class="login_title">Email SignUp</h5>
+                <input
+                  type="text"
+                  id="joinUserName"
+                  name="userName"
+                  class="input-text"
+                  placeholder="UserName (ex.Hong gil dong)"
+                />
+                <input
+                  type="email"
+                  id="joinUserEmail"
+                  name="userName"
+                  class="input-text"
+                  placeholder="Email account (ex.google, naver..)"
+                />
+                <input
+                  type="password"
+                  id="joinPassword"
+                  name="password"
+                  class="input-text"
+                  maxlength="17"
+                  placeholder="password"
+                />
+                <input
+                  type="password"
+                  id="joinRePassword"
+                  class="input-text"
+                  maxlength="17"
+                  placeholder="confirm password"
+                  onkeydown="keydown(2)"
+                />
+                <div class="btnGroup">
+                  <li
+                    id="liEmailJoinSubmit"
+                    class="waves-effect waves-teal btn-flat"
+                    onclick="SignUpBtnEvent()"
+                  >
+                    Signed Up
+                  </li>
                 </div>
-                <em id="back" onclick="active_login('hide_signup','hide_login')">&ltback</em>
+              </div>
+              <em id="back" onclick="active_login('hide_signup','hide_login')"
+                >&ltback</em
+              >
             </div>
 
-            <div id = "change_login">
-            <!-- Typed js -->
-            <span id="typed" class="welcome-heading text-white"></span>
-            <p class="text-muted">
-              레이시오 웹 어플리케이션을 경험해보세요
-            </p>
-            <div id = "login_button">
-            <a
-              href="#"
-              class="btn btn-lg btn-primary btn-pill align-self-center text-md-center"
-              onclick = "active_login('change_login','hide_login')"
-            ><i class="fa fa-sign-in mr-2"></i>로그인</a>
-            </div>
-            <div id='hide_dash'>
-            <div id='rounded1'></div><a id='user_info'></a><a id="logoutbtn" onclick="LogOutEvent()">Logout</a></a>
-            </div>
+            <div id="change_login">
+              <!-- Typed js -->
+              <span id="typed" class="welcome-heading text-white"></span>
+              <p class="text-muted" id="text1">
+                트림원을 위한 웹 어플리케이션을 경험해보세요. <br />
+                당신의 데이터를 유용하고 효율적으로 관리 할 수 있습니다.
+              </p>
 
-            <div class="d-block mt-4">
-              <a href="https://designrevision.com/download/shards"
-                ><img
-                  class="w-25 mt-2 mr-3"
-                  src="images/app-promo/badge-apple-store.png"
-                  alt="Get it on Apple Store"
-              /></a>
-              <a href="https://designrevision.com/download/shards"
-                ><img
-                  class="w-25 mt-2"
-                  src="images/app-promo/badge-google-play-store.png"
-                  alt="Get it on Google Play Store"
-              /></a>
+              <div id="login_button">
+                <a
+                  href="#"
+                  class="btn btn-lg btn-primary btn-pill align-self-center text-md-center"
+                  onclick="active_login('change_login','hide_login')"
+                  ><i class="fa fa-sign-in mr-2"></i>로그인</a
+                >
+              </div>
+              <div id="hide_dash">
+                <div id="rounded1"></div>
+                <a id="user_info"></a>
+                <a id="logoutbtn" onclick="LogOutEvent()">Logout</a>
+              </div>
+
+              <div class="d-block mt-4">
+                <a href="https://designrevision.com/download/shards"
+                  ><img
+                    class="w-25 mt-2 mr-3"
+                    src="images/app-promo/badge-apple-store.png"
+                    alt="Get it on Apple Store"
+                /></a>
+                <a href="https://designrevision.com/download/shards"
+                  ><img
+                    class="w-25 mt-2"
+                    src="images/app-promo/badge-google-play-store.png"
+                    alt="Get it on Google Play Store"
+                /></a>
               </div>
             </div>
-        </div>
+          </div>
           <div class="col-lg-4 col-md-5 col-sm-12 ml-auto">
             <img
               class="iphone-mockup ml-auto"
@@ -197,16 +273,17 @@
             class="app-features-wrapper col-lg-4 col-md-6 col-sm-12 py-5 mx-auto"
           >
             <div class="container">
-              <h3 class="section-title underline--left my-5">Features</h3>
+              <h3 class="section-title underline--left my-5" id="text_fit0">
+                trimm만의 특징
+              </h3>
               <div class="feature py-4 d-flex">
                 <div class="icon text-white bg-success mr-5">
                   <i class="fa fa-refresh"></i>
                 </div>
                 <div>
-                  <h5>Comfortable</h5>
-                  <p>
-                    Quisque mollis mi ac aliquet accumsan. Sed sed dapibus
-                    libero. Nullam luctus purus duis sensibus signiferumque.
+                  <h5 id="text_fit1">편리함</h5>
+                  <p id="text_fit1_sub">
+                    누구나 쉽게 사용할 수 있는 간편하고 깔끔한 UI
                   </p>
                 </div>
               </div>
@@ -216,10 +293,9 @@
                   <i class="fa fa-shield"></i>
                 </div>
                 <div>
-                  <h5>Security</h5>
-                  <p>
-                    Quisque mollis mi ac aliquet accumsan. Sed sed dapibus
-                    libero. Nullam luctus purus duis sensibus signiferumque.
+                  <h5 id="text_fit2">보안성</h5>
+                  <p id="text_fit2_sub">
+                    철저하고 완벽하게 개인 정보 보호
                   </p>
                 </div>
               </div>
@@ -229,10 +305,9 @@
                   <i class="fa fa-share"></i>
                 </div>
                 <div>
-                  <h5>Sharing</h5>
-                  <p>
-                    Quisque mollis mi ac aliquet accumsan. Sed sed dapibus
-                    libero. Nullam luctus purus duis sensibus signiferumque.
+                  <h5 id="text_fit3">데이터 공유</h5>
+                  <p id="text_fit3_sub">
+                    파일 시스템을 통한 데이터 관리
                   </p>
                 </div>
               </div>
@@ -242,10 +317,9 @@
                   <i class="fa fa-globe"></i>
                 </div>
                 <div>
-                  <h5>Access Anywhere</h5>
-                  <p>
-                    Quisque mollis mi ac aliquet accumsan. Sed sed dapibus
-                    libero. Nullam luctus purus duis sensibus signiferumque.
+                  <h5 id="text_fit4">어디서나 쉽게!</h5>
+                  <p id="text_fit4_sub">
+                    언제 어디서나 사용할 수 있는 trimm One!
                   </p>
                 </div>
               </div>
@@ -266,11 +340,7 @@
             <div
               class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto"
             >
-              <img
-                src=""
-                class="w-100"
-                alt="Testimonial Avatar"
-              />
+              <img src="" class="w-100" alt="Testimonial Avatar" />
             </div>
             <h5 class="mb-1">Osbourne Tranter</h5>
             <span class="text-muted d-block mb-2">CEO at Megacorp</span>
@@ -284,11 +354,7 @@
             <div
               class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto"
             >
-              <img
-                src=""
-                class="w-100"
-                alt="Testimonial Avatar"
-              />
+              <img src="" class="w-100" alt="Testimonial Avatar" />
             </div>
             <h5 class="mb-1">Darrin Ollie</h5>
             <span class="text-muted d-block mb-2">CEO at Megacorp</span>
@@ -302,11 +368,7 @@
             <div
               class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto"
             >
-              <img
-                src=""
-                class="w-100"
-                alt="Testimonial Avatar"
-              />
+              <img src="" class="w-100" alt="Testimonial Avatar" />
             </div>
             <h5 class="mb-1">Quinton Bruce</h5>
             <span class="text-muted d-block mb-2">CEO at Megacorp</span>
@@ -329,11 +391,7 @@
             <div class="card-deck">
               <div class="col-md-12 col-lg-4">
                 <div class="card mb-4">
-                  <img
-                    class="card-img-top"
-                    src=""
-                    alt="Card image cap"
-                  />
+                  <img class="card-img-top" src="" alt="Card image cap" />
                   <div class="card-body">
                     <h4 class="card-title">
                       Find Great Places to Work While Travelling
@@ -352,11 +410,7 @@
 
               <div class="col-md-12 col-lg-4">
                 <div class="card mb-4">
-                  <img
-                    class="card-img-top"
-                    src=""
-                    alt="Card image cap"
-                  />
+                  <img class="card-img-top" src="" alt="Card image cap" />
                   <div class="card-body">
                     <h4 class="card-title">
                       Quick Tips for Improving Your Website's Design
@@ -375,11 +429,7 @@
 
               <div class="col-md-12 col-lg-4">
                 <div class="card mb-4">
-                  <img
-                    class="card-img-top"
-                    src=""
-                    alt="Card image cap"
-                  />
+                  <img class="card-img-top" src="" alt="Card image cap" />
                   <div class="card-body">
                     <h4 class="card-title">
                       A Designer's Tips While Travelling and Working
@@ -442,37 +492,45 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#"
-                  >Home <span class="sr-only">(current)</span></a
+                <a class="nav-link" href="#" id="tag0"
+                  >홈 <span class="sr-only">(current)</span></a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Ranking & Achievement</a>
+                <a class="nav-link" href="#" id="tag1">랭킹 & 업적</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Database</a>
+                <a class="nav-link" href="#" id="tag2">데이터베이스</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Our Product</a>
+                <a class="nav-link" href="#" id="tag3">제품</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Our services</a>
+                <a class="nav-link" href="#" id="tag4">기타 서비스</a>
               </li>
             </ul>
 
             <!-- Social Icons -->
             <ul class="header-social-icons navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-twitter"></i></a>
+                <a class="nav-link" href="#" onclick="ChangeLanguage()"
+                  ><i class="fa fa-language fa-lg"></i
+                ></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-facebook"></i></a>
+                <a class="nav-link" href="#"
+                  ><i class="fa fa-twitter fa-lg"></i
+                ></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-dribbble"></i></a>
+                <a class="nav-link" href="#"
+                  ><i class="fa fa-facebook fa-lg"></i
+                ></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-github"></i></a>
+                <a class="nav-link" href="#"
+                  ><i class="fa fa-youtube fa-lg"></i
+                ></a>
               </li>
             </ul>
           </div>
@@ -488,17 +546,18 @@
     <script src="/js/lib/typed.js"></script>
     <script src="/js/index.js"></script>
     <script src="/js/login.js"></script>
+    <script src="/js/language.js"></script>
     <script defer src="/__/firebase/5.9.1/firebase-app.js"></script>
     <script defer src="/__/firebase/5.9.1/firebase-auth.js"></script>
     <script defer src="/__/firebase/init.js"></script>
 
     <script type="text/template" id="templateUserList">
-      <li id="li<%=targetUserUid %>" data-targetUserUid="<%=targetUserUid %>" data-username="<%=userName %>" class="collection-item avatar list">
-        <img src="<%=profileImg ? profileImg : 'img/noprofile.png'  %>" alt="" class="circle">
-        <span class="title"><%=userName %></span>
-        <span class="small material-icons right hiddendiv done">done</span>
-        <span class="small material-icons right hiddendiv mood yellow-text">mood</span>
-    </li>
-  </script>
+        <li id="li<%=targetUserUid %>" data-targetUserUid="<%=targetUserUid %>" data-username="<%=userName %>" class="collection-item avatar list">
+          <img src="<%=profileImg ? profileImg : 'img/noprofile.png'  %>" alt="" class="circle">
+          <span class="title"><%=userName %></span>
+          <span class="small material-icons right hiddendiv done">done</span>
+          <span class="small material-icons right hiddendiv mood yellow-text">mood</span>
+      </li>
+    </script>
   </body>
 </html>
