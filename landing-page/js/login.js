@@ -58,7 +58,7 @@ function GoogleBtnEvent() {
   firebase
     .auth()
     .signInWithPopup(provider)
-    .then((result) => {
+    .then(result => {
       firebase
         .auth()
         .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
@@ -68,9 +68,11 @@ function GoogleBtnEvent() {
         })
         .catch(error => {});
 
-      set_user(firebase.auth().currentUser;);
+      set_user(firebase.auth().currentUser);
     })
-    .catch(function(error) {});
+    .catch(function(error) {
+      alert(error.message);
+    });
 }
 
 //이메일 로그인 버튼 이벤트
@@ -78,8 +80,7 @@ function EmailBtnEvent() {
   const email = document.getElementById('userName').value.trim();
   const password = document.getElementById('password').value.trim();
   firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-  if (!emailCheck(email))
-    alert('Invaild Email');
+  if (!emailCheck(email)) alert('Invaild Email');
 
   if (emailCheck(email) && password.length > 0) {
     firebase
@@ -95,14 +96,14 @@ function EmailBtnEvent() {
             .then(() => {
               // Sign-out successful.
             })
-            .catch((error) => {
+            .catch(error => {
               // An error happened.
             });
           retrun;
         }
         set_user(user);
       })
-      .catch((error) => {
+      .catch(error => {
         // Handle Errors here.
         switch (error.code) {
           case 'auth/invalid-email':
@@ -137,17 +138,17 @@ function SignUpBtnEvent() {
         user
           .sendEmailVerification()
           .then(() => alert('Verifying message is sent to your Email'))
-          .catch((error) => {});
+          .catch(error => {});
 
         user
           .updateProfile({
             displayName: userName,
           })
-          .catch((error) => {});
+          .catch(error => {});
 
         active_login('hide_signup', 'hide_login');
       })
-      .catch((error) => {
+      .catch(error => {
         switch (error.code) {
           case 'auth/email-already-in-use':
             alert('This Email is already in use');
@@ -178,7 +179,7 @@ function LogOutEvent() {
       document.getElementById('user_info').innerHTML = '';
       active_login('hide_dash', 'login_button');
     })
-    .catch((error) => {
+    .catch(error => {
       // An error happened.
     });
 }
