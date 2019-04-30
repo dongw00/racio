@@ -1,13 +1,13 @@
-import React from "react";
-import { Container, Row, Col, Card, CardHeader, CardBody } from "shards-react";
+import React from 'react';
+import { Container, Row, Col, Card, CardHeader, CardBody } from 'shards-react';
 
-import PageTitle from "../components/common/PageTitle";
+import PageTitle from '../components/common/PageTitle';
 
 const Tables = () => (
   <Container fluid className="main-content-container px-4">
     {/* Page Header */}
     <Row noGutters className="page-header py-4">
-      <PageTitle sm="4" title="Add New Post" subtitle="Blog Posts" className="text-sm-left" />
+      <PageTitle sm="4" title="순위" className="text-sm-left" />
     </Row>
 
     {/* Default Light Table */}
@@ -15,7 +15,7 @@ const Tables = () => (
       <Col>
         <Card small className="mb-4">
           <CardHeader className="border-bottom">
-            <h6 className="m-0">Active Users</h6>
+            <h6 className="m-0">총 거리</h6>
           </CardHeader>
           <CardBody className="p-0 pb-3">
             <table className="table mb-0">
@@ -25,10 +25,10 @@ const Tables = () => (
                     #
                   </th>
                   <th scope="col" className="border-0">
-                    First Name
+                    Name
                   </th>
                   <th scope="col" className="border-0">
-                    Last Name
+                    Distance
                   </th>
                   <th scope="col" className="border-0">
                     Country
@@ -45,7 +45,7 @@ const Tables = () => (
                 <tr>
                   <td>1</td>
                   <td>Ali</td>
-                  <td>Kerry</td>
+                  <td>26.3km</td>
                   <td>Russian Federation</td>
                   <td>Gdańsk</td>
                   <td>107-0339</td>
@@ -53,7 +53,7 @@ const Tables = () => (
                 <tr>
                   <td>2</td>
                   <td>Clark</td>
-                  <td>Angela</td>
+                  <td>17.2km</td>
                   <td>Estonia</td>
                   <td>Borghetto di Vara</td>
                   <td>1-660-850-1647</td>
@@ -61,7 +61,7 @@ const Tables = () => (
                 <tr>
                   <td>3</td>
                   <td>Jerry</td>
-                  <td>Nathan</td>
+                  <td>15.5km</td>
                   <td>Cyprus</td>
                   <td>Braunau am Inn</td>
                   <td>214-4225</td>
@@ -69,7 +69,7 @@ const Tables = () => (
                 <tr>
                   <td>4</td>
                   <td>Colt</td>
-                  <td>Angela</td>
+                  <td>13.3km</td>
                   <td>Liberia</td>
                   <td>Bad Hersfeld</td>
                   <td>1-848-473-7416</td>
@@ -86,7 +86,7 @@ const Tables = () => (
       <Col>
         <Card small className="mb-4 overflow-hidden">
           <CardHeader className="bg-dark">
-            <h6 className="m-0 text-white">Active Users</h6>
+            <h6 className="m-0 text-white">당일 거리</h6>
           </CardHeader>
           <CardBody className="bg-dark p-0 pb-3">
             <table className="table table-dark mb-0">
@@ -96,10 +96,10 @@ const Tables = () => (
                     #
                   </th>
                   <th scope="col" className="border-0">
-                    First Name
+                    Name
                   </th>
                   <th scope="col" className="border-0">
-                    Last Name
+                    Distance
                   </th>
                   <th scope="col" className="border-0">
                     Country
@@ -116,7 +116,7 @@ const Tables = () => (
                 <tr>
                   <td>1</td>
                   <td>Ali</td>
-                  <td>Kerry</td>
+                  <td>20.9km</td>
                   <td>Russian Federation</td>
                   <td>Gdańsk</td>
                   <td>107-0339</td>
@@ -124,7 +124,7 @@ const Tables = () => (
                 <tr>
                   <td>2</td>
                   <td>Clark</td>
-                  <td>Angela</td>
+                  <td>18.9km</td>
                   <td>Estonia</td>
                   <td>Borghetto di Vara</td>
                   <td>1-660-850-1647</td>
@@ -132,7 +132,7 @@ const Tables = () => (
                 <tr>
                   <td>3</td>
                   <td>Jerry</td>
-                  <td>Nathan</td>
+                  <td>10.7km</td>
                   <td>Cyprus</td>
                   <td>Braunau am Inn</td>
                   <td>214-4225</td>
@@ -140,7 +140,7 @@ const Tables = () => (
                 <tr>
                   <td>4</td>
                   <td>Colt</td>
-                  <td>Angela</td>
+                  <td>5.3km</td>
                   <td>Liberia</td>
                   <td>Bad Hersfeld</td>
                   <td>1-848-473-7416</td>

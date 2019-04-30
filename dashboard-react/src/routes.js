@@ -7,9 +7,9 @@ import { DefaultLayout } from './layouts';
 // Route Views
 import MainPage from './views/MainPage';
 import UserProfile from './views/UserProfile';
-import ComponentsOverview from './views/ComponentsOverview';
+// import ComponentsOverview from './views/ComponentsOverview';
 import Ranking from './views/Ranking';
-import BlogPosts from './views/BlogPosts';
+// import BlogPosts from './views/BlogPosts';
 import History from './views/History';
 
 export default [
@@ -44,15 +44,15 @@ export default [
     layout: DefaultLayout,
     component: UserProfile,
   },
-  {
-    path: '/components-overview',
-    layout: DefaultLayout,
-    component: ComponentsOverview,
-  },
+  // {
+  //   path: '/components-overview',
+  //   layout: DefaultLayout,
+  //   component: ComponentsOverview,
+  // },
 
-  {
-    path: '/blog-posts',
-    layout: DefaultLayout,
-    component: BlogPosts,
-  },
+  // {
+  //   path: '/blog-posts',
+  //   layout: DefaultLayout,
+  //   component: BlogPosts,
+  // },
 ];
