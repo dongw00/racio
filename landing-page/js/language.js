@@ -25,6 +25,7 @@ function ChangeLanguage() {
       'Anytime, anywhere, you can enjoy trimm One!';
     language = 'EN';
   } else {
+
     document.getElementById('text_login').innerHTML = '로그인';
     document.getElementById('text1').innerHTML =
       '트림원을 위한 웹 어플리케이션을 경험해보세요. <br>  당신의 데이터를 유용하고 효율적으로 관리 할 수 있습니다.';
@@ -39,11 +40,11 @@ function ChangeLanguage() {
     document.getElementById('text_fit3').innerHTML = '데이터 공유';
     document.getElementById('text_fit4').innerHTML = '어디서나 쉽게!';
     document.getElementById('text_fit1_sub').innerHTML =
-      '간편하고 깔끔한 UI, 누구나 쉽게사용할 수 있습니다';
+      '누구나 쉽게 사용할 수 있는 간편하고 깔끔한 UI';
     document.getElementById('text_fit2_sub').innerHTML =
-      '철저하고 완벽하게 개인 정보를 보호합니다';
+      '철저하고 완벽하게 개인 정보 보호';
     document.getElementById('text_fit3_sub').innerHTML =
-      '파일 시스템을 통해 데이터를 관리할 수 있습니다';
+      '파일 시스템을 통한 데이터 관리';
     document.getElementById('text_fit4_sub').innerHTML =
       '언제 어디서나 사용할 수 있는 trimm One!';
 
