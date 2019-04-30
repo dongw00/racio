@@ -22,6 +22,7 @@
     />
     <link rel="stylesheet" href="css/shards.min.css" />
     <link rel="stylesheet" href="css/shards-extras.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/login.css" />
   </head>
   <body class="shards-app-promo-page--1">
@@ -84,9 +85,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fa fa-dribbble"></i></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-github"></i></a>
-              </li>
             </ul>
           </div>
         </nav>
@@ -107,7 +105,6 @@
                         <div class="btnGroup">
                             <li id="liGoogleBtn" class="waves-effect waves-teal btn-flat" onclick="GoogleBtnEvent()"><i></i>Using Google Account</li>
                         </div>
-                        <em class="or">or</em>
                     </div>
                     <div id="dvEmail">
                         <input type="email" id="userName" name="userName" class="input-text" placeholder="email">
@@ -117,9 +114,10 @@
                             <li id="liEmailJoin" class="waves-effect waves-teal btn-flat" onclick="active_login('hide_login','hide_signup')">Sign Up</li>
                         </div>
                     </div>
-                    <em id="back" onclick="active_login('hide_login','change_login')">&ltback</em>
+                    <em class="login-btn" id="back" onclick="active_login('hide_login','change_login')">
+                      <i class="fa fa-angle-left"></i>back</em>
                 </div>
-              </div> 
+              </div>
             </div>
             <!-- SignUp -->
             <div id = "hide_signup">
@@ -137,16 +135,15 @@
             </div>
 
             <div id = "change_login">
-            <h1 class="welcome-heading display-4 text-white">
-              Trimm Bicycle
-            </h1>
+            <!-- Typed js -->
+            <span id="typed" class="welcome-heading text-white"></span>
             <p class="text-muted">
               레이시오 웹 어플리케이션을 경험해보세요
             </p>
             <div id = "login_button">
             <a
               href="#"
-              class="btn btn-lg btn-primary btn-pill align-self-center text-md-center" 
+              class="btn btn-lg btn-primary btn-pill align-self-center text-md-center"
               onclick = "active_login('change_login','hide_login')"
             ><i class="fa fa-sign-in mr-2"></i>로그인</a>
             </div>
@@ -270,7 +267,7 @@
               class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto"
             >
               <img
-                src="images/common/avatar-1.jpeg"
+                src=""
                 class="w-100"
                 alt="Testimonial Avatar"
               />
@@ -288,7 +285,7 @@
               class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto"
             >
               <img
-                src="images/common/avatar-2.jpeg"
+                src=""
                 class="w-100"
                 alt="Testimonial Avatar"
               />
@@ -306,7 +303,7 @@
               class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto"
             >
               <img
-                src="images/common/avatar-3.jpeg"
+                src=""
                 class="w-100"
                 alt="Testimonial Avatar"
               />
@@ -334,7 +331,7 @@
                 <div class="card mb-4">
                   <img
                     class="card-img-top"
-                    src="images/common/card-1.jpg"
+                    src=""
                     alt="Card image cap"
                   />
                   <div class="card-body">
@@ -357,7 +354,7 @@
                 <div class="card mb-4">
                   <img
                     class="card-img-top"
-                    src="images/common/card-3.jpg"
+                    src=""
                     alt="Card image cap"
                   />
                   <div class="card-body">
@@ -380,7 +377,7 @@
                 <div class="card mb-4">
                   <img
                     class="card-img-top"
-                    src="images/common/card-2.jpg"
+                    src=""
                     alt="Card image cap"
                   />
                   <div class="card-body">
@@ -425,63 +422,6 @@
       </form>
     </div>
     <!-- / Subscribe Section -->
-
-    <!-- Contact Section -->
-    <div class="contact section-invert py-4">
-      <h3 class="section-title text-center m-5">Contact Us</h3>
-      <div class="container py-4">
-        <div class="row justify-content-md-center px-4">
-          <div class="contact-form col-sm-12 col-md-10 col-lg-7 p-4 mb-4 card">
-            <form>
-              <div class="row">
-                <div class="col-md-6 col-sm-12">
-                  <div class="form-group">
-                    <label for="contactFormFullName">Full Name</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="contactFormFullName"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <div class="form-group">
-                    <label for="contactFormEmail">Email address</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="contactFormEmail"
-                      placeholder="Enter your email address"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Message</label>
-                    <textarea
-                      id="exampleInputEmail1"
-                      class="form-control mb-4"
-                      rows="10"
-                      placeholder="Enter your message..."
-                      name="message"
-                    ></textarea>
-                  </div>
-                </div>
-              </div>
-              <input
-                class="btn btn-success btn-pill d-flex ml-auto mr-auto"
-                type="submit"
-                value="Send Your Message"
-              />
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- / Contact Section -->
 
     <!-- Footer Section -->
     <footer>
@@ -542,21 +482,23 @@
     <!-- / Footer Section -->
 
     <!-- JavaScript Dependencies -->
-    <script src="/js/jquery-3.4.0.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/lib/jquery-3.4.0.min.js"></script>
+    <script src="/js/lib/popper.min.js"></script>
+    <script src="/js/lib/bootstrap.min.js"></script>
+    <script src="/js/lib/typed.js"></script>
+    <script src="/js/index.js"></script>
     <script src="/js/login.js"></script>
-    <script defer src="/__/firebase/4.6.1/firebase-app.js"></script>
-    <script defer src="/__/firebase/4.6.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.9.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.9.1/firebase-auth.js"></script>
     <script defer src="/__/firebase/init.js"></script>
-      
+
     <script type="text/template" id="templateUserList">
-            <li id="li<%=targetUserUid %>" data-targetUserUid="<%=targetUserUid %>" data-username="<%=userName %>" class="collection-item avatar list">
-                <img src="<%=profileImg ? profileImg : 'img/noprofile.png'  %>" alt="" class="circle">
-                <span class="title"><%=userName %></span>
-                <span class="small material-icons right hiddendiv done">done</span>
-                <span class="small material-icons right hiddendiv mood yellow-text">mood</span>
-            </li>
-    </script>
-    </body>
+      <li id="li<%=targetUserUid %>" data-targetUserUid="<%=targetUserUid %>" data-username="<%=userName %>" class="collection-item avatar list">
+        <img src="<%=profileImg ? profileImg : 'img/noprofile.png'  %>" alt="" class="circle">
+        <span class="title"><%=userName %></span>
+        <span class="small material-icons right hiddendiv done">done</span>
+        <span class="small material-icons right hiddendiv mood yellow-text">mood</span>
+    </li>
+  </script>
+  </body>
 </html>
