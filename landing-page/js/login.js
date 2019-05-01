@@ -8,15 +8,12 @@ function confirmLogin(){
     storageBucket: "facebooklogin-44d81.appspot.com",
     messagingSenderId: "480930104944"
     };
-  firebase.initializeApp(config);  
-  
+  firebase.initializeApp(config); 
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      try{
+      try {
         set_user(user);
-      }
-      catch(error){
-      };
+      } catch (error) {}
     } else {
       document.getElementById('login_button').style.display = 'block';
     }
@@ -43,9 +40,11 @@ function set_user(user) {
   active_login('login_button', 'hide_dash');
   active_login('hide_login', 'change_login');
 
-  if(user.photoURL === null) {
-    document.getElementById('rounded1').style.backgroundImage = `url(/../images/app-promo/No_url.png)`;
-  }else{
+  if (user.photoURL === null) {
+    document.getElementById(
+      'rounded1'
+    ).style.backgroundImage = `url(/../images/app-promo/No_url.png)`;
+  } else {
     document.getElementById('rounded1').style.backgroundImage = `url(${
       user.photoURL
     })`;
@@ -98,8 +97,7 @@ function GoogleBtnEvent() {
       firebase
         .auth()
         .setPersistence(firebase.auth.Auth.Persistence.SESSION)
-        .then(() => {
-        })
+        .then(() => {})
         .catch(error => {});
       var user = firebase.auth().currentUser;
       set_user(user);
@@ -108,7 +106,6 @@ function GoogleBtnEvent() {
       alert(error.message);
     });
 }
-
 
 //이메일 로그인 버튼 이벤트
 function EmailBtnEvent() {

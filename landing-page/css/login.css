@@ -5,13 +5,13 @@
   display: none;
 }
 
-#img_table{
-  width : 50%;
-  display : inline-block;
+#img_table {
+  width: 50%;
+  display: inline-block;
 }
-#go_dash{
-  width : 45%;
-  display : inline-block;
+#go_dash {
+  width: 45%;
+  display: inline-block;
 }
 #rounded1 {
   width: 60%;
@@ -28,18 +28,18 @@
 #rounded1:before {
   content: '';
   padding-top: 100%; /* 1:1 비율 */
-  display : inline-block;
-
+  display: inline-block;
 }
 
-#start_dash{
-  color : white;
+#start_dash {
+  color: white;
   margin-top: -15px;
 }
 
 #hide_dash {
   display: none;
 }
+
 #user_infro {
   font-size: 15px;
 }
