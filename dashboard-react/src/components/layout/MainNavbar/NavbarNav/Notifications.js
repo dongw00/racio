@@ -10,6 +10,8 @@ export default class Notifications extends React.Component {
     };
 
     this.toggleNotifications = this.toggleNotifications.bind(this);
+    this.overNotifications = this.overNotifications.bind(this);
+    this.leaveNotifications = this.leaveNotifications.bind(this);
   }
 
   toggleNotifications() {
@@ -18,24 +20,33 @@ export default class Notifications extends React.Component {
     });
   }
 
+  overNotifications() {
+    this.setState({
+      visible: true
+    });
+  }
+
+  leaveNotifications() {
+    this.setState({
+      visible: false
+    });
+  }
+
   render() {
     return (
-      <NavItem className="border-right dropdown notifications">
-        <NavLink
-          className="nav-link-icon text-center"
-          onClick={this.toggleNotifications}
-        >
+      <NavItem className="border-right dropdown notifications"
+        onClick={this.toggleNotifications}
+        onMouseOver={this.overNotifications}
+        onMouseLeave={this.leaveNotifications}>
+        <NavLink className="nav-link-icon text-center">
           <div className="nav-link-icon__wrapper">
-            <i className="material-icons">&#xE7F4;</i>
+            <i className="material-icons" >&#xE7F4;</i>
             <Badge pill theme="danger">
               2
             </Badge>
           </div>
         </NavLink>
-        <Collapse
-          open={this.state.visible}
-          className="dropdown-menu dropdown-menu-small"
-        >
+        <Collapse open={this.state.visible} className="dropdown-menu dropdown-menu-small">
           <DropdownItem>
             <div className="notification__icon-wrapper">
               <div className="notification__icon">
@@ -67,7 +78,7 @@ export default class Notifications extends React.Component {
             </div>
           </DropdownItem>
           <DropdownItem className="notification__all text-center">
-            모든 알림 보기
+            Show all notifications
           </DropdownItem>
         </Collapse>
       </NavItem>

@@ -38,12 +38,12 @@ export default class UserActions extends React.Component {
           />{' '}
           <span className="d-none d-md-inline-block">박진우</span>
         </DropdownToggle>
-        <Collapse tag={DropdownMenu} left small open={this.state.visible}>
+        <Collapse tag={DropdownMenu} small open={this.state.visible}>
           <DropdownItem tag={Link} to="user-profile">
-            <i className="material-icons">&#xE7FD;</i> 프로필
+            <i className="material-icons">&#xE7FD;</i> Profile
           </DropdownItem>
           <DropdownItem tag={Link} to="edit-user-profile">
-            <i className="material-icons">&#xE8B8;</i> 프로필 수정
+            <i className="material-icons">&#xE8B8;</i> Edit profile
           </DropdownItem>
           {/* <DropdownItem tag={Link} to="file-manager-list">
             <i className="material-icons">&#xE2C7;</i> 파일
@@ -53,7 +53,7 @@ export default class UserActions extends React.Component {
           </DropdownItem> */}
           <DropdownItem divider />
           <DropdownItem tag={Link} to="/" className="text-danger">
-            <i className="material-icons text-danger">&#xE879;</i> 로그아웃
+            <i className="material-icons text-danger">&#xE879;</i> Logout
           </DropdownItem>
         </Collapse>
       </NavItem>

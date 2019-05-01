@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavbarBrand } from 'shards-react';
+import { Navbar } from 'shards-react';
 
 import { Dispatcher, Constants } from '../../../flux';
 
