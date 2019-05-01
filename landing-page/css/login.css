@@ -52,7 +52,12 @@
 #back {
   cursor: pointer;
 }
+
+#user_info{
+  color : white;
+}
 #logoutbtn {
+  color : white;
   cursor: pointer;
 }
 
