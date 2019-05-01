@@ -4985,7 +4985,6 @@ a.text-accent:hover {
   padding: 0;
   min-width: 25rem;
   border-right: 0;
-  right: auto;
 }
 .main-navbar .navbar .notifications .dropdown-menu .dropdown-item {
   white-space: normal;
@@ -5049,13 +5048,15 @@ a.text-accent:hover {
 .main-navbar .navbar .user-avatar {
   max-width: 2.5rem;
 }
+/* 중요 드롭다운 프로필/알림 */
 .main-navbar .navbar .navbar-nav .dropdown-menu {
   position: absolute;
-  right: 0;
   width: 100%;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-top: none;
+  right: 0;
+  left: auto;
 }
 .main-navbar .navbar .nav-link-icon i {
   line-height: 2.5rem;
