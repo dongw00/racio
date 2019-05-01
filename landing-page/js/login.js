@@ -1,3 +1,27 @@
+var config = {
+  apiKey: 'AIzaSyAFBoNrEkBI0TLB6fjW-4ifMS3HAtuxxtY',
+  authDomain: 'facebooklogin-44d81.firebaseapp.com',
+  databaseURL: 'https://facebooklogin-44d81.firebaseio.com',
+  projectId: 'facebooklogin-44d81',
+  storageBucket: 'facebooklogin-44d81.appspot.com',
+  messagingSenderId: '480930104944',
+};
+firebase.initializeApp(config);
+
+//세션유지
+function confirmLogin() {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      try {
+        set_user(user);
+      } catch (error) {}
+    } else {
+      document.getElementById('login_button').style.display = 'block';
+    }
+  });
+}
+
+//엔터감지
 function keydown(num) {
   if (window.event.keyCode == 13) {
     if (num == 1) EmailBtnEvent();
@@ -5,19 +29,27 @@ function keydown(num) {
   }
 }
 
+//화면변화
 function active_login(id1, id2) {
   clear();
   document.getElementById(id1).style.display = 'none';
   document.getElementById(id2).style.display = 'block';
 }
 
+//정보입력
 function set_user(user) {
   active_login('login_button', 'hide_dash');
   active_login('hide_login', 'change_login');
 
-  document.getElementById('rounded1').style.backgroundImage = `url(${
-    user.photoURL
-  })`;
+  if (user.photoURL === null) {
+    document.getElementById(
+      'rounded1'
+    ).style.backgroundImage = `url(/../images/app-promo/No_url.png)`;
+  } else {
+    document.getElementById('rounded1').style.backgroundImage = `url(${
+      user.photoURL
+    })`;
+  }
   document.getElementById('user_info').innerHTML = `
     Name : ${user.displayName}
     <br>
@@ -26,12 +58,14 @@ function set_user(user) {
   `;
 }
 
+//이메일 생성가능 판단
 function emailCheck(mail) {
   const emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   if (emailReg.test(mail)) return true;
   return false;
 }
 
+//이메일 유효성 검증
 function validateJoinForm(email, password, rePassword) {
   if (!emailCheck(email)) {
     alert('Invalid Email');
@@ -44,6 +78,7 @@ function validateJoinForm(email, password, rePassword) {
   return true;
 }
 
+//입력값 초기화
 function clear() {
   document.getElementById('joinUserName').value = '';
   document.getElementById('joinUserEmail').value = '';
@@ -52,6 +87,7 @@ function clear() {
   document.getElementById('userName').value = '';
   document.getElementById('password').value = '';
 }
+
 //구글 로그인 버튼 이벤트
 function GoogleBtnEvent() {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -61,14 +97,11 @@ function GoogleBtnEvent() {
     .then(result => {
       firebase
         .auth()
-        .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-        .then(() => {
-          // var provider = new firebase.auth.GoogleAuthProvider();
-          // return firebase.auth().signInWithRedirect(provider);
-        })
+        .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+        .then(() => {})
         .catch(error => {});
-
-      set_user(firebase.auth().currentUser);
+      var user = firebase.auth().currentUser;
+      set_user(user);
     })
     .catch(function(error) {
       alert(error.message);
@@ -79,7 +112,7 @@ function GoogleBtnEvent() {
 function EmailBtnEvent() {
   const email = document.getElementById('userName').value.trim();
   const password = document.getElementById('password').value.trim();
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
   if (!emailCheck(email)) alert('Invaild Email');
 
   if (emailCheck(email) && password.length > 0) {

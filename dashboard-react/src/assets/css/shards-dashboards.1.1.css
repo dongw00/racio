@@ -33,10 +33,8 @@
 body {
   font-size: 1rem;
   font-weight: 300;
-  color: #5a6169;
-  opacity: 0.9;
-  background: #212529;
-  /* background-color: #fff; */
+  color: #695a5a;
+  background-color: #fff;
 }
 a {
   color: #007bff;
@@ -101,6 +99,8 @@ h2 {
 h3 {
   font-size: 1.953rem;
   line-height: 2.25rem;
+  /* 중요 h3 색상 추가 */
+  color: #d9e8ff;
 }
 .h4,
 h4 {
@@ -4512,8 +4512,10 @@ html {
   font-size: 16px;
   font-weight: 500;
 }
+/* 중요 body 색상 */
 body {
-  background: #f5f6f8;
+  opacity: 0.9;
+  background: #212529;
   font-size: 15px;
   font-weight: 500;
 }
@@ -5071,7 +5073,7 @@ a.text-accent:hover {
   position: fixed;
   height: calc(100vh);
   opacity: 0.9;
-  background: #212529;
+  background: #fff;
   z-index: 1070;
   will-change: transform;
   transition: -webkit-transform 0.2s ease-in-out;

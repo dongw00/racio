@@ -221,9 +221,9 @@
                 당신의 데이터를 유용하고 효율적으로 관리 할 수 있습니다.
               </p>
 
-              <div id="login_button">
+              <div id="login_button" style="display: none">
                 <a
-                  id='text_login'
+                  id="text_login"
                   href="#"
                   class="btn btn-lg btn-primary btn-pill align-self-center text-md-center"
                   onclick="active_login('change_login','hide_login')"
@@ -231,15 +231,17 @@
                 >
               </div>
               <div id="hide_dash">
-                <div id='img_table'><div id="rounded1"></div></div>
-                <div id='go_dash'>
-                  <a
-                    id='start_dash'
-                    href="#"
-                    class="btn btn-lg btn-primary btn-pill align-self-center text-md-center"
-                    ><i class="fa fa-sign-in mr-2"></i>시작</a></div>
+                <div>
+                  <div id="img_table"><div id="rounded1"></div></div>
+                  <div id="go_dash">
+                    <a
+                      id="start_dash"
+                      href="#"
+                      class="btn btn-lg btn-primary btn-pill align-self-center text-md-center"
+                      ><i class="fa fa-sign-in mr-2"></i>시작</a
+                    >
+                  </div>
                 </div>
-
                 <a id="user_info"></a>
                 <a id="logoutbtn" onclick="LogOutEvent()">Logout</a>
               </div>
@@ -357,7 +359,11 @@
             <div
               class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto"
             >
-              <img src="" class="w-100" alt="Testimonial Avatar" />
+              <img
+                src="/images/app-promo/2등.png"
+                class="w-100"
+                alt="Testimonial Avatar"
+              />
             </div>
             <h5 class="mb-1">2. Ki yeon song</h5>
             <span class="text-muted d-block mb-2">Korea</span>
@@ -370,7 +376,11 @@
             <div
               class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto"
             >
-              <img src="" class="w-100" alt="Testimonial Avatar" />
+              <img
+                src="/images/app-promo/1등.png"
+                class="w-100"
+                alt="Testimonial Avatar"
+              />
             </div>
             <h5 class="mb-1">1. Adam</h5>
             <span class="text-muted d-block mb-2">USA</span>
@@ -383,7 +393,11 @@
             <div
               class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto"
             >
-              <img src="" class="w-100" alt="Testimonial Avatar" />
+              <img
+                src="/images/app-promo/3등.png"
+                class="w-100"
+                alt="Testimonial Avatar"
+              />
             </div>
             <h5 class="mb-1">3. Harry potter</h5>
             <span class="text-muted d-block mb-2">UK</span>
@@ -398,7 +412,7 @@
 
     <!-- Our Blog Section -->
     <div class="blog section section-invert py-4">
-      <h3 class="section-title text-center m-5">Latest Posts</h3>
+      <h3 class="section-title text-center m-5" id="post_text">최근 게시물</h3>
       <div class="container">
         <div class="py-4">
           <div class="row">
@@ -503,8 +517,6 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-
-          </div>
         </div>
       </nav>
     </footer>
@@ -522,6 +534,15 @@
     <script defer src="/__/firebase/5.9.1/firebase-auth.js"></script>
     <script defer src="/__/firebase/init.js"></script>
 
+    <<<<<<< HEAD =======
+    <script src="/js/index.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/language.js"></script>
+    <script>
+      confirmLogin();
+    </script>
+
+    >>>>>>> 5815f521288b901dd933b5f68d0b66854f3e96ae
     <script type="text/template" id="templateUserList">
         <li id="li<%=targetUserUid %>" data-targetUserUid="<%=targetUserUid %>" data-username="<%=userName %>" class="collection-item avatar list">
           <img src="<%=profileImg ? profileImg : 'img/noprofile.png'  %>" alt="" class="circle">
