@@ -4962,7 +4962,7 @@ a.text-accent:hover {
   border-color: #007bff !important;
 }
 .main-navbar .navbar {
-  height: 3.75rem;
+  height: 4rem;
 }
 .main-navbar .navbar > * {
   display: -ms-flexbox;
@@ -5056,6 +5056,7 @@ a.text-accent:hover {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-top: none;
+  left: auto;
 }
 .main-navbar .navbar .nav-link-icon i {
   line-height: 2.5rem;

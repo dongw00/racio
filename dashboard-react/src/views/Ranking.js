@@ -7,7 +7,7 @@ const Tables = () => (
   <Container fluid className="main-content-container px-4">
     {/* Page Header */}
     <Row noGutters className="page-header py-4">
-      <PageTitle sm="4" title="순위" className="text-sm-left" />
+      <PageTitle sm="4" title="Ranking" className="text-sm-left" />
     </Row>
 
     {/* Default Light Table */}
@@ -15,7 +15,7 @@ const Tables = () => (
       <Col>
         <Card small className="mb-4">
           <CardHeader className="border-bottom">
-            <h6 className="m-0">총 거리</h6>
+            <h6 className="m-0">Total distance</h6>
           </CardHeader>
           <CardBody className="p-0 pb-3">
             <table className="table mb-0">
@@ -86,7 +86,7 @@ const Tables = () => (
       <Col>
         <Card small className="mb-4 overflow-hidden">
           <CardHeader className="bg-dark">
-            <h6 className="m-0 text-white">당일 거리</h6>
+            <h6 className="m-0 text-white">Daily distance</h6>
           </CardHeader>
           <CardBody className="bg-dark p-0 pb-3">
             <table className="table table-dark mb-0">

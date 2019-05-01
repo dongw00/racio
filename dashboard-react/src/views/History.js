@@ -9,8 +9,8 @@ const History = () => (
     {/* Page Header */}
     <Row noGutters className="page-header py-4">
       <PageTitle
-        title="기록"
-        subtitle="History"
+        title="Record"
+        subtitle="map"
         className="text-sm-left mb-3"
       />
     </Row>

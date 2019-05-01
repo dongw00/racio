@@ -132,7 +132,7 @@ UsersOverview.propTypes = {
 };
 
 UsersOverview.defaultProps = {
-  title: '전체 기록',
+  title: 'Total Record',
   chartData: {
     labels: Array.from(new Array(30), (_, i) => (i === 0 ? 1 : i)),
     datasets: [
