@@ -1,15 +1,15 @@
-var config = {
-  apiKey: "AIzaSyAFBoNrEkBI0TLB6fjW-4ifMS3HAtuxxtY",
-  authDomain: "facebooklogin-44d81.firebaseapp.com",
-  databaseURL: "https://facebooklogin-44d81.firebaseio.com",
-  projectId: "facebooklogin-44d81",
-  storageBucket: "facebooklogin-44d81.appspot.com",
-  messagingSenderId: "480930104944"
-  };
-firebase.initializeApp(config);
-
 //세션유지
 function confirmLogin(){
+  var config = {
+    apiKey: "AIzaSyAFBoNrEkBI0TLB6fjW-4ifMS3HAtuxxtY",
+    authDomain: "facebooklogin-44d81.firebaseapp.com",
+    databaseURL: "https://facebooklogin-44d81.firebaseio.com",
+    projectId: "facebooklogin-44d81",
+    storageBucket: "facebooklogin-44d81.appspot.com",
+    messagingSenderId: "480930104944"
+    };
+  firebase.initializeApp(config);  
+  
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       try{
