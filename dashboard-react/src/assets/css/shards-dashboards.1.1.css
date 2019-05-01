@@ -33,8 +33,10 @@
 body {
   font-size: 1rem;
   font-weight: 300;
-  color: #000;
-  background-color: #fff;
+  color: #5a6169;
+  opacity: 0.9;
+  background: #212529;
+  /* background-color: #fff; */
 }
 a {
   color: #007bff;
@@ -378,7 +380,7 @@ pre {
 .form-control:focus {
   color: #495057;
   background-color: #fff;
-  border-color: #495057;
+  border-color: #007bff;
   box-shadow: 0 0.313rem 0.719rem rgba(0, 123, 255, 0.1),
     0 0.156rem 0.125rem rgba(0, 0, 0, 0.06);
 }
@@ -4516,7 +4518,7 @@ body {
   font-weight: 500;
 }
 a {
-  color: #000;
+  color: #007bff;
 }
 a:hover {
   color: #0056b3;
@@ -5069,7 +5071,7 @@ a.text-accent:hover {
   position: fixed;
   height: calc(100vh);
   opacity: 0.9;
-  background: #000;
+  background: #212529;
   z-index: 1070;
   will-change: transform;
   transition: -webkit-transform 0.2s ease-in-out;
@@ -5094,7 +5096,7 @@ a.text-accent:hover {
   height: 100%;
   padding: 1.25rem;
   font-size: 1.25rem;
-  /* border-left: 1px solid #e1e5eb; */
+  border-left: 1px solid #e1e5eb;
 }
 .main-sidebar .toggle-sidebar:hover {
   cursor: pointer;
@@ -5148,15 +5150,15 @@ a.text-accent:hover {
 .main-sidebar .nav .nav-item .nav-link:hover,
 .main-sidebar .nav .nav-item.active,
 .main-sidebar .nav .nav-item:hover {
-  box-shadow: inset 0.1875rem 0 0 #caced8;
-  background-color: #000;
-  color: #fff;
+  box-shadow: inset 0.1875rem 0 0 #007bff;
+  background-color: #fbfbfb;
+  color: #007bff;
 }
 .main-sidebar .nav .nav-item .nav-link.active i,
 .main-sidebar .nav .nav-item .nav-link:hover i,
 .main-sidebar .nav .nav-item.active i,
 .main-sidebar .nav .nav-item:hover i {
-  color: #fff;
+  color: #007bff;
 }
 .main-sidebar .nav--no-borders .nav-item .nav-link {
   border-bottom: 0;
@@ -5740,8 +5742,4 @@ html .ql-toolbar .ql-picker .ql-picker-options {
 /* 추가항목 */
 .d-flex.px-3.highlight {
   background-color: #8abaf2;
-}
-
-.material-icons.md-light {
-  color: var(--light);
 }

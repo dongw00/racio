@@ -75,28 +75,6 @@ function GoogleBtnEvent() {
     });
 }
 
-// // //테스트용 구글 로그인 이벤트
-//  GoogleBtnEvent();
-// function Google(){
-//   firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-//   .then(function() {
-//     var provider = new firebase.auth.GoogleAuthProvider();
-//     // In memory persistence will be applied to the signed in Google user
-//     // even though the persistence was set to 'none' and a page redirect
-//     // occurred.
-//     set_user(firebase.auth().currentUser);
-//     return firebase.auth().signInWithRedirect(provider);
-//   })
-//   .catch(function(error) {
-//     // Handle Errors here.
-//     var errorCode = error.code;
-//     var errorMessage = error.message;
-//   });
-// }
-// ////
-
-
-
 //이메일 로그인 버튼 이벤트
 function EmailBtnEvent() {
   const email = document.getElementById('userName').value.trim();
