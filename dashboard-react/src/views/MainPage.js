@@ -14,8 +14,8 @@ const MainPage = ({ smallStats }) => (
     {/* Page Header */}
     <Row noGutters className="page-header py-4">
       <PageTitle
-        title="박진우님 대시보드"
-        subtitle="Dashboard"
+        title="User Dashboard"
+        subtitle="dashboard"
         className="text-sm-left mb-3"
       />
     </Row>

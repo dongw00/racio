@@ -94,7 +94,7 @@ Mission.propTypes = {
 };
 
 Mission.defaultProps = {
-  title: '미션',
+  title: 'Mission',
   discussions: [
     {
       id: 1,
