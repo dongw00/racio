@@ -20,20 +20,20 @@ class SidebarMainNavbar extends React.Component {
     return (
       <div className="main-navbar">
         <Navbar
-          className="align-items-stretch bg-dark flex-md-nowrap p-0"
+          className="align-items-stretch bg-black flex-md-nowrap p-0"
           type="dark">
           <img
             id="main-logo"
-            className="d-inline-block align-top mr-1"
-            style={{ width: '100%', height: 'auto' }}
-            src={require('../../../assets/images/trimm.PNG')}
-            alt="Shards Dashboard"
+            className="mx-auto my-auto"
+            src={require('../../../assets/images/trimm.png')}
+            alt="trimm logo"
           />
           {/* eslint-disable-next-line */}
           <a
             className="toggle-sidebar d-sm-inline d-md-none d-lg-none"
             onClick={this.handleToggleSidebar}>
-            <i className="material-icons">&#xE5C4;</i>
+            {/* 화살표 아이콘 */}
+            <i className="material-icons md-light">&#xE5C4;</i>
           </a>
         </Navbar>
       </div>

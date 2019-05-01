@@ -34,9 +34,7 @@ body {
   font-size: 1rem;
   font-weight: 300;
   color: #000;
-  opacity: 0.9;
-  background: #212529;
-  /* background-color: #fff; */
+  background-color: #fff;
 }
 a {
   color: #007bff;
@@ -5096,7 +5094,7 @@ a.text-accent:hover {
   height: 100%;
   padding: 1.25rem;
   font-size: 1.25rem;
-  border-left: 1px solid #e1e5eb;
+  /* border-left: 1px solid #e1e5eb; */
 }
 .main-sidebar .toggle-sidebar:hover {
   cursor: pointer;
@@ -5742,4 +5740,8 @@ html .ql-toolbar .ql-picker .ql-picker-options {
 /* 추가항목 */
 .d-flex.px-3.highlight {
   background-color: #8abaf2;
+}
+
+.material-icons.md-light {
+  color: var(--light);
 }
