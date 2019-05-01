@@ -71,7 +71,7 @@ MainPage.propTypes = {
 MainPage.defaultProps = {
   smallStats: [
     {
-      label: 'Posts',
+      label: 'DAILY',
       value: '2,390',
       percentage: '4.7%',
       increase: true,
@@ -89,7 +89,7 @@ MainPage.defaultProps = {
       ],
     },
     {
-      label: 'Pages',
+      label: 'WEEKLY',
       value: '182',
       percentage: '12.4',
       increase: true,
@@ -107,7 +107,7 @@ MainPage.defaultProps = {
       ],
     },
     {
-      label: 'Comments',
+      label: 'MONTHLY',
       value: '8,147',
       percentage: '3.8%',
       increase: false,
@@ -125,44 +125,44 @@ MainPage.defaultProps = {
         },
       ],
     },
-    {
-      label: 'New Customers',
-      value: '29',
-      percentage: '2.71%',
-      increase: false,
-      decrease: true,
-      chartLabels: [null, null, null, null, null, null, null],
-      attrs: { md: '4', sm: '6' },
-      datasets: [
-        {
-          label: 'Today',
-          fill: 'start',
-          borderWidth: 1.5,
-          backgroundColor: 'rgba(255,65,105,0.1)',
-          borderColor: 'rgb(255,65,105)',
-          data: [1, 7, 1, 3, 1, 4, 8],
-        },
-      ],
-    },
-    {
-      label: 'Subscribers',
-      value: '17,281',
-      percentage: '2.4%',
-      increase: false,
-      decrease: true,
-      chartLabels: [null, null, null, null, null, null, null],
-      attrs: { md: '4', sm: '6' },
-      datasets: [
-        {
-          label: 'Today',
-          fill: 'start',
-          borderWidth: 1.5,
-          backgroundColor: 'rgb(0,123,255,0.1)',
-          borderColor: 'rgb(0,123,255)',
-          data: [3, 2, 3, 2, 4, 5, 4],
-        },
-      ],
-    },
+    // {
+    //   label: 'New Customers',
+    //   value: '29',
+    //   percentage: '2.71%',
+    //   increase: false,
+    //   decrease: true,
+    //   chartLabels: [null, null, null, null, null, null, null],
+    //   attrs: { md: '4', sm: '6' },
+    //   datasets: [
+    //     {
+    //       label: 'Today',
+    //       fill: 'start',
+    //       borderWidth: 1.5,
+    //       backgroundColor: 'rgba(255,65,105,0.1)',
+    //       borderColor: 'rgb(255,65,105)',
+    //       data: [1, 7, 1, 3, 1, 4, 8],
+    //     },
+    //   ],
+    // },
+    // {
+    //   label: 'Subscribers',
+    //   value: '17,281',
+    //   percentage: '2.4%',
+    //   increase: false,
+    //   decrease: true,
+    //   chartLabels: [null, null, null, null, null, null, null],
+    //   attrs: { md: '4', sm: '6' },
+    //   datasets: [
+    //     {
+    //       label: 'Today',
+    //       fill: 'start',
+    //       borderWidth: 1.5,
+    //       backgroundColor: 'rgb(0,123,255,0.1)',
+    //       borderColor: 'rgb(0,123,255)',
+    //       data: [3, 2, 3, 2, 4, 5, 4],
+    //     },
+    //   ],
+    // },
   ],
 };
 

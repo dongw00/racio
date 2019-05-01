@@ -40,7 +40,7 @@ class MainSidebar extends React.Component {
       'main-sidebar',
       'px-0',
       'col-12',
-      this.state.menuVisible && 'open'
+      this.state.menuVisible && 'open',
     );
 
     return (
