@@ -4962,7 +4962,7 @@ a.text-accent:hover {
   border-color: #007bff !important;
 }
 .main-navbar .navbar {
-  height: 3.75rem;
+  height: 4rem;
 }
 .main-navbar .navbar > * {
   display: -ms-flexbox;
