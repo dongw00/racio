@@ -6,10 +6,10 @@ function ChangeLanguage() {
     document.getElementById('text1').innerHTML =
       'Experience Web Application for TrimmOne!, <br> You can manage a data efficiently and useful';
     document.getElementById('tag0').innerHTML = 'Home';
-    document.getElementById('tag1').innerHTML = 'Ranking & Achievement';
-    document.getElementById('tag2').innerHTML = 'Database';
-    document.getElementById('tag3').innerHTML = 'Our Product';
-    document.getElementById('tag4').innerHTML = 'Our Services';
+    // document.getElementById('tag1').innerHTML = 'Ranking & Achievement';
+    // document.getElementById('tag2').innerHTML = 'Database';
+    document.getElementById('tag3').innerHTML = '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Our Product';
+    document.getElementById('tag4').innerHTML = '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Our Services';
     document.getElementById('text_fit0').innerHTML = 'Features';
     document.getElementById('text_fit1').innerHTML = 'Comfortable';
     document.getElementById('text_fit2').innerHTML = 'Securitiy';
@@ -31,10 +31,10 @@ function ChangeLanguage() {
     document.getElementById('text1').innerHTML =
       '트림원을 위한 웹 어플리케이션을 경험해보세요. <br>  당신의 데이터를 유용하고 효율적으로 관리 할 수 있습니다.';
     document.getElementById('tag0').innerHTML = '홈';
-    document.getElementById('tag1').innerHTML = '랭킹 & 업적';
-    document.getElementById('tag2').innerHTML = '데이터베이스';
-    document.getElementById('tag3').innerHTML = '제품';
-    document.getElementById('tag4').innerHTML = '기타 서비스';
+    // document.getElementById('tag1').innerHTML = '랭킹 & 업적';
+    // document.getElementById('tag2').innerHTML = '데이터베이스';
+    document.getElementById('tag3').innerHTML = '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 제품 설명';
+    document.getElementById('tag4').innerHTML = '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 기타 서비스';
     document.getElementById('text_fit0').innerHTML = 'trimm만의 특징';
     document.getElementById('text_fit1').innerHTML = '편리함';
     document.getElementById('text_fit2').innerHTML = '보안성';
