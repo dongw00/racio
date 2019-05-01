@@ -23,7 +23,7 @@ function ChangeLanguage() {
       'You can manage your data through the file system';
     document.getElementById('text_fit4_sub').innerHTML =
       'Anytime, anywhere, you can enjoy trimm One!';
-    document.getElementById('post_text').innerHTML ='Latest Posts';
+    document.getElementById('post_text').innerHTML = 'Latest Posts';
 
     language = 'EN';
   } else {
@@ -48,10 +48,7 @@ function ChangeLanguage() {
       '파일 시스템을 통한 데이터 관리';
     document.getElementById('text_fit4_sub').innerHTML =
       '언제 어디서나 사용할 수 있는 trimm One!';
-<<<<<<< HEAD
-=======
-    document.getElementById('post_text').innerHTML ='최근 게시물';
->>>>>>> 5815f521288b901dd933b5f68d0b66854f3e96ae
+    document.getElementById('post_text').innerHTML = '최근 게시물';
 
     language = 'KR';
   }
