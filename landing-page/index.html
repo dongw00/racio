@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -24,13 +25,33 @@
     <link rel="stylesheet" href="css/shards-extras.min.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/login.css" />
-  </head>
+    <link rel="stylesheet" href="css/menu.css" />
+  </head>      
+  <div id="page-wrapper" style="position: relative; z-index: 2">
+      <!-- 사이드바 -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand">
+            <a href="#">Trimm</a>
+          </li>
+          <li><a href="#"><i class="fas fa-home"></i>&nbsp 홈</a></li>
+          <li><a href="#"><i class="fas fa-tablet-alt"></i>&nbsp 제품 설명</a></li>
+          <li><a href="#"><i class="fas fa-hand-holding"></i>&nbsp 기타 서비스</a></li>
+          <li><a href="#"><i class="fas fa-map-signs"></i>&nbsp 오시는 길</a></li>
+          <li><a href="#"><i class="fa fa-language fa-lg"></i>&nbsp 한영 변환</a></li>
+          <li><a href="#"><i class="fa fa-instagram fa-lg"></i>&nbsp Instagram</a></li> 
+          <li><a href="#"><i class="fa fa-facebook fa-lg"></i>&nbsp Facebook</a></li>
+          <li><a href="#"><i class="fa fa-youtube fa-lg"></i>&nbsp Youtube</a></li>
+          <li><i class="fas fa-caret-right" id="exit_nav" onclick="toggleNav(2)"></i></li>
+        </ul>
+      </div>
+  </div>
   <body class="shards-app-promo-page--1">
     <!-- Welcome Section -->
     <div class="welcome d-flex justify-content-center flex-column">
       <div class="container">
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark pt-4 px-0">
+        <nav id = "highest_nav" class="navbar navbar-expand-lg navbar-dark pt-4 px-0">
           <a class="navbar-brand mr-5" href="#">
             <img src="images/app-promo/trimm_logo.png" />
           </a>
@@ -42,30 +63,37 @@
             aria-controls="navbarNavDropdown"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onclick="toggleNav(1)"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#" id="tag0"
-                  >홈 <span class="sr-only">(current)</span></a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" id="tag3"
-                  >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 제품 설명</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" id="tag4"
-                  >&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp 기타 서비스</a
-                >
-              </li>
-            </ul>
-
+            <i class="fas fa-caret-right fa-lg" id="toolbar_menu"></i>
+            <div>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#" id="tag0"
+                    >&nbsp홈<span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="tag3"
+                    >&nbsp제품 설명</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" id="tag4"
+                    >&nbsp기타 서비스</a
+                  >
+                </li>
+              </ul>
+            </div>
             <!-- Social Icons -->
             <ul class="header-social-icons navbar-nav ml-auto">
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="far fa-caret-square-left fa-lg"></i></a>
+              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="#" onclick="ChangeLanguage()"
                   ><i class="fa fa-language fa-lg"></i
@@ -105,7 +133,7 @@
             <div id="hide_login">
               <div id="dvAuth">
                 <div id="dvLogin">
-                  <h5 class="login_title">Account</h5>
+                  <h5 class="login_title">Account Login</h5>
                   <div id="dvSocial">
                     <div class="btnGroup">
                       <li
@@ -205,8 +233,11 @@
                   </li>
                 </div>
               </div>
-              <em id="back" onclick="active_login('hide_signup','hide_login')"
-                >&ltback</em
+              <em
+                class="login-btn" 
+                id="back" 
+                onclick="active_login('hide_signup','hide_login')"
+                ><i class="fa fa-angle-left"></i>back</em
               >
             </div>
 
@@ -215,11 +246,10 @@
               <span id="typed" class="welcome-heading text-white"></span>
               <p class="text-muted" id="text1">
                 트림원을 위한 웹 어플리케이션을 경험해보세요. <br />
-                당신의 데이터를 유용하고 효율적으로 관리 할 수 있습니다. <br />
                 더 나은 삶을 경험해볼 준비가 되셨나요?
               </p>
 
-              <div id="login_button" style="display: none">
+              <div id="login_button">
                 <a
                   id="text_login"
                   href="#"
@@ -281,7 +311,7 @@
             <img
               class="mt-auto mb-auto"
               src="images/app-promo/Trimm_Device.png"
-              alt="App Screenshot - Shards App Promo Demo Page"
+              
             />
           </div>
 
@@ -503,7 +533,7 @@
     <footer>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand" href="#">Shards Agency</a>
+          <a class="navbar-brand" href="#">Trimm</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -512,12 +542,14 @@
             aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onclick="toggleNav(1)"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
       </nav>
     </footer>
+    
     <!-- / Footer Section -->
 
     <!-- JavaScript Dependencies -->
@@ -528,6 +560,7 @@
     <script src="js/index.js"></script>
     <script src="js/login.js"></script>
     <script src="js/language.js"></script>
+    <script src="js/menu.js"></script>
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
 

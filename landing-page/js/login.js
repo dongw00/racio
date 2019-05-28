@@ -12,10 +12,10 @@ function confirmLogin(){
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       try {
-        set_user(user);
+        //set_user(user);
       } catch (error) {}
     } else {
-      document.getElementById('login_button').style.display = 'block';
+      // document.getElementById('login_button').style.display = 'block';
     }
   });
 }
@@ -37,24 +37,29 @@ function active_login(id1, id2) {
 
 //정보입력
 function set_user(user) {
-  active_login('login_button', 'hide_dash');
-  active_login('hide_login', 'change_login');
+  location.href="http://react-deploy-44.s3-website.ap-northeast-2.amazonaws.com/main";
+    
 
-  if (user.photoURL === null) {
-    document.getElementById(
-      'rounded1'
-    ).style.backgroundImage = `url(/../images/app-promo/No_url.png)`;
-  } else {
-    document.getElementById('rounded1').style.backgroundImage = `url(${
-      user.photoURL
-    })`;
-  }
-  document.getElementById('user_info').innerHTML = `
-    Name : ${user.displayName}
-    <br>
-    Email : ${user.email}
-    <br>
-  `;
+
+  // active_login('login_button', 'hide_dash');
+  // active_login('hide_login', 'change_login');
+
+
+  // if (user.photoURL === null) {
+  //   document.getElementById(
+  //     'rounded1'
+  //   ).style.backgroundImage = `url(/../images/app-promo/No_url.png)`;
+  // } else {
+  //   document.getElementById('rounded1').style.backgroundImage = `url(${
+  //     user.photoURL
+  //   })`;
+  // }
+  // document.getElementById('user_info').innerHTML = `
+  //   Name : ${user.displayName}
+  //   <br>
+  //   Email : ${user.email}
+  //   <br>
+  // `;
 }
 
 //이메일 생성가능 판단
