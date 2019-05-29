@@ -50,12 +50,12 @@ const MainPage = ({ smallStats }) => (
         <UsersByDevice />
       </Col>
 
-      {/* Discussions */}
+      {/* Mission */}
       <Col lg="5" md="12" sm="12" className="mb-4">
         <Mission />
       </Col>
 
-      {/* Top Referrals */}
+      {/* Ranking */}
       <Col lg="3" md="12" sm="12" className="mb-4">
         <Ranking />
       </Col>
