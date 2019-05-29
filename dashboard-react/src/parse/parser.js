@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Long from 'long';
+import CustomFileUpload from '../components/components-overview/CustomFileUpload';
 
-const eventType = {
-  LOG_TYPE_RESUME: 1,
-  LOG_TYPE_PAUSE: 2,
-  LOG_TYPE_LAP: 3,
-}
+// const eventType = {
+//   LOG_TYPE_RESUME: 1,
+//   LOG_TYPE_PAUSE: 2,
+//   LOG_TYPE_LAP: 3,
+// }
 
 class ReadLog extends Component {
   constructor(props) {
@@ -15,7 +16,6 @@ class ReadLog extends Component {
   }
   handleChange(e) {
     let file = e.target.files[0];
-    if (file === undefined) return;
     let fileReader = new FileReader();
     fileReader.onload = () => {
       this.parse(new Uint32Array(fileReader.result));
@@ -39,6 +39,7 @@ class ReadLog extends Component {
         });
       } else {
         let states = {};
+        states.time = time;
         let flag = r[++i] & 0xffff0000;
         let speed = r[i] & 0xffff;
         states.flag = flag;
@@ -95,9 +96,10 @@ class ReadLog extends Component {
   }
   render() {
     return (
-      <div>
-        <input type="file" onChange={this.handleChange.bind(this)} />
-      </div>
+      <CustomFileUpload onChange={this.handleChange.bind(this)}/>
+      // <div>
+      //   <input type="file" onChange={this.handleChange.bind(this)} />
+      // </div>
     );
   }
 }
