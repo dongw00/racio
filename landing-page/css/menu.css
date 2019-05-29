@@ -52,6 +52,8 @@
   font-size: 1.3em;
   line-height: 3em;
   font-weight: bold;
+  position: relative;
+  left: 200px;
 }
 #exit_nav {
   cursor: pointer;
