@@ -53,11 +53,11 @@
   cursor: pointer;
 }
 
-#user_info{
-  color : white;
+#user_info {
+  color: white;
 }
 #logoutbtn {
-  color : white;
+  color: white;
   cursor: pointer;
 }
 
@@ -140,13 +140,31 @@
 }
 
 #typed {
-  font-size : 57px;
+  font-size: 57px;
 }
 
-#text_login{
-  background: -moz-linear-gradient(-45deg,  rgba(0,0,0,0.65) 12%, rgba(0,0,0,0.65) 22%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0) 83%); 
-  background: -webkit-linear-gradient(-45deg,  rgba(0,0,0,0.65) 12%,rgba(0,0,0,0.65) 22%,rgba(0,0,0,0.25) 60%,rgba(0,0,0,0) 83%); 
-  background: linear-gradient(135deg,  rgba(0,0,0,0.65) 12%,rgba(0,0,0,0.65) 22%,rgba(0,0,0,0.25) 60%,rgba(0,0,0,0) 83%); 
+#text_login {
+  background: -moz-linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.65) 12%,
+    rgba(0, 0, 0, 0.65) 22%,
+    rgba(0, 0, 0, 0.25) 60%,
+    rgba(0, 0, 0, 0) 83%
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.65) 12%,
+    rgba(0, 0, 0, 0.65) 22%,
+    rgba(0, 0, 0, 0.25) 60%,
+    rgba(0, 0, 0, 0) 83%
+  );
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.65) 12%,
+    rgba(0, 0, 0, 0.65) 22%,
+    rgba(0, 0, 0, 0.25) 60%,
+    rgba(0, 0, 0, 0) 133%
+  );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );
   border: 1px;
 }
