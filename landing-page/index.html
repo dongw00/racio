@@ -13,7 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- CSS Dependencies -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -26,32 +31,65 @@
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/login.css" />
     <link rel="stylesheet" href="css/menu.css" />
-  </head>      
+  </head>
   <div id="page-wrapper" style="position: relative; z-index: 2">
-      <!-- 사이드바 -->
-      <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <li class="sidebar-brand">
-            <a href="#">Trimm</a>
-          </li>
-          <li><a href="#"><i class="fas fa-home"></i>&nbsp 홈</a></li>
-          <li><a href="#"><i class="fas fa-tablet-alt"></i>&nbsp 제품 설명</a></li>
-          <li><a href="#"><i class="fas fa-hand-holding"></i>&nbsp 기타 서비스</a></li>
-          <li><a href="#"><i class="fas fa-map-signs"></i>&nbsp 오시는 길</a></li>
-          <li><a href="#"><i class="fa fa-language fa-lg"></i>&nbsp 한영 변환</a></li>
-          <li><a href="#"><i class="fa fa-instagram fa-lg"></i>&nbsp Instagram</a></li> 
-          <li><a href="#"><i class="fa fa-facebook fa-lg"></i>&nbsp Facebook</a></li>
-          <li><a href="#"><i class="fa fa-youtube fa-lg"></i>&nbsp Youtube</a></li>
-          <li><i class="fas fa-caret-right" id="exit_nav" onclick="toggleNav(2)"></i></li>
-        </ul>
-      </div>
+    <!-- 사이드바 -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a href="#">Trimm</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-home"></i>&nbsp 홈</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-tablet-alt"></i>&nbsp 제품 설명</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-hand-holding"></i>&nbsp 기타 서비스</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-map-signs"></i>&nbsp 오시는 길</a>
+        </li>
+        <li>
+          <a href="#" onclick="ChangeLanguage()"
+            ><i class="fa fa-language fa-lg"></i>&nbsp 한영 변환</a
+          >
+        </li>
+        <li>
+          <a href="https://www.instagram.com/trimmbike/"
+            ><i class="fa fa-instagram fa-lg"></i>&nbsp Instagram</a
+          >
+        </li>
+        <li>
+          <a href="https://www.facebook.com/trimmbikecomputer/"
+            ><i class="fa fa-facebook fa-lg"></i>&nbsp Facebook</a
+          >
+        </li>
+        <li>
+          <a href="https://www.youtube.com/channel/UCzsilV9p11bt_T3PhUEnYww"
+            ><i class="fa fa-youtube fa-lg"></i>&nbsp Youtube</a
+          >
+        </li>
+        <li>
+          <i
+            class="fas fa-times-circle fa-lg"
+            id="exit_nav"
+            onclick="toggleNav(2)"
+          ></i>
+        </li>
+      </ul>
+    </div>
   </div>
   <body class="shards-app-promo-page--1">
     <!-- Welcome Section -->
     <div class="welcome d-flex justify-content-center flex-column">
       <div class="container">
         <!-- Navigation -->
-        <nav id = "highest_nav" class="navbar navbar-expand-lg navbar-dark pt-4 px-0">
+        <nav
+          id="highest_nav"
+          class="navbar navbar-expand-lg navbar-dark pt-4 px-0"
+        >
           <a class="navbar-brand mr-5" href="#">
             <img src="images/app-promo/trimm_logo.png" />
           </a>
@@ -77,14 +115,10 @@
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#" id="tag3"
-                    >&nbsp제품 설명</a
-                  >
+                  <a class="nav-link" href="#" id="tag3">&nbsp제품 설명</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#" id="tag4"
-                    >&nbsp기타 서비스</a
-                  >
+                  <a class="nav-link" href="#" id="tag4">&nbsp기타 서비스</a>
                 </li>
               </ul>
             </div>
@@ -234,8 +268,8 @@
                 </div>
               </div>
               <em
-                class="login-btn" 
-                id="back" 
+                class="login-btn"
+                id="back"
                 onclick="active_login('hide_signup','hide_login')"
                 ><i class="fa fa-angle-left"></i>back</em
               >
@@ -311,7 +345,6 @@
             <img
               class="mt-auto mb-auto"
               src="images/app-promo/Trimm_Device.png"
-              
             />
           </div>
 
@@ -549,7 +582,7 @@
         </div>
       </nav>
     </footer>
-    
+
     <!-- / Footer Section -->
 
     <!-- JavaScript Dependencies -->
