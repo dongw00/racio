@@ -1,0 +1,20 @@
+.carousel{
+    box-shadow : none;
+}
+
+#highest_nav{
+    padding-left :10%;
+    padding-right :10%;    
+    z-index:2;
+    background-color: rgba(0, 0, 0, 0.322);
+}
+
+/* 고정 상단 네비게이션 바 */
+#toolbar_menu {
+    cursor: pointer;
+}
+  
+#page-wrapper{
+    position: relative;
+    z-index:3;
+}

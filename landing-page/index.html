@@ -31,14 +31,15 @@
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/login.css" />
     <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/slide.css" />
   </head>
-  <div id="page-wrapper" style="position: relative; z-index: 2">
+  <div id="page-wrapper">
     <!-- 사이드바 -->
     <div id="sidebar-wrapper">
       <ul class="sidebar-nav">
-        <li class="sidebar-brand">
+        <li class="sidebar-brand" onclick="toggleNav(2)">
           <a href="#"
-            ><i class="fas fa-times-circle fa-lg" onclick="toggleNav(2)"></i
+            ><i class="fas fa-times-circle fa-lg"></i
           ></a>
         </li>
         <li>
@@ -91,8 +92,8 @@
         <!-- Navigation -->
         <nav
           id="highest_nav"
-          class="navbar navbar-expand-lg navbar-dark pt-4 px-0"
-        >
+          class="navbar fixed-top navbar-expand-lg navbar-dark pt-1 pb-1"
+        >          
           <a class="navbar-brand mr-5" href="#">
             <img src="images/app-promo/trimm_logo.png" />
           </a>
@@ -109,7 +110,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <i class="fas fa-caret-right fa-lg" id="toolbar_menu"></i>
+          <i class="fas fa-caret-right fa-lg" id="toolbar_menu"></i>
             <div>
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
@@ -127,10 +128,6 @@
             </div>
             <!-- Social Icons -->
             <ul class="header-social-icons navbar-nav ml-auto">
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="#"
-                  ><i class="far fa-caret-square-left fa-lg"></i></a>
-              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="#" onclick="ChangeLanguage()"
                   ><i class="fa fa-language fa-lg"></i
@@ -156,7 +153,6 @@
                 ></a>
               </li>
             </ul>
-          </div>
         </nav>
         <!-- / Navigation -->
       </div>
@@ -344,13 +340,45 @@
     <div id="app-features" class="app-features section">
       <div class="container-fluid">
         <div class="row">
-          <div class="app-screenshot col-lg-4 col-md-12 col-sm-12 px-0 py-5">
-            <img class="mt-auto mb-auto" src="images/app-promo/Trimm_Device.png" />
+          <!-- <div class="col-lg-12">
+              
+          </div> -->
+
+          <div class="col-lg-6 col-md-12 col-sm-12 px-0 py-5">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 py-4"></div>
+              <div class="col-lg-12 py-4"></div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-2"></div><div class="col-lg-5 col-md-6 col-sm-6 col-8">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="d-block w-100" src="images/app-promo/front_pink.png">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="images/app-promo/front_skyblue.png">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="images/app-promo/front_red.png">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+              </div>
+            </div>
+            </div>
+              <!-- <img class="mt-auto mb-auto" src="images/app-promo/Trimm_Device.png" /> -->
           </div>
 
           <!-- App Features Wrapper -->
+          <!-- <div class="app-features-wrapper col-lg-3"></div> -->
           <div
-            class="app-features-wrapper col-lg-4 col-md-6 col-sm-12 py-5 mx-auto"
+            class="app-features-wrapper col-lg-6 col-md-6 col-sm-12 py-5 mx-auto"
           >
             <div class="container">
               <h3 class="section-title underline--left my-5" id="text_fit0">
@@ -567,17 +595,6 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
           <a class="navbar-brand" href="#">Trimm</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            onclick="toggleNav(1)"
-          >
-            <span class="navbar-toggler-icon"></span>
           </button>
         </div>
       </nav>
