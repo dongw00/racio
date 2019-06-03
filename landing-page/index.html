@@ -113,16 +113,19 @@
           <i class="fas fa-caret-right fa-lg" id="toolbar_menu"></i>
             <div>
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li>&nbsp</li>
+                <li class="nav-item active dynamic_underline">
                   <a class="nav-link" href="#" id="tag0"
-                    >&nbsp홈<span class="sr-only">(current)</span></a
+                    >홈<span class="sr-only">(current)</span></a
                   >
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#" id="tag3">&nbsp제품 설명</a>
+                <li>&nbsp</li>
+                <li class="nav-item dynamic_underline">
+                  <a class="nav-link" href="#" id="tag3">제품 설명</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#" id="tag4">&nbsp기타 서비스</a>
+                <li>&nbsp</li>
+                <li class="nav-item dynamic_underline">
+                  <a class="nav-link" href="#" id="tag4">기타 서비스</a>
                 </li>
               </ul>
             </div>
@@ -286,7 +289,7 @@
                 <a
                   id="text_login"
                   href="#"
-                  class="btn btn-lg btn-primary btn-pill align-self-center text-md-center"
+                  class="btn btn-lg btn-primary btn-pill align-self-center text-md-center luxury_btn"
                   onclick="active_login('change_login','hide_login')"
                   ><i class="fa fa-sign-in mr-2"></i>로그인</a
                 >
@@ -323,10 +326,10 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-5 col-sm-12 ml-auto">
+          <div class="col-lg-4 col-md-5 col-sm-11 py-5 ml-auto">
             <img
-              class="iphone-mockup ml-auto"
-              src="images/app-promo/iphone_black.svg"
+              class="iphone-mockup trimm_phone ml-auto"
+              src="images/app-promo/trimm_phone_case3.png"
               alt="iPhone App Mockup"
             />
           </div>
@@ -339,12 +342,8 @@
     <!-- Features Section -->
     <div id="app-features" class="app-features section">
       <div class="container-fluid">
-        <div class="row">
-          <!-- <div class="col-lg-12">
-              
-          </div> -->
-
-          <div class="col-lg-6 col-md-12 col-sm-12 px-0 py-5">
+        <div class="row h-100">
+          <div id="left_feature" class="col-lg-6 col-md-12 col-sm-12 px-0 py-5">
             <div class="row">
               <div class="col-lg-12 col-md-12 py-4"></div>
               <div class="col-lg-12 py-4"></div>
@@ -377,61 +376,70 @@
 
           <!-- App Features Wrapper -->
           <!-- <div class="app-features-wrapper col-lg-3"></div> -->
-          <div
-            class="app-features-wrapper col-lg-6 col-md-6 col-sm-12 py-5 mx-auto"
-          >
-            <div class="container">
-              <h3 class="section-title underline--left my-5" id="text_fit0">
-                trimm만의 특징
-              </h3>
-              <div class="feature py-4 d-flex">
-                <div class="icon text-white bg-success mr-5">
-                  <i class="fa fa-refresh"></i>
-                </div>
-                <div>
-                  <h5 id="text_fit1">편리함</h5>
-                  <p id="text_fit1_sub">
-                    누구나 쉽게 사용할 수 있는 간편하고 깔끔한 UI
-                  </p>
-                </div>
-              </div>
-
-              <div class="feature py-4 d-flex">
-                <div class="icon text-white bg-success mr-5">
-                  <i class="fa fa-shield"></i>
-                </div>
-                <div>
-                  <h5 id="text_fit2">보안성</h5>
-                  <p id="text_fit2_sub">
-                    철저하고 완벽하게 개인 정보 보호
-                  </p>
-                </div>
-              </div>
-
-              <div class="feature py-4 d-flex">
-                <div class="icon text-white bg-success mr-5">
-                  <i class="fa fa-share"></i>
-                </div>
-                <div>
-                  <h5 id="text_fit3">데이터 공유</h5>
-                  <p id="text_fit3_sub">
-                    파일 시스템을 통한 데이터 관리
-                  </p>
-                </div>
-              </div>
-
-              <div class="feature py-4 d-flex">
-                <div class="icon text-white bg-success mr-5">
-                  <i class="fa fa-globe"></i>
-                </div>
-                <div>
-                  <h5 id="text_fit4">어디서나 쉽게!</h5>
-                  <p id="text_fit4_sub">
-                    언제 어디서나 사용할 수 있는 trimm One!
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div id="right_feature" class="col-lg-6 col-md-12 col-sm-12 py-5 px-0">
+            <div class="row h-100">
+              <!-- <div class="col-lg-12"> -->
+              <div class="col-12">
+                <h3 class="section-title underline--left my-5" id="text_fit0">
+                  Trimm One 소개
+                </h3>
+              </div>  
+              <!-- </div> -->
+              <!-- <div id="features_table"> -->
+              <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-12"> -->
+                <div class="Bigtable col-12">
+                  <div id="table1">
+                    <div id="table_btn2">
+                      <img src="images/app-promo/icon/battery-full-solid.svg" class="icon_feature">
+                    </div>
+                    <div id="table_btn3">
+                      <img src="images/app-promo/icon/compass-regular.svg" class="icon_feature">
+                    </div>
+                    <div id="table_btn4">
+                        <img src="images/app-promo/icon/phone-volume-solid.svg" class="icon_feature">
+                      </div>
+                    <div id="table_btn5">
+                        <img src="images/app-promo/icon/globe-solid.svg" class="icon_feature">
+                    </div>
+                    <div id="table_btn6">
+                        <img src="images/app-promo/icon/chart-line-solid.svg" class="icon_feature">
+                    </div>
+                    <div id="table_btn7">
+                        <img src="images/app-promo/icon/heartbeat-solid.svg" class="icon_feature">
+                    </div>
+                    <div id="table_btn8">
+                        <img src="images/app-promo/icon/file-export-solid.svg" class="icon_feature">
+                    </div>
+                    <div id="table_btn9">
+                        <img src="images/app-promo/icon/shield-alt-solid.svg" class="icon_feature">
+                    </div>
+                    
+                  </div>
+                    <div id="table_back">
+                      <img class="img_set" src="images/app-promo/trimm_bike.jpg">
+                    </div>
+                    <div id="table2">
+                    </div>
+                    <div id="table3">
+                    </div>
+                    <div id="table4">
+                    </div>
+                    <div id="table5">
+                    </div>
+                    <div id="table6">
+                    </div>
+                    <div id="table7">
+                    </div>
+                    <div id="table8">
+                    </div>
+                    <div id="table9">
+                    </div>
+      
+                  </div>
+                  </div>
+                  
+                <!-- </div> -->
+              <!-- </div> -->
           </div>
         </div>
       </div>
