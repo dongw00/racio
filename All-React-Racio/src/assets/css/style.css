@@ -10,7 +10,7 @@
   margin-left: auto;
 }
 
-.blog-comments__arrow img {
+.blog-comments__arrow input {
   width: 1.5rem;
   height: 3em;
   border-radius: 0.25rem;

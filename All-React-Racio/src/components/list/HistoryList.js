@@ -10,13 +10,12 @@ import _ from 'lodash';
 import preview from '../../assets/images/preview.jpg';
 import rightArrow from '../../assets/images/right_arrow.png';
 
-
 class HistoryList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: null
-    }
+      view: null,
+    };
     this.getMonth = this.getMonth.bind(this);
   }
 
@@ -53,18 +52,20 @@ class HistoryList extends React.Component {
   }
 
   test(log) {
-    this.setState({view: log});
+    this.setState({ view: log });
   }
 
   render() {
     if (!this.props.data) return <p>Loading...</p>;
-    else if(this.props.data === []) return <p>No Records</p>
+    else if (this.props.data === []) return <p>No Records</p>;
     else {
       if (this.state.view) {
-        return <HistoryDetails log={this.state.view}/>;
+        return <HistoryDetails log={this.state.view} />;
       } else {
-        const parseDate = item => new Date(946728000000 + item.header.time * 1000);
-        const monthName = item => moment(parseDate(item), 'YYYY-MM-DD').format('M');
+        const parseDate = item =>
+          new Date(946728000000 + item.header.time * 1000);
+        const monthName = item =>
+          moment(parseDate(item), 'YYYY-MM-DD').format('M');
         const resultData = _.groupBy(this.props.data, monthName);
         const resData = _.toPairs(resultData).sort((o1, o2) => {
           if (o1[0] > o2[0]) return -1;
@@ -106,8 +107,10 @@ class HistoryList extends React.Component {
                     </div>
                   </div>
                   {/* icon */}
-                  <NavLink className="blog-comments__arrow mr-4" onClick={this.test.bind(this, el)}>
-                    <img src={rightArrow} alt="arrow" />
+                  <NavLink
+                    className="blog-comments__arrow mr-4"
+                    onClick={this.test.bind(this, el)}>
+                    <input type="image" src={rightArrow} Alt="" />
                   </NavLink>
                 </div>
               ))}

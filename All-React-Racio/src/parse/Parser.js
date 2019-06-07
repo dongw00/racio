@@ -11,8 +11,6 @@ import { setLogData, readLogData } from './Database';
 
 const SaveLog = () => (
   <div>
-    Have a NEW Record?
-        <CustomFileUpload onChange={setLogData} />
   </div>
 );
 
