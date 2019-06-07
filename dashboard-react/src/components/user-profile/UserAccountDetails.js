@@ -15,6 +15,8 @@ import {
   Button
 } from "shards-react";
 
+
+
 const UserAccountDetails = ({ title }) => (
   <Card small className="mb-4">
     <CardHeader className="border-bottom">
@@ -115,7 +117,12 @@ const UserAccountDetails = ({ title }) => (
                 {/* Description */}
                 <Col md="12" className="form-group">
                   <label htmlFor="feDescription">자기 소개</label>
-                  <FormTextarea id="feDescription" rows="5" />
+                  <FormTextarea 
+                  id="feDescription"
+                  rows="5"
+                  value=""
+                  onChange={() => {}}
+                  />
                 </Col>
               </Row>
               <Button theme="accent">변경</Button>

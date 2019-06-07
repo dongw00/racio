@@ -14,7 +14,7 @@ const DefaultLayout = ({ children, noNavbar, noFooter }) => (
         className="main-content p-0"
         lg={{ size: 10, offset: 2 }}
         md={{ size: 9, offset: 3 }}
-        sm="12"
+        // sm="12"
         tag="main">
         {!noNavbar && <MainNavbar />}
         {children}

@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardHeader, CardBody } from 'shards-react';
+import { NavItem, NavLink, Card, CardHeader, CardBody } from 'shards-react';
 
+import HistoryDetails from '../../parse/HistoryDetails';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 import _ from 'lodash';
 
@@ -11,7 +13,9 @@ import rightArrow from '../../assets/images/right_arrow.png';
 class HistoryList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { data: props.data, isLoading: false };
+    this.state = {
+      view: null,
+    };
     this.getMonth = this.getMonth.bind(this);
   }
 
@@ -47,72 +51,75 @@ class HistoryList extends React.Component {
     }
   }
 
+  test(log) {
+    this.setState({ view: log });
+  }
+
   render() {
-    const { data, isLoading } = this.state;
+    if (!this.props.data) return <p>Loading...</p>;
+    else if (this.props.data === []) return <p>No Records</p>;
+    else {
+      if (this.state.view) {
+        return <HistoryDetails log={this.state.view} />;
+      } else {
+        const parseDate = item =>
+          new Date(946728000000 + item.header.time * 1000);
+        const monthName = item =>
+          moment(parseDate(item), 'YYYY-MM-DD').format('M');
+        const resultData = _.groupBy(this.props.data, monthName);
+        const resData = _.toPairs(resultData).sort((o1, o2) => {
+          if (o1[0] > o2[0]) return -1;
+          else if (o1[0] < o2[0]) return 1;
+          else return 0;
+        });
+        const HistList = resData.map((els, idx) => (
+          <Card key={idx} className="mb-4">
+            <CardHeader className="border-bottom">
+              <h6 className="m-0">{this.getMonth(els[0])}</h6>
+            </CardHeader>
 
-    if (isLoading) return <p>Loading...</p>;
+            <CardBody className="p-0">
+              {els[1].map((el, idx) => (
+                <div key={idx} className="blog-comments__item d-flex p-3">
+                  {/* Map preview part */}
+                  <div className="blog-comments__history mr-3">
+                    <img src={preview} alt="preview" />
+                  </div>
+                  {/* Content */}
+                  <div className="blog-comments__content">
+                    {/* Content :: Title */}
+                    <div className="blog-comments__meta text-mutes">
+                      <span className="text-mutes">
+                        {moment(parseDate(el)).format('YYYY-MM-DD')}
+                      </span>
+                    </div>
 
-    /* Sort by recent date */
-    data.sort((o1, o2) => {
-      if (o1.date > o2.date) return -1;
-      else if (o1.date < o2.date) return 1;
-      else return 0;
-    });
+                    {/* Content :: Body */}
+                    <p className="m-0 my-1 mb-2 text-muted">
+                      {moment(parseDate(el)).format('HH:mm:ss')}
+                    </p>
 
-    const monthName = item => moment(item.date, 'YYYY-MM-DD').format('M');
-
-    const resultData = _.groupBy(data, monthName);
-    const resData = _.toPairs(resultData).sort((o1, o2) => {
-      if (o1[0] > o2[0]) return -1;
-      else if (o1[0] < o2[0]) return 1;
-      else return 0;
-    });
-
-    const HistList = resData.map((els, idx) => (
-      <Card key={idx} className="mb-4">
-        <CardHeader className="border-bottom">
-          <h6 className="m-0">{this.getMonth(els[0])}</h6>
-        </CardHeader>
-
-        <CardBody className="p-0">
-          {els[1].map((el, idx) => (
-            <div key={idx} className="blog-comments__item d-flex p-3">
-              {/* Map preview part */}
-              <div className="blog-comments__history mr-3">
-                <img src={preview} alt="preview" />
-              </div>
-              {/* Content */}
-              <div className="blog-comments__content">
-                {/* Content :: Title */}
-                <div className="blog-comments__meta text-mutes">
-                  <span className="text-mutes">
-                    {moment(el.date).format('YYYY-MM-DD')}
-                  </span>
+                    {/* Content :: Title */}
+                    <div className="blog-comments__meta text-mutes">
+                      {/* <span className="text-mutes">
+                        주행거리 : 10km, 최고 속도 : 9km/h
+                    </span> */}
+                    </div>
+                  </div>
+                  {/* icon */}
+                  <NavLink
+                    className="blog-comments__arrow mr-4"
+                    onClick={this.test.bind(this, el)}>
+                    <input type="image" src={rightArrow} alt="" />
+                  </NavLink>
                 </div>
-
-                {/* Content :: Body */}
-                <p className="m-0 my-1 mb-2 text-muted">
-                  {moment(el.date).format('YYYY-MM-DD')}
-                </p>
-
-                {/* Content :: Title */}
-                <div className="blog-comments__meta text-mutes">
-                  <span className="text-mutes">
-                    주행거리 : 10km, 최고 속도 : 9km/h
-                  </span>
-                </div>
-              </div>
-              {/* icon */}
-              <div className="blog-comments__arrow mr-4">
-                <img src={rightArrow} alt="arrow" />
-              </div>
-            </div>
-          ))}
-        </CardBody>
-      </Card>
-    ));
-
-    return <>{HistList}</>;
+              ))}
+            </CardBody>
+          </Card>
+        ));
+        return HistList;
+      }
+    }
   }
 }
 

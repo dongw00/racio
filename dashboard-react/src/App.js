@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/shards-dashboards.1.1.css';
 import './assets/css/style.css';
 
-export default () => (
+const APP = () => (
   <Router basename={process.env.REACT_APP_BASENAME || ''}>
     <div>
       {routes.map((route, index) => {
@@ -18,7 +18,7 @@ export default () => (
             exact={route.exact}
             component={props => {
               return (
-                <route.layout {...props}>
+                <route.layout {...props} >
                   <route.component {...props} />
                 </route.layout>
               );
@@ -29,3 +29,5 @@ export default () => (
     </div>
   </Router>
 );
+
+export default APP;

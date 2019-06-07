@@ -10,15 +10,21 @@ import {
   NavLink,
 } from 'shards-react';
 
+import {app} from '../../../../firebase/FBinit';
+
 export default class UserActions extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      visible: false,
+      user: null,
+      visible: false
     };
 
     this.toggleUserActions = this.toggleUserActions.bind(this);
+    this.ConfirmLogin = this.ConfirmLogin.bind(this);
+
+    this.ConfirmLogin();
   }
 
   toggleUserActions() {
@@ -27,16 +33,22 @@ export default class UserActions extends React.Component {
     });
   }
 
+  ConfirmLogin() {
+    app.auth().onAuthStateChanged(user => {
+        if(user) this.setState({ user });
+    });
+}
+
   render() {
     return (
       <NavItem tag={Dropdown} caret toggle={this.toggleUserActions}>
         <DropdownToggle caret tag={NavLink} className="text-nowrap px-3">
           <img
             className="user-avatar rounded-circle mr-2"
-            src={require('./../../../../assets/images/avatars/wo.jpg')}
+            src={this.state.user ? this.state.user.photoURL : require("../../../../assets/images/app-promo/No_url.png")}
             alt="User Avatar"
           />{' '}
-          <span className="d-none d-md-inline-block">박진우</span>
+          <span className="d-none d-md-inline-block">{this.state.user ? this.state.user.displayName : null}</span>
         </DropdownToggle>
         <Collapse tag={DropdownMenu} small open={this.state.visible}>
           <DropdownItem tag={Link} to="user-profile">

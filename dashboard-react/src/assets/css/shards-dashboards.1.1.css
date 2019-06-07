@@ -5684,6 +5684,13 @@ html .ql-toolbar .ql-picker .ql-picker-options {
     font-weight: 400;
   }
 }
+@media (max-width: 767.98px){
+  .main-sidebar {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    box-shadow: none;
+  }
+}
 @media (max-width: 991.98px) {
   .main-navbar .navbar .notifications {
     position: static;
@@ -5695,11 +5702,6 @@ html .ql-toolbar .ql-picker .ql-picker-options {
   .main-navbar .navbar .notifications .dropdown-menu {
     left: 0;
     right: 0;
-  }
-  .main-sidebar {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-    box-shadow: none;
   }
   .main-sidebar__search {
     box-sizing: border-box;

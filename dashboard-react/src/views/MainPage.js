@@ -9,6 +9,7 @@ import UsersByDevice from '../components/main/UsersByDevice';
 import Mission from '../components/main/Mission';
 import Ranking from '../components/common/Ranking';
 
+
 const MainPage = ({ smallStats }) => (
   <Container fluid className="main-content-container px-4">
     {/* Page Header */}
@@ -50,12 +51,12 @@ const MainPage = ({ smallStats }) => (
         <UsersByDevice />
       </Col>
 
-      {/* Mission */}
+      {/* Discussions */}
       <Col lg="5" md="12" sm="12" className="mb-4">
         <Mission />
       </Col>
 
-      {/* Ranking */}
+      {/* Top Referrals */}
       <Col lg="3" md="12" sm="12" className="mb-4">
         <Ranking />
       </Col>
@@ -90,7 +91,7 @@ MainPage.defaultProps = {
     },
     {
       label: 'WEEKLY',
-      value: '182',
+      value: 0,
       percentage: '12.4',
       increase: true,
       chartLabels: [null, null, null, null, null, null, null],

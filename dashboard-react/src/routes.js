@@ -1,10 +1,10 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
+// import React from 'react';
 
 // Layout Types
 import { DefaultLayout } from './layouts';
 
 // Route Views
+import Landing from './views/Landing';
 import MainPage from './views/MainPage';
 import UserProfile from './views/UserProfile';
 // import ComponentsOverview from './views/ComponentsOverview';
@@ -17,8 +17,8 @@ export default [
   {
     path: '/',
     exact: true,
-    layout: DefaultLayout,
-    component: () => <Redirect to="/main" />,
+    layout: 'div',
+    component: Landing,
   },
   /* Dashboard - main page */
   {
