@@ -1,0 +1,17 @@
+.blog-comments__history img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.25rem;
+}
+
+.blog-comments__arrow {
+  align-self: center;
+  justify-content: right;
+  margin-left: auto;
+}
+
+.blog-comments__arrow img {
+  width: 1.5rem;
+  height: 3em;
+  border-radius: 0.25rem;
+}
