@@ -9,7 +9,7 @@ function ChangeLanguage() {
     // document.getElementById('tag1').innerHTML = 'Ranking & Achievement';
     // document.getElementById('tag2').innerHTML = 'Database';
     document.getElementById('tag3').innerHTML = 'Our Product';
-    document.getElementById('tag4').innerHTML = 'Our Services';
+    document.getElementById('tag4').innerHTML = 'Pre-Sale';
     document.getElementById('text_fit0').innerHTML = 'Features';
     // document.getElementById('text_fit1').innerHTML = 'Comfortable';
     // document.getElementById('text_fit2').innerHTML = 'Securitiy';
@@ -34,7 +34,7 @@ function ChangeLanguage() {
     // document.getElementById('tag1').innerHTML = '랭킹 & 업적';
     // document.getElementById('tag2').innerHTML = '데이터베이스';
     document.getElementById('tag3').innerHTML = '제품 설명';
-    document.getElementById('tag4').innerHTML = '기타 서비스';
+    document.getElementById('tag4').innerHTML = '사전 예약구매';
     document.getElementById('text_fit0').innerHTML = 'Trimm One 소개';
     // document.getElementById('text_fit1').innerHTML = '편리함';
     // document.getElementById('text_fit2').innerHTML = '보안성';

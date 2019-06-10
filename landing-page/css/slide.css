@@ -144,6 +144,7 @@
   height: 80%;
   background-color: blue;
   position: absolute;
+
   z-index: 1;
 }
 
@@ -158,6 +159,7 @@
   text-indent: 1em;
   font-weight: 700;
   color: black;
+  overflow: scroll;
   z-index: -1;
 }
 
@@ -172,6 +174,7 @@
   text-indent: 1em;
   font-weight: 700;
   color: black;
+  overflow: scroll;
   z-index: -1;
 }
 
@@ -186,6 +189,7 @@
   text-indent: 1em;
   font-weight: 700;
   color: black;
+  overflow: scroll;
   z-index: -1;
 }
 #table5 {
@@ -199,6 +203,7 @@
   text-indent: 1em;
   font-weight: 700;
   color: black;
+  overflow: scroll;
   z-index: -1;
 }
 #table6 {
@@ -212,6 +217,7 @@
   text-indent: 1em;
   font-weight: 700;
   color: black;
+  overflow: scroll;
   z-index: -1;
 }
 #table7 {
@@ -225,6 +231,7 @@
   text-indent: 1em;
   font-weight: 700;
   color: black;
+  overflow: scroll;
   z-index: -1;
 }
 #table8 {
@@ -238,6 +245,7 @@
   text-indent: 1em;
   font-weight: 700;
   color: black;
+  overflow: scroll;
   z-index: -1;
 }
 #table9 {
@@ -251,6 +259,7 @@
   text-indent: 1em;
   font-weight: 700;
   color: black;
+
   z-index: -1;
 }
 #table_btn2 {
