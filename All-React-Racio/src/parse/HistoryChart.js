@@ -20,7 +20,6 @@ class HistoryChart extends React.Component {
         },
         elements: {
           line: {
-            // A higher value makes the line look skewed at this ratio.
             tension: 0.3,
           },
           point: {

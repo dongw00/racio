@@ -112,7 +112,7 @@ const HistoryDetails = ({ log }) => {
       {/* Page Header */}
       <Row>
         <Col className="mb-4">
-          <b5 className="text-uppercase page-subtitle">{date}</b5>
+          <h5 className="text-uppercase page-subtitle">{date}</h5>
           <MapComponent />
         </Col>
       </Row>
