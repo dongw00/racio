@@ -16,35 +16,22 @@ class HistoryList extends React.Component {
   }
 
   /* month date to String month */
-  getMonth(month) {
-    switch (month) {
-      case '1':
-        return 'JAN';
-      case '2':
-        return 'FEB';
-      case '3':
-        return 'MAR';
-      case '4':
-        return 'APR';
-      case '5':
-        return 'MAY';
-      case '6':
-        return 'JUN';
-      case '7':
-        return 'JUL';
-      case '8':
-        return 'AUG';
-      case '9':
-        return 'SEP';
-      case '10':
-        return 'OCT';
-      case '11':
-        return 'NOV';
-      case '12':
-        return 'DEC';
-      default:
-        return 'Undefined';
-    }
+  getMonth(v) {
+    const monthName = [
+      'JAN',
+      'FEB',
+      'MAR',
+      'APR',
+      'MAY',
+      'JUN',
+      'JUL',
+      'AUG',
+      'SEP',
+      'OCT',
+      'NOV',
+      'DEC',
+    ];
+    return monthName[v + 1];
   }
 
   render() {
@@ -52,12 +39,15 @@ class HistoryList extends React.Component {
 
     if (isLoading) return <p>Loading...</p>;
 
+    console.dir(data);
     /* Sort by recent date */
     data.sort((o1, o2) => {
       if (o1.date > o2.date) return -1;
       else if (o1.date < o2.date) return 1;
       else return 0;
     });
+
+    console.dir(data);
 
     const monthName = item => moment(item.date, 'YYYY-MM-DD').format('M');
 
@@ -98,7 +88,7 @@ class HistoryList extends React.Component {
                 {/* Content :: Title */}
                 <div className="blog-comments__meta text-mutes">
                   <span className="text-mutes">
-                    주행거리 : 10km, 최고 속도 : 9km/h
+                    주행거리 : 15km, 최고 속도 : 9km/h
                   </span>
                 </div>
               </div>

@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import CustomFileUpload from '../components/components-overview/CustomFileUpload';
-import { setLogData, readLogData } from './Database';
+import React from 'react';
+import { readLogData } from './Database';
 
 // const eventType = {
 //   LOG_TYPE_RESUME: 1,
@@ -8,16 +7,12 @@ import { setLogData, readLogData } from './Database';
 //   LOG_TYPE_LAP: 3,
 // }
 
-
-const SaveLog = () => (
-  <div>
-  </div>
-);
+const SaveLog = () => <div />;
 
 function parseData() {
   return new Promise((resolve, reject) => {
-    readLogData().then((bufferlist) => {
-      var logs = []
+    readLogData().then(bufferlist => {
+      var logs = [];
       bufferlist.forEach(buffer => {
         var log = {}; // one log
         var view = new DataView(buffer);
@@ -25,7 +20,7 @@ function parseData() {
         // Header
         log.header = {
           version: view.getUint32(0, true),
-          time: view.getFloat64(4, true)
+          time: view.getFloat64(4, true),
         };
 
         // Body
@@ -35,7 +30,7 @@ function parseData() {
           if (time < 0) {
             body.push({
               time: time,
-              eventType: view.getUint32(++i * 4, true)
+              eventType: view.getUint32(++i * 4, true),
             });
           } else {
             var state = {};
@@ -45,8 +40,8 @@ function parseData() {
             var locationFlag = flagNSpeed & 0x80000000;
             var flags = flagNSpeed & 0x7fff0000;
             var speed = flagNSpeed & 0xffff;
-            if (speed === 0) { }
-            else {
+            if (speed === 0) {
+            } else {
               if (speed < 0xfffe) {
                 state.speed = speed / 256;
               } else {
@@ -56,7 +51,6 @@ function parseData() {
             }
             state.flags = flags;
 
-
             for (var j = 0; j < 16; j++) {
               if (flags === 0) break;
               if (flags & 0x80000000) {
@@ -64,22 +58,28 @@ function parseData() {
                   case 1: {
                     state.distance = view.getFloat32(++i * 4, true);
                     break;
-                  } case 2: {
+                  }
+                  case 2: {
                     state.altitude = view.getFloat32(++i * 4, true);
                     break;
-                  } case 3: {
+                  }
+                  case 3: {
                     state.cadence = view.getFloat32(++i * 4, true);
                     break;
-                  } case 4: {
+                  }
+                  case 4: {
                     state.heartRate = view.getFloat32(++i * 4, true);
                     break;
-                  } case 5: {
+                  }
+                  case 5: {
                     state.power = view.getFloat32(++i * 4, true);
                     break;
-                  } case 6: {
+                  }
+                  case 6: {
                     state.calories = view.getFloat32(++i * 4, true);
                     break;
-                  } default: {
+                  }
+                  default: {
                   }
                 }
               }
@@ -89,8 +89,8 @@ function parseData() {
             if (locationFlag) {
               state.mercPooint = {
                 x: view.getFloat32(++i * 4, true),
-                y: view.getFloat32(++i * 4, true)
-              }
+                y: view.getFloat32(++i * 4, true),
+              };
             }
             body.push(state);
           }
@@ -104,7 +104,6 @@ function parseData() {
     });
   });
 }
-
 
 export default SaveLog;
 export { parseData };

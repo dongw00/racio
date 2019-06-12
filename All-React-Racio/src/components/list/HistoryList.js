@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavItem, NavLink, Card, CardHeader, CardBody } from 'shards-react';
+import { NavLink, Card, CardHeader, CardBody } from 'shards-react';
 
 import HistoryDetails from '../../parse/HistoryDetails';
 
@@ -20,35 +20,22 @@ class HistoryList extends React.Component {
   }
 
   /* month date to String month */
-  getMonth(month) {
-    switch (month) {
-      case '1':
-        return 'JAN';
-      case '2':
-        return 'FEB';
-      case '3':
-        return 'MAR';
-      case '4':
-        return 'APR';
-      case '5':
-        return 'MAY';
-      case '6':
-        return 'JUN';
-      case '7':
-        return 'JUL';
-      case '8':
-        return 'AUG';
-      case '9':
-        return 'SEP';
-      case '10':
-        return 'OCT';
-      case '11':
-        return 'NOV';
-      case '12':
-        return 'DEC';
-      default:
-        return 'Undefined';
-    }
+  getMonth(v) {
+    const monthName = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    return monthName[v - 1];
   }
 
   test(log) {
@@ -72,10 +59,13 @@ class HistoryList extends React.Component {
           else if (o1[0] < o2[0]) return 1;
           else return 0;
         });
+
         const HistList = resData.map((els, idx) => (
           <Card key={idx} className="mb-4">
             <CardHeader className="border-bottom">
-              <h6 className="m-0">{this.getMonth(els[0])}</h6>
+              <h4 className="m-0">{`${this.getMonth(
+                parseInt(els[0])
+              )} History`}</h4>
             </CardHeader>
 
             <CardBody className="p-0">
@@ -89,14 +79,14 @@ class HistoryList extends React.Component {
                   <div className="blog-comments__content">
                     {/* Content :: Title */}
                     <div className="blog-comments__meta text-mutes">
-                      <span className="text-mutes">
-                        {moment(parseDate(el)).format('YYYY-MM-DD')}
-                      </span>
+                      <h5 className="text-mutes">
+                        {`${moment(parseDate(el)).format('dddd')}'s record`}
+                      </h5>
                     </div>
 
                     {/* Content :: Body */}
                     <p className="m-0 my-1 mb-2 text-muted">
-                      {moment(parseDate(el)).format('HH:mm:ss')}
+                      {moment(parseDate(el)).format('YYYY-MM-DD HH:mm')}
                     </p>
 
                     {/* Content :: Title */}
@@ -110,7 +100,7 @@ class HistoryList extends React.Component {
                   <NavLink
                     className="blog-comments__arrow mr-4"
                     onClick={this.test.bind(this, el)}>
-                    <input type="image" src={rightArrow} Alt="" />
+                    <input type="image" src={rightArrow} alt="" />
                   </NavLink>
                 </div>
               ))}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { hot } from 'react-hot-loader';
 
 import routes from './routes';
 
@@ -18,7 +19,7 @@ const APP = () => (
             exact={route.exact}
             component={props => {
               return (
-                <route.layout {...props} >
+                <route.layout {...props}>
                   <route.component {...props} />
                 </route.layout>
               );
@@ -30,4 +31,4 @@ const APP = () => (
   </Router>
 );
 
-export default APP;
+export default hot(module)(APP);
