@@ -1,0 +1,46 @@
+.text_head{
+    font-family: 'Courgette', cursive;
+}
+.text_upper{
+    padding-top: 5%;
+    padding-bottom: 3%;
+    
+    border-bottom: 1px solid aliceblue;
+}
+.text_lower{
+    height: 80%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top : 3%
+}
+.youtube_frame{
+    /* background-color:black; */
+    text-align:middle;   
+}
+.youtube{
+    position: relative;
+    height:0; 
+    padding-bottom: 56.25%;
+}
+.text_half_left{
+    width: 50%;
+    height: 100%;
+    float : left;
+}
+.text_img{
+    max-width: 66%;
+    max-height: 100%;
+}
+.text_img2{
+    max-width: 70%;
+    max-height: 100%;
+}
+.text_half_right{
+    width:30%;
+    height: 100%;
+    float : left;
+}
+
+h4{
+    font-family: 'Poiret One', cursive;
+}
