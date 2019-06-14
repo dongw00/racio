@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'shards-react';
 import PageTitle from '../components/common/PageTitle';
 import HistoryList from '../components/list/HistoryList';
 
-import ReadLog, { parseData } from '../parse/Parser';
+import parseData from '../parse/Parser';
 
 class History extends Component {
   constructor(props) {
@@ -35,13 +35,6 @@ class History extends Component {
             subtitle="map"
             className="text-sm-left mb-3"
           />
-        </Row>
-
-        {/* Read Log File */}
-        <Row>
-          <Col>
-            <ReadLog />
-          </Col>
         </Row>
 
         {/* User's record history */}

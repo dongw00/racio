@@ -7,7 +7,6 @@ import Chart from '../utils/chart';
 class HistoryChart extends React.Component {
   constructor(props) {
     super(props);
-
     this.canvasRef = React.createRef();
   }
 

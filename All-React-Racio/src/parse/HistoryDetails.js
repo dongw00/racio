@@ -9,20 +9,20 @@ import MapComponent from '../components/maps/MapComponent';
 import moment from 'moment';
 
 const HistoryDetails = ({ log }) => {
-  var date = moment(new Date(946728000000 + log.header.time * 1000)).format(
+  const date = moment(new Date(946728000000 + log.header.time * 1000)).format(
     'YYYY-MM-DD HH:mm:ss'
   );
 
-  var speeds = [];
-  var distances = [];
-  var calories = [];
+  const speeds = [];
+  const distances = [];
+  const calories = [];
   log.body.forEach(state => {
     if (state.speed) speeds.push(state.speed);
     if (state.distance) distances.push(state.distance);
     if (state.calories) calories.push(state.calories);
   });
 
-  var statProps = [
+  const statProps = [
     {
       label: 'Distance',
       value: distances[distances.length - 1],
@@ -61,7 +61,7 @@ const HistoryDetails = ({ log }) => {
     },
   ];
 
-  var chartProps = {
+  const chartProps = {
     title: 'Record Chart',
     chartData: {
       labels: Array.from(new Array(log.body.length), (_, i) =>
@@ -80,30 +80,6 @@ const HistoryDetails = ({ log }) => {
           pointRadius: 0,
           pointHoverRadius: 3,
         },
-        // {
-        //     label: 'Distance',
-        //     fill: 'start',
-        //     data: distances,
-        //     backgroundColor: 'rgba(255,0,123,0.1)',
-        //     borderColor: 'rgba(255,0,123,1)',
-        //     pointBackgroundColor: '#ffffff',
-        //     pointHoverBackgroundColor: 'rgb(255,0,123)',
-        //     borderWidth: 1.5,
-        //     pointRadius: 0,
-        //     pointHoverRadius: 3,
-        // },
-        // {
-        //     label: 'Calory',
-        //     fill: 'start',
-        //     data: calories,
-        //     backgroundColor: 'rgba(123,255,0,0.1)',
-        //     borderColor: 'rgba(123,255,0,1)',
-        //     pointBackgroundColor: '#ffffff',
-        //     pointHoverBackgroundColor: 'rgb(123,255,0)',
-        //     borderWidth: 1.5,
-        //     pointRadius: 0,
-        //     pointHoverRadius: 3,
-        // },
       ],
     },
   };

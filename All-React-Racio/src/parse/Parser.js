@@ -1,21 +1,12 @@
-import React from 'react';
 import { readLogData } from './Database';
 
-// const eventType = {
-//   LOG_TYPE_RESUME: 1,
-//   LOG_TYPE_PAUSE: 2,
-//   LOG_TYPE_LAP: 3,
-// }
-
-const SaveLog = () => <div />;
-
-function parseData() {
+export default function parseData() {
   return new Promise((resolve, reject) => {
     readLogData().then(bufferlist => {
-      var logs = [];
+      const logs = [];
       bufferlist.forEach(buffer => {
-        var log = {}; // one log
-        var view = new DataView(buffer);
+        let log = {}; // one log
+        const view = new DataView(buffer);
 
         // Header
         log.header = {
@@ -24,34 +15,30 @@ function parseData() {
         };
 
         // Body
-        var body = [];
-        for (var i = 3; i < view.byteLength / 4; i++) {
-          var time = view.getFloat32(i * 4, true);
+        const body = [];
+        for (let i = 3; i < view.byteLength / 4; i++) {
+          const time = view.getFloat32(i * 4, true);
           if (time < 0) {
             body.push({
               time: time,
               eventType: view.getUint32(++i * 4, true),
             });
           } else {
-            var state = {};
+            let state = {};
             state.time = time;
 
-            var flagNSpeed = view.getUint32(++i * 4, true);
-            var locationFlag = flagNSpeed & 0x80000000;
-            var flags = flagNSpeed & 0x7fff0000;
-            var speed = flagNSpeed & 0xffff;
-            if (speed === 0) {
-            } else {
-              if (speed < 0xfffe) {
-                state.speed = speed / 256;
-              } else {
-                state.speed = -1;
-              }
+            const flagNSpeed = view.getUint32(++i * 4, true);
+            const locationFlag = flagNSpeed & 0x80000000;
+            let flags = flagNSpeed & 0x7fff0000;
+            const speed = flagNSpeed & 0xffff;
+
+            if (speed !== 0) {
+              speed < 0xfffe ? (state.speed = speed / 256) : (state.speed = -1);
               flags |= 0x80000000;
             }
             state.flags = flags;
 
-            for (var j = 0; j < 16; j++) {
+            for (let j = 0; j < 16; j++) {
               if (flags === 0) break;
               if (flags & 0x80000000) {
                 switch (j) {
@@ -87,9 +74,17 @@ function parseData() {
               flags <<= 1;
             }
             if (locationFlag) {
-              state.mercPooint = {
-                x: view.getFloat32(++i * 4, true),
-                y: view.getFloat32(++i * 4, true),
+              const mercX = view.getFloat32(++i * 4, true);
+              const mercY = view.getFloat32(++i * 4, true);
+
+              console.log(`mercX = ${mercX}, mercY = ${mercY}`);
+              debugger;
+              state.spotPoint = {
+                long: (mercX / (1 << 31)) * 180 - 180,
+                lat:
+                  (Math.atan(Math.sinh(Math.PI * (1 - mercY / (1 << 31)))) *
+                    180) /
+                  Math.PI,
               };
             }
             body.push(state);
@@ -104,6 +99,3 @@ function parseData() {
     });
   });
 }
-
-export default SaveLog;
-export { parseData };
