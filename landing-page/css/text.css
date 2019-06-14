@@ -33,7 +33,7 @@
   max-height: 100%;
 }
 .text_img1 {
-  max-width: 150%;
+  max-width: 100%;
   max-height: 100%;
 }
 .text_img2 {
@@ -41,14 +41,22 @@
   max-height: 100%;
 }
 .text_half_right {
-  width: 33%;
+  width: 49%;
   height: 100%;
   float: left;
+}
+.Multilingual_support{
+  font-size : 65%;
 }
 
 h4 {
   font-family: 'Poiret One', cursive;
 }
+.text_img3{
+    max-width:80%;
+    height:auto;
+}
 
-.dash {
+.text_nanum_pen{
+  font-family: 'Nanum Gothic', sans-serif;
 }

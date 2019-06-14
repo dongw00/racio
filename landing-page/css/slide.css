@@ -24,15 +24,13 @@
   border-bottom: 0.2em inset white;
 }
 
-/* 1200 992 768  */
+/* 1200 992 768 576 */
 
 @media (min-width: 1200px) {
   .trimm_phone {
     width: 90%;
     height: 90%;
     padding-top: 10%;
-    /* padding-top:20%; */
-    /* padding-bottom:50%; */
   }
 }
 
@@ -40,20 +38,60 @@
   .trimm_phone {
     width: 90%;
     height: 90%;
-    /* padding-top:10%; */
   }
 }
 
+
+
+
 @media (max-width: 992px) {
-  /* #left_feature{
-        height: 10px;
-    } */
-  /* .Bigtable{
-        height: 800px !important;
-    } */
   .Bigtable {
-    /* padding-top:100%;
-        margin-top:-100%; */
+    height : 800px !important;
+  }
+  .tableDefault{
+    width:90% !important;
+    Left:-80% !important;
+  }
+  #table_back{
+    width:100% !important;
+  }
+}
+@media (max-width: 768px) {
+  .Bigtable {
+    height : 500px !important;
+  }
+  .tableDefault{
+    width:90% !important;
+    Left:-80% !important;
+  }
+  #table_back{
+    width:100% !important;
+  } 
+}
+@media (max-width: 576px) {
+  .Bigtable {
+    height : 400px !important;
+  }
+  .tableDefault{
+    width:90% !important;
+    Left:-80% !important;
+  }
+  #table_back{
+    width:100% !important;
+  } 
+}
+
+
+/* @media (max-width: 992px) {
+
+.Bigtable {
+  width: 100% !important;
+  height: auto !important;
+  /* padding-top: 20% !important;
+  margin-top: -20% !important; */
+
+/* @media (max-width: 992px) {
+  .Bigtable {
     width: 768px !important;
     height: 768px !important;
     padding-top: 20% !important;
@@ -108,13 +146,6 @@
     padding-top: 20% !important;
     margin-top: -20% !important;
   }
-}
-/* .features_tables{
-    height: 700px !important;
-} */
-
-/* .features_tables{
-    padding: 0%;
 } */
 
 .Bigtable {
@@ -124,41 +155,33 @@
   position: relative;
 }
 
-#features_table {
-  width: 100%;
-  height: 100%;
-}
-
 #table_back {
-  left: 10%;
-  width: 80%;
-  height: 80%;
+  /* left: 10%; */
+  width: 90%;
+  height: 100%;
   background-color: skyblue;
   position: absolute;
   z-index: -1;
 }
 #table1 {
-  /* width: 300px;
-    height: 300px; */
-  margin-top: -1px;
   width: 10%;
-  height: 81%;
+  height: 100%;
   font-weight: 700;
   background-color: blue;
   position: absolute;
   z-index: 1;
 }
 
-#table2 {
+.tableDefault {
   left: -70%;
   width: 80%;
-  height: 80%;
+  height: 100%;
   font-size: 18px;
   color: black;
   font-weight: 700;
   text-indent: 1em;
   text-align: left;
-  padding-left: 2%;
+  /* padding-left: 2%; */
   background-color: rgba(172, 250, 88, 0.8);
   position: absolute;
   z-index: 0;
@@ -166,118 +189,33 @@
   transition-timing-function: ease-out;
 }
 
+
+
+#table2 {
+  background-color: rgba(172, 250, 88, 0.8) !important;
+}
+
 #table3 {
-  left: -70%;
-  width: 80%;
-  height: 80%;
-  font-size: 18px;
-  color: black;
-  font-weight: 700;
-  text-indent: 1em;
-  text-align: left;
-  padding-left: 2%;
-  background-color: rgba(255, 192, 203, 0.800);
-  position: absolute;
-  z-index: 0;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
+  background-color: rgba(255, 192, 203, 0.800) !important;
 }
 
 #table4 {
-  left: -70%;
-  width: 80%;
-  height: 80%;
-  font-size: 18px;
-  color: black;
-  font-weight: 700;
-  text-indent: 1em;
-  text-align: left;
-  padding-left: 2%;
-  background-color: rgba(190, 188, 188, 0.800);
-  position: absolute;
-  z-index: 0;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
+  background-color: rgba(190, 188, 188, 0.800) !important;
 }
 #table5 {
-  left: -70%;
-  width: 80%;
-  height: 80%;
-  font-size: 1.2em;
-  color: black;
-  font-weight: 700;
-  text-indent: 1em;
-  text-align: left;
-  padding-left: 2%;
-  background-color: rgba(221, 160, 221, 0.800);
-  position: absolute;
-  z-index: 0;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
+  background-color: rgba(221, 160, 221, 0.800) !important;
 }
 #table6 {
-  left: -70%;
-  width: 80%;
-  height: 80%;
-  color: black;
-  font-size: 18px;
-  font-weight: 700;
-  text-indent: 1em;
-  text-align: left;
-  padding-left: 2%;
-  background-color: rgba(245, 208, 169, 0.800);
-  position: absolute;
-  z-index: 0;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
+  background-color: rgba(245, 208, 169, 0.800) !important;
 }
 #table7 {
-  left: -70%;
-  width: 80%;
-  height: 80%;
-  font-size: 18px;
-  color: black;
-  font-weight: 700;
-  text-indent: 1em;
-  text-align: left;
-  padding-left: 2%;
-  background-color: rgba(246, 206, 236, 0.800);
-  position: absolute;
-  z-index: 0;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
+  background-color: rgba(246, 206, 236, 0.800) !important;
 }
 #table8 {
-  left: -70%;
-  width: 80%;
-  height: 80%;
-  font-size: 18px;
-  color: black;
-  font-weight: 700;
-  text-indent: 1em;
-  text-align: left;
-  padding-left: 2%;
-  background-color: rgba(169, 226, 243, 0.800);
-  position: absolute;
-  z-index: 0;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
+  background-color: rgba(169, 226, 243, 0.800) !important; 
 }
 #table9 {
-  left: -70%;
-  width: 80%;
-  height: 80%;
-  font-size: 18px;
-  color: black;
-  font-weight: 700;
-  text-indent: 1em;
-  text-align: left;
-  padding-left: 2%;
-  background-color: rgba(230, 230, 230, 0.800);
-  position: absolute;
-  z-index: 0;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
+  background-color: rgba(230, 230, 230, 0.800) !important;
 }
 #table_btn2 {
   background-color: white;
