@@ -50,7 +50,7 @@ class HistoryList extends React.Component {
         return <HistoryDetails log={this.state.view} />;
       } else {
         const parseDate = item =>
-          new Date(946728000000 + item.header.time * 1000);
+          new Date(946728000000+ 31557600000 + item.header.time * 1000);
         const monthName = item =>
           moment(parseDate(item), 'YYYY-MM-DD').format('M');
         const resultData = _.groupBy(this.props.data, monthName);
