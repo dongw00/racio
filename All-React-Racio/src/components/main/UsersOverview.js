@@ -8,10 +8,39 @@ import Chart from '../../utils/chart';
 class UsersOverview extends React.Component {
   constructor(props) {
     super(props);
-
     this.canvasRef = React.createRef();
   }
-
+  chartdata = {
+    labels: Array.from(new Array(31), (_, i) => (i === 0 ? 1 : i)),
+    datasets: [
+      {
+        label: 'Current Month',
+        fill: 'start',
+        data: [0, 1, 2, 3, 4, 5],
+        backgroundColor: 'rgba(0,123,255,0.1)',
+        borderColor: 'rgba(0,123,255,1)',
+        pointBackgroundColor: '#ffffff',
+        pointHoverBackgroundColor: 'rgb(0,123,255)',
+        borderWidth: 1.5,
+        pointRadius: 0,
+        pointHoverRadius: 3,
+      },
+      {
+        label: 'Past Month',
+        fill: 'start',
+        data: [0, 1, 2, 3, 4, 5, 6, 6, 7, 8],
+        backgroundColor: 'rgba(255,65,105,0.1)',
+        borderColor: 'rgba(255,65,105,1)',
+        pointBackgroundColor: '#ffffff',
+        pointHoverBackgroundColor: 'rgba(255,65,105,1)',
+        borderDash: [3, 3],
+        borderWidth: 1,
+        pointRadius: 0,
+        pointHoverRadius: 2,
+        pointBorderColor: 'rgba(255,65,105,1)',
+      },
+    ],
+  };
   componentDidMount() {
     const chartOptions = {
       ...{
@@ -93,7 +122,7 @@ class UsersOverview extends React.Component {
           <h6 className="m-0">{title}</h6>
         </CardHeader>
         <CardBody className="pt-0">
-          <Row className="border-bottom py-2 bg-light">
+          {/* <Row className="border-bottom py-2 bg-light">
             <Col sm="6" className="d-flex mb-2 mb-sm-0">
               <RangeDatePicker />
             </Col>
@@ -104,7 +133,7 @@ class UsersOverview extends React.Component {
                 View Full Report &rarr;
               </Button>
             </Col>
-          </Row>
+          </Row> */}
           <canvas
             height="120"
             ref={this.canvasRef}

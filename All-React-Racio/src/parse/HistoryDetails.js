@@ -9,9 +9,9 @@ import MapComponent from '../components/maps/MapComponent';
 import moment from 'moment';
 
 const HistoryDetails = ({ log }) => {
-  var date = moment(new Date(946728000000 + log.header.time * 1000)).format(
-    'YYYY-MM-DD HH:mm:ss'
-  );
+  var date = moment(
+    new Date(946728000000 + 31557600000 + log.header.time * 1000)
+  ).format('YYYY-MM-DD HH:mm:ss');
 
   var speeds = [];
   var distances = [];
