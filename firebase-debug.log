@@ -1,0 +1,25 @@
+[debug] [2019-06-15T18:51:33.636Z] ----------------------------------------------------------------------
+[debug] [2019-06-15T18:51:33.638Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\proxi\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-06-15T18:51:33.639Z] CLI Version:   6.5.0
+[debug] [2019-06-15T18:51:33.639Z] Platform:      win32
+[debug] [2019-06-15T18:51:33.639Z] Node Version:  v10.15.3
+[debug] [2019-06-15T18:51:33.640Z] Time:          Sun Jun 16 2019 03:51:33 GMT+0900 (GMT+09:00)
+[debug] [2019-06-15T18:51:33.640Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-06-15T18:51:33.648Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-06-15T18:51:33.649Z] > authorizing via signed-in user
+[debug] [2019-06-15T18:51:33.649Z] [iam] checking project facebooklogin-44d81 for permissions ["firebase.projects.get"]
+[debug] [2019-06-15T18:51:33.651Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/facebooklogin-44d81:testIamPermissions  
+
+[debug] [2019-06-15T18:51:34.973Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-15T18:51:34.974Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/facebooklogin-44d81  
+ 
+[debug] [2019-06-15T18:51:36.165Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\proxi\Desktop\웹페이지개발'...
+[info] 
+[debug] [2019-06-15T18:51:36.184Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/480930104944/clients/_:getWebAppConfig  
+ 
+[debug] [2019-06-15T18:51:37.095Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: landing-page
+[info] +  hosting: Local server: http://localhost:5000
