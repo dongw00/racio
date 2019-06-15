@@ -8,6 +8,7 @@ import UsersByDevice from '../components/main/UsersByDevice';
 import Mission from '../components/main/Mission';
 import Ranking from '../components/common/Ranking';
 import parseData from '../parse/Parser';
+import '../assets/css/style.css';
 
 const MainPage = ({ smallStats }) => {
   const [data, setData] = useState(null);
@@ -16,6 +17,7 @@ const MainPage = ({ smallStats }) => {
   const [yearly, setYearly] = useState(0);
   const [arr, setArr] = useState(null);
   const [prev, setPrev] = useState(null);
+
   parseData().then(logs => {
     /* Sort by recent date */
     if (data === null) {
@@ -263,8 +265,19 @@ const MainPage = ({ smallStats }) => {
       </Container>
     );
   } else {
-    // return jiwnoo;
-    return <div>jinwoo</div>;
+    // return
+
+    return (
+      <Container fluid className="main-content-container px-4">
+        <div class="jinwoo">
+          <div
+            class="spinner-border py-5 text-primary"
+            style={{ width: '7rem', height: '7rem' }}
+            role="status"
+          />
+        </div>
+      </Container>
+    );
   }
 };
 
