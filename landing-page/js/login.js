@@ -92,6 +92,29 @@ function clear() {
   document.getElementById('password').value = '';
 }
 
+
+//페이스북 로그인 버튼 이벤트
+function FacebookBtnEvent(){
+  const provider = new firebase.auth.FacebookAuthProvider();
+  firebase
+    .auth()
+    .signInWithPopup(provider)
+    .then(result => {
+      firebase
+        .auth()
+        .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+        .then(() => {})
+        .catch(error => {});
+      var user = firebase.auth().currentUser;
+      set_user(user);
+    })
+    .catch(function(error) {
+      alert(error.message);
+    });
+}
+
+
+
 //구글 로그인 버튼 이벤트
 function GoogleBtnEvent() {
   const provider = new firebase.auth.GoogleAuthProvider();
