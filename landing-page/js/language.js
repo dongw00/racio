@@ -2,53 +2,39 @@ var language = 'KR';
 
 function ChangeLanguage() {
   if (language === 'KR') {
-    document.getElementById('text_login').innerHTML = '<i class="fa fa-sign-in mr-2"></i>Login';
+    document.getElementById('text_login').innerHTML =
+      '<i class="fa fa-sign-in mr-2"></i>Login';
     document.getElementById('text1').innerHTML =
       'Experience Web Application for TrimmOne!, <br> You can manage a data efficiently and useful';
     document.getElementById('tag0').innerHTML = 'Home';
-    // document.getElementById('tag1').innerHTML = 'Ranking & Achievement';
-    // document.getElementById('tag2').innerHTML = 'Database';
     document.getElementById('tag3').innerHTML = 'Our Product';
     document.getElementById('tag4').innerHTML = 'Pre-Sale';
     document.getElementById('text_fit0').innerHTML = 'Features';
-    // document.getElementById('text_fit1').innerHTML = 'Comfortable';
-    // document.getElementById('text_fit2').innerHTML = 'Securitiy';
-    // document.getElementById('text_fit3').innerHTML = 'Data sharing';
-    // document.getElementById('text_fit4').innerHTML = 'Easily access Anyware!';
-    // document.getElementById('text_fit1_sub').innerHTML =
-    //   'Simple and clean UI, It is Easy to use';
-    // document.getElementById('text_fit2_sub').innerHTML =
-    //   'We Protect personal information thoroughly and completely';
-    // document.getElementById('text_fit3_sub').innerHTML =
-    //   'You can manage your data through the file system';
-    // document.getElementById('text_fit4_sub').innerHTML =
-      // 'Anytime, anywhere, you can enjoy trimm One!';
     document.getElementById('post_text').innerHTML = 'Latest Posts';
+    document.getElementById('text_fit0').innerHTML = 'About TrimmOne';
 
+    /*
+    document.getElementById('table2').innerHTML = 'Renewable Energy';
+    document.getElementById('table3').innerHTML = 'Powerful Navi for Map';
+    document.getElementById('table4').innerHTML = 'Message & Call';
+    document.getElementById('table5').innerHTML = 'Multilingual support ';
+    document.getElementById('table6').innerHTML = 'Dashboard';
+    document.getElementById('table7').innerHTML = 'Health';
+    document.getElementById('table8').innerHTML = 'Data Synchronization ';
+    document.getElementById('table9').innerHTML = 'Aesthetic design  ';
+*/
     language = 'EN';
   } else {
-    document.getElementById('text_login').innerHTML = '<i class="fa fa-sign-in mr-2"></i>로그인';
+    document.getElementById('text_login').innerHTML =
+      '<i class="fa fa-sign-in mr-2"></i>로그인';
     document.getElementById('text1').innerHTML =
-    '트림원을 위한 웹 어플리케이션을 경험해보세요. <br/> 더 나은 삶을 경험해볼 준비가 되셨나요?';
+      '트림원을 위한 웹 어플리케이션을 경험해보세요. <br/> 더 나은 삶을 경험해볼 준비가 되셨나요?';
     document.getElementById('tag0').innerHTML = '홈';
-    // document.getElementById('tag1').innerHTML = '랭킹 & 업적';
-    // document.getElementById('tag2').innerHTML = '데이터베이스';
     document.getElementById('tag3').innerHTML = '제품 설명';
     document.getElementById('tag4').innerHTML = '사전 예약구매';
     document.getElementById('text_fit0').innerHTML = 'Trimm One 소개';
-    // document.getElementById('text_fit1').innerHTML = '편리함';
-    // document.getElementById('text_fit2').innerHTML = '보안성';
-    // document.getElementById('text_fit3').innerHTML = '데이터 공유';
-    // document.getElementById('text_fit4').innerHTML = '어디서나 쉽게!';
-    // document.getElementById('text_fit1_sub').innerHTML =
-    //   '누구나 쉽게 사용할 수 있는 간편하고 깔끔한 UI';
-    // document.getElementById('text_fit2_sub').innerHTML =
-    //   '철저하고 완벽하게 개인 정보 보호';
-    // document.getElementById('text_fit3_sub').innerHTML =
-    //   '파일 시스템을 통한 데이터 관리';
-    // document.getElementById('text_fit4_sub').innerHTML =
-    //   '언제 어디서나 사용할 수 있는 trimm One!';
     document.getElementById('post_text').innerHTML = '최근 게시물';
+    document.getElementById('text_fit0').innerHTML = 'TrimmOne 소개';
 
     language = 'KR';
   }
