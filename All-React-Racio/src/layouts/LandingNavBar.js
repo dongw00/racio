@@ -5,8 +5,6 @@ import SocialIcons from '../components/landing/SocialIcons';
 
 import trimmImg from '../assets/images/trimm.png';
 
-import '../components/landing/menu';
-
 const NavBar = () => {
     const [Nav, setNav] = useState(false);
     return (

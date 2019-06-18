@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import routes from './routes';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/css/bootstrap.min.css';
 import './assets/css/shards-dashboards.1.1.css';
 import './assets/css/style.css';
 

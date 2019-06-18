@@ -10,15 +10,16 @@ class FirebaseLogin extends Component {
     super(props);
 
     this.state = {
-      user: null,
+      // user: null,
       signUp: false,
       login: false,
+      userName: "",
+      email: "",
+      password: "",
+      confirm: "",
+      done: false,
     };
 
-    this.SignUpEvent = this.SignUpEvent.bind(this);
-    this.BackEvent = this.BackEvent.bind(this);
-    this.LoginEvent = this.LoginEvent.bind(this);
-    this.GoogleBtnEvent = this.GoogleBtnEvent.bind(this);
     this.ConfirmLogin();
   }
 
@@ -71,8 +72,8 @@ class FirebaseLogin extends Component {
 
   //이메일 로그인 버튼 이벤트
   EmailBtnEvent() {
-    const email = document.getElementById('userName').value.trim();
-    const password = document.getElementById('password').value.trim();
+    const email = this.state.email;
+    const password = this.state.password;
     app.auth().setPersistence(auth.Auth.Persistence.SESSION);
     if (!this.emailCheck(email)) alert('Invaild Email');
 
@@ -88,6 +89,7 @@ class FirebaseLogin extends Component {
               .auth()
               .signOut()
               .catch(error => console.error('error!', error));
+            return;
           }
           this.LoginDone();
         })
@@ -142,10 +144,8 @@ class FirebaseLogin extends Component {
 
   //이메일 가입버튼 이벤트
   SignUpBtnEvent() {
-    const userName = document.getElementById('joinUserName').value.trim();
-    const email = document.getElementById('joinUserEmail').value.trim();
-    const password = document.getElementById('joinPassword').value.trim();
-    const rePassword = document.getElementById('joinRePassword').value.trim();
+    const [userName, email, password, rePassword] =
+    [this.state.userName, this.state.email, this.state.password, this.state.confirm];
     if (this.validateJoinForm(email, password, rePassword)) {
       app
         .auth()
@@ -154,7 +154,9 @@ class FirebaseLogin extends Component {
           const user = app.auth().currentUser;
           user
             .sendEmailVerification()
-            .then(() => alert('Verifying message is sent to your Email'))
+            .then(() => {
+              alert('Verifying message is sent to your Email');
+            })
             .catch(error => { });
 
           user
@@ -162,8 +164,6 @@ class FirebaseLogin extends Component {
               displayName: userName,
             })
             .catch(error => { });
-
-          this.active_login('hide_signup', 'ActiveLogin');
         })
         .catch(error => {
           switch (error.code) {
@@ -193,15 +193,32 @@ class FirebaseLogin extends Component {
       .signOut()
       .then(() => {
         // Sign-out successful
-        document.getElementById('rounded1').style.backgroundImage = null;
-        document.getElementById('user_info').innerHTML = '';
-        this.active_login('hide_dash', 'login_button');
+        // document.getElementById('rounded1').style.backgroundImage = null;
+        // document.getElementById('user_info').innerHTML = '';
+        // this.active_login('hide_dash', 'login_button');
       })
       .catch(error => console.error('Error!', error));
   }
 
+  handleUserName(event) {
+    this.setState({ userName: event.target.value });
+  }
+  handlePassword(event) {
+    this.setState({ password: event.target.value });
+  }
+  handleEmail(event) {
+    this.setState({ email: event.target.value });
+  }
+  handleConfirm(event) {
+    this.setState({ confirm: event.target.value });
+  }
+
+
   SignUpEvent() {
     this.setState({ signUp: true });
+  }
+  SignUpBackEvent() {
+    this.setState({ signUp: false });
   }
   BackEvent() {
     this.setState({ login: false });
@@ -211,28 +228,45 @@ class FirebaseLogin extends Component {
   }
   LoginDone() {
     this.setState({
-      user: app.auth().currentUser,
+      done: true,
       login: false,
       signup: false,
     });
   }
 
   render() {
-    return this.state.user ? (
+    return this.state.done ? (
       <Redirect to="/main" />
     ) : (
         <div>
           {this.state.login ? (
             this.state.signUp ? (
-              <SignUp />
+              <SignUp
+                events={{
+                  signup: this.SignUpEvent.bind(this),
+                  signupBack: this.SignUpBackEvent.bind(this),
+                  done: this.SignUpBtnEvent.bind(this)
+                }}
+                handles={{
+                  userName: this.handleUserName.bind(this),
+                  password: this.handlePassword.bind(this),
+                  email: this.handleEmail.bind(this),
+                  confirm: this.handleConfirm.bind(this)
+                }}
+              />
             ) : (
                 <ActiveLogin
                   events={{
-                    google: this.GoogleBtnEvent,
-                    facebook: this.FacebookBtnEvent,
-                    email: this.EmailBtnEvent,
-                    signup: this.SignUpEvent,
-                    back: this.BackEvent,
+                    google: this.GoogleBtnEvent.bind(this),
+                    facebook: this.FacebookBtnEvent.bind(this),
+                    email: this.EmailBtnEvent.bind(this),
+                    signup: this.SignUpEvent.bind(this),
+                    signupBack: this.SignUpBackEvent.bind(this),
+                    back: this.BackEvent.bind(this),
+                  }}
+                  handles={{
+                    email: this.handleEmail.bind(this),
+                    password: this.handlePassword.bind(this),
                   }}
                 />
               )
@@ -240,8 +274,8 @@ class FirebaseLogin extends Component {
               <ChangeLogin
                 user={this.state.user}
                 events={{
-                  login: this.LoginEvent,
-                  logout: this.LogOutEvent,
+                  login: this.LoginEvent.bind(this),
+                  logout: this.LogOutEvent.bind(this),
                 }}
               />
             )}
@@ -318,6 +352,7 @@ const ActiveLogin = props => (
             name="userName"
             className="input-text"
             placeholder="email"
+            onChange={props.handles.email}
           />
           <input
             type="password"
@@ -326,7 +361,7 @@ const ActiveLogin = props => (
             className="input-text"
             maxLength="17"
             placeholder="password"
-            onKeyDown="keydown(1)"
+            onChange={props.handles.password}
           />
           <div className="btnGroup">
             <li
@@ -352,8 +387,8 @@ const ActiveLogin = props => (
   </div>
 );
 
-const SignUp = () => (
-  <div id="hide_signup">
+const SignUp = (props) => (
+  <div>
     <div id="dvJoin">
       <h5 className="login_title">Email SignUp</h5>
       <input
@@ -362,6 +397,7 @@ const SignUp = () => (
         name="userName"
         className="input-text"
         placeholder="UserName (ex.Hong gil dong)"
+        onChange={props.handles.userName}
       />
       <input
         type="email"
@@ -369,6 +405,7 @@ const SignUp = () => (
         name="userName"
         className="input-text"
         placeholder="Email account (ex.google, naver..)"
+        onChange={props.handles.email}
       />
       <input
         type="password"
@@ -377,6 +414,7 @@ const SignUp = () => (
         className="input-text"
         maxLength="17"
         placeholder="password"
+        onChange={props.handles.password}
       />
       <input
         type="password"
@@ -384,19 +422,19 @@ const SignUp = () => (
         className="input-text"
         maxLength="17"
         placeholder="confirm password"
-        onKeyDown="keydown(2)"
+        onChange={props.handles.confirm}
       />
       <div className="btnGroup">
         <li
           id="liEmailJoinSubmit"
           className="waves-effect waves-teal btn-flat"
-          onClick="SignUpBtnEvent()">
+          onClick={props.events.done}>
           Signed Up
         </li>
       </div>
     </div>
-    <em id="back" onClick="active_login('hide_signup','ActiveLogin')">
-      &ltback
+    <em className="login-btn" id="back" onClick={props.events.signupBack}>
+      &lt;back
     </em>
   </div>
 );

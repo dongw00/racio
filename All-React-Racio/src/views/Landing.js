@@ -8,10 +8,11 @@ import Subscribe from '../components/landing/Subscribe';
 import Footer from '../components/landing/Footer';
 import NavBar from '../layouts/LandingNavBar';
 
-import '../components/landing/menu'
+import '../components/landing/Table'
 
 import '../assets/css/index.css';
 import '../assets/css/login.css';
+import '../assets/css/shards.min.css'
 import '../assets/css/shards-extras.min.css';
 import '../assets/css/menu.css';
 import '../assets/css/slide.css';
