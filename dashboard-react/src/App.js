@@ -6,7 +6,7 @@ import { hot } from 'react-hot-loader/root';
 import routes from './routes';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './assets/css/shards-dashboards.1.1.css';
+import './assets/css/shards-dashboards';
 import './assets/css/style.css';
 
 const App = () => (

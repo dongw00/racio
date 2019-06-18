@@ -2,6 +2,7 @@
 
 // Layout Types
 import { DefaultLayout } from './layouts';
+// import SideBar from './layouts/LandingSideBar';
 
 // Route Views
 import Landing from './views/Landing'
@@ -13,7 +14,7 @@ import Ranking from './views/Ranking';
 import History from './views/History';
 
 export default [
-  /* Dashboard - main page */
+  /* Landing - main page */
   {
     path: '/',
     exact: true,

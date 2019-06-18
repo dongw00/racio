@@ -94,6 +94,18 @@
 #liGoogleBtn i {
   background: url(../images/app-promo/icon_google.svg) 50% no-repeat;
 }
+#liFacebookBtn {
+  background: rgb(0, 108, 209);
+  /* border: 0px solid #dadce0; */
+  color: #fcfcfc !important;
+}
+#liFacebookBtn i {
+  /* background: url(../images/app-promo/icon_facebook.png) 50% no-repeat; */
+  background: url(../images/app-promo/icon_facebook.png) 50% no-repeat;
+  background-size:100%;
+}
+
+
 #liEmailBtn {
   background: #2d5399;
 }
@@ -141,7 +153,6 @@
 
 #typed {
   font-size: 57px;
-  font-weight: 400 !important;
 }
 
 #text_login {
@@ -168,4 +179,5 @@
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 );
   border: 1px;
+  
 }

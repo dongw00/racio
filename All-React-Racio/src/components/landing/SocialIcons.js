@@ -1,10 +1,9 @@
 import React from 'react';
-//import ChangeLanguage from './Language';
+import ChangeLanguage from './Language';
 
 const SocialIcons = () => (
   <ul className="header-social-icons navbar-nav ml-auto">
-    <li className="nav-item">
-      {/*onClick={ChangeLanguage()}*/}
+    <li className="nav-item" onClick={ChangeLanguage()}>
       <a className="nav-link" href=".#">
         <i className="fa fa-language fa-lg" />
       </a>

@@ -49,7 +49,21 @@ class FirebaseLogin extends Component {
         app
           .auth()
           .setPersistence(auth.Auth.Persistence.SESSION)
-          .catch(error => console.error('error!', error));
+        this.LoginDone();
+      })
+      .catch(error => alert(error.message));
+  }
+
+  //페이스북 로그인 버튼 이벤트
+  FacebookBtnEvent() {
+    const provider = new auth.FacebookAuthProvider();
+    app
+      .auth()
+      .signInWithPopup(provider)
+      .then(result => {
+        app
+          .auth()
+          .setPersistence(auth.Auth.Persistence.SESSION)
         this.LoginDone();
       })
       .catch(error => alert(error.message));
@@ -141,13 +155,13 @@ class FirebaseLogin extends Component {
           user
             .sendEmailVerification()
             .then(() => alert('Verifying message is sent to your Email'))
-            .catch(error => {});
+            .catch(error => { });
 
           user
             .updateProfile({
               displayName: userName,
             })
-            .catch(error => {});
+            .catch(error => { });
 
           this.active_login('hide_signup', 'ActiveLogin');
         })
@@ -190,7 +204,7 @@ class FirebaseLogin extends Component {
     this.setState({ signUp: true });
   }
   BackEvent() {
-    this.setState({ signUp: false });
+    this.setState({ login: false });
   }
   LoginEvent() {
     this.setState({ login: true });
@@ -207,31 +221,32 @@ class FirebaseLogin extends Component {
     return this.state.user ? (
       <Redirect to="/main" />
     ) : (
-      <div>
-        {this.state.login ? (
-          this.state.signUp ? (
-            <SignUp />
+        <div>
+          {this.state.login ? (
+            this.state.signUp ? (
+              <SignUp />
+            ) : (
+                <ActiveLogin
+                  events={{
+                    google: this.GoogleBtnEvent,
+                    facebook: this.FacebookBtnEvent,
+                    email: this.EmailBtnEvent,
+                    signup: this.SignUpEvent,
+                    back: this.BackEvent,
+                  }}
+                />
+              )
           ) : (
-            <ActiveLogin
-              events={{
-                google: this.GoogleBtnEvent,
-                email: this.EmailBtnEvent,
-                signup: this.SignUpEvent,
-                back: this.SignUpEvent,
-              }}
-            />
-          )
-        ) : (
-          <ChangeLogin
-            user={this.state.user}
-            events={{
-              login: this.LoginEvent,
-              logout: this.LogOutEvent,
-            }}
-          />
-        )}
-      </div>
-    );
+              <ChangeLogin
+                user={this.state.user}
+                events={{
+                  login: this.LoginEvent,
+                  logout: this.LogOutEvent,
+                }}
+              />
+            )}
+        </div>
+      );
   }
 }
 export default FirebaseLogin;
@@ -290,6 +305,9 @@ const ActiveLogin = props => (
               onClick={props.events.google}>
               <i />
               Using Google Account
+            </li>
+            <li id="liFacebookBtn" class="waves-effect waves-teal btn-flat" onclick={props.events.facebook}>
+              <i></i>Using Facebook Account
             </li>
           </div>
         </div>

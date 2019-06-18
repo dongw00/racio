@@ -1,0 +1,62 @@
+.text_head {
+  font-family: 'Courgette', cursive;
+}
+.text_upper {
+  padding-top: 5%;
+  padding-bottom: 3%;
+
+  border-bottom: 1px solid aliceblue;
+}
+.text_lower {
+  height: 80%;
+  padding-left: 4%;
+  padding-right: 3%;
+  padding-top: 3%;
+  padding-bottom: 2%;
+}
+.youtube_frame {
+  /* background-color:black; */
+  text-align: middle;
+}
+.youtube {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.text_half_left {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+.text_img {
+  max-width: 66%;
+  max-height: 100%;
+}
+.text_img1 {
+  max-width: 100%;
+  max-height: 100%;
+}
+.text_img2 {
+  max-width: 70%;
+  max-height: 100%;
+}
+.text_half_right {
+  width: 49%;
+  height: 100%;
+  float: left;
+}
+.Multilingual_support{
+  font-size : 65%;
+}
+
+h4 {
+  font-family: 'Poiret One', cursive;
+}
+.text_img3{
+    max-width:80%;
+    height:auto;
+}
+
+.text_nanum_pen{
+  font-family: 'Nanum Gothic', sans-serif;
+}

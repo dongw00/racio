@@ -2,8 +2,8 @@
   position: relative;
   height: 100vh;
   min-height: 700px;
-  background: url(../images/app-promo/Bicycle-Background.jpg) no-repeat center
-    center fixed;
+  background: url(../images/app-promo/Bicycle-Background.jpg) no-repeat
+    center center fixed;
   background-size: cover;
 }
 .shards-landing-page--1 .welcome:before {
@@ -101,7 +101,7 @@
   }
 }
 .shards-app-promo-page--1 .welcome .iphone-mockup {
-  max-width: 65%;
+  max-width: 85%;
 }
 .shards-app-promo-page--1 .section-title {
   position: relative;
@@ -120,9 +120,10 @@
   left: 0;
   margin-left: 0;
 }
+/*
 .shards-app-promo-page--1 .app-screenshot {
-  background: url(../images/app-promo/features-background.jpg) no-repeat center
-    center fixed;
+  background: url(../images/app-promo/Cool-Cycling-Background.jpg) no-repeat
+    center center fixed;
   background-size: cover;
 }
 .shards-app-promo-page--1 .app-screenshot:before {
@@ -134,7 +135,7 @@
   right: 0;
   background: #e9ecef;
   opacity: 0.6;
-}
+}*/
 .shards-app-promo-page--1 .app-screenshot img {
   max-width: 300px;
   position: absolute;
