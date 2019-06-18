@@ -7,21 +7,21 @@ import OurBlog from '../components/landing/OurBlog';
 import Subscribe from '../components/landing/Subscribe';
 import Footer from '../components/landing/Footer';
 
-
 import '../assets/css/index.css';
 import '../assets/css/login.css';
 import '../assets/css/shards-extras.min.css';
-
+import '../assets/css/menu.css';
+import '../assets/css/slide.css';
 
 const Landing = () => (
-    <div className="shards-app-promo-page--1">
-        <Welcome></Welcome>
-        <Features></Features>
-        <Testimonials></Testimonials>
-        <OurBlog></OurBlog>
-        <Subscribe></Subscribe>
-        <Footer></Footer>
-    </div>
+  <div className="shards-app-promo-page--1">
+    <Welcome />
+    <Features />
+    <Testimonials />
+    <OurBlog />
+    <Subscribe />
+    <Footer />
+  </div>
 );
 
 export default Landing;

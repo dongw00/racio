@@ -2,8 +2,8 @@
   position: relative;
   height: 100vh;
   min-height: 700px;
-  background: url(../images/app-promo/Bicycle-Background.jpg) no-repeat
-    center center fixed;
+  background: url(../images/app-promo/Bicycle-Background.jpg) no-repeat center
+    center fixed;
   background-size: cover;
 }
 .shards-landing-page--1 .welcome:before {
@@ -101,7 +101,7 @@
   }
 }
 .shards-app-promo-page--1 .welcome .iphone-mockup {
-  max-width: 85%;
+  max-width: 65%;
 }
 .shards-app-promo-page--1 .section-title {
   position: relative;

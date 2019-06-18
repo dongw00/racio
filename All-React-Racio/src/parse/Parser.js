@@ -70,15 +70,12 @@ export default function parseData() {
                   }
                 }
               }
-
               flags <<= 1;
             }
             if (locationFlag) {
-              const mercX = view.getFloat32(++i * 4, true);
-              const mercY = view.getFloat32(++i * 4, true);
+              const mercX = view.getUint32(++i * 4, true);
+              const mercY = view.getUint32(++i * 4, true);
 
-              console.log(`mercX = ${mercX}, mercY = ${mercY}`);
-              debugger;
               state.spotPoint = {
                 long: (mercX / (1 << 31)) * 180 - 180,
                 lat:
