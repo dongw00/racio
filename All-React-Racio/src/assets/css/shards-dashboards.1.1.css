@@ -5754,3 +5754,11 @@ html .ql-toolbar .ql-picker .ql-picker-options {
 
   /* -webkit-filter: blur(5px); 블러 시키고 싶은 곳에 넣기 */
 }
+.main-content-container{
+  display:table;
+}
+.jinwoo  {
+  display:table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
